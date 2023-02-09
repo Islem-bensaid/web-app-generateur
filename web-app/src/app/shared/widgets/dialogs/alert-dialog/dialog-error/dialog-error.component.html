@@ -1,0 +1,30 @@
+<ng-container *ngIf="!mutlimsgs">
+    <div mat-dialog-content>
+        <div class="cp5" fxLayout="row wrap" fxLayoutAlign="space-between center">
+            <div fxFlex="100" fxLayoutAlign="center center" class="text-center">
+                {{ msg | translate }}
+            </div>
+        </div>
+    </div>
+</ng-container>
+<ng-container *ngIf="mutlimsgs">
+    <div mat-dialog-content>
+
+        <div *ngFor="let m of listmsg" class="cp5" fxLayout="row wrap" fxLayoutAlign="space-between center">
+            <div fxFlex="100" fxLayoutAlign="center center" class="text-center">
+                {{ m | translate }}
+            </div>
+        </div>
+    </div>
+</ng-container>
+
+<div mat-dialog-actions>
+    <button
+            (click)="respond(false)"
+            [mat-dialog-close]
+            color="primary"
+            mat-raised-button
+    >
+        {{ "confirm" | translate }}
+    </button>
+</div>

@@ -1,0 +1,52 @@
+<div fxFlex="100" fxLayout="column" fxLayoutAlign="space-between stretch">
+  <st2i-fiche-details
+    [data]="params['infoProjet'].data"
+    [metadata]="params['baseInformation'].metadata">
+  </st2i-fiche-details>
+  <st2i-card [metadata]="{ title: 'Brief', classList: { cardContent: 'p-0' }}">
+    <div fxFlex="100" fxLayout="column" fxLayoutAlign="space-between stretch">
+      <div fxFlex="100" fxLayout="row wrap">
+        <div fxFlex="50" fxFlex.lt-md="100" fxLayoutAlign="center start">
+          <!--            [width]="projectImage.getBoundingClientRect().width *.6"
+                          [height]="projectImage.getBoundingClientRect().height *.6"-->
+          <!--          <img #projectImage *ngIf="params.projectImgDim"-->
+          <!--               [ngStyle]="{'width.px': params.projectImgDim.width, 'height.px':  params.projectImgDim.height}"-->
+          <!--                alt="{{'Project Image'|translate}}"-->
+          <!--               [src]="params['infoProjet'].data['pImageAsB64']" />-->
+          <app-inner-gallery-media [metadata]="{listMedias: params['infoProjet'].data.dataMedia}"></app-inner-gallery-media>
+        </div>
+        <div fxFlex="50" fxFlex.lt-md="100">
+          <st2i-fiche-details #briefConntainer
+                              [data]="params['infoProjet'].data"
+                              [metadata]="params['infoProjet'].metadata">
+          </st2i-fiche-details>
+        </div>
+      </div>
+    </div>
+  </st2i-card>
+
+  <st2i-card [metadata]="{ title: 'gp.ap.formAddProject.labels.description'}">
+    {{params['infoProjet'].data.description}}
+  </st2i-card>
+<!--  <st2i-card [metadata]="{ title: 'gp.ap.formAddProject.labels.executiveReport'}">-->
+<!--    {{params['infoProjet'].data.executiveReport}}-->
+<!--  </st2i-card>-->
+  <div fxFlex="100" fxLayout="row nowrap" fxLayoutAlign="start center">
+    <st2i-datatable fxFlex="100" fxFlex.lt-md="100"
+                    [responsePayload]="params.tableListViewContacts.responsePayload"
+                    [metadata]="params?.tableListViewContacts.metadata"
+                    (onAction)="onAction(this,$event)"
+    ></st2i-datatable>
+  </div>
+
+
+  <st2i-card [metadata]="{ title: 'Viewer', classList: { cardContent: 'p-0' }, forViewer: true }">
+    <div class="forge-viewer" id="MyViewerDiv"></div>
+  </st2i-card>
+  <div fxFlex="100" fxLayout="row wrap" fxLayoutAlign="end center">
+    <button (click)="goToListe()" mat-raised-button type="button" class="cancel-btn">
+      <mat-icon class="mx-1" style="font-size: 1.4rem;">arrow_back_outline</mat-icon>
+      <span>{{ 'Projects list' | translate }}</span>
+    </button>
+  </div>
+</div>

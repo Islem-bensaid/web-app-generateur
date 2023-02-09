@@ -1,0 +1,11 @@
+.card-title {
+    font-weight: bold;
+
+    text-underline: #005b9f;
+    text-decoration-color: #4779b2;
+    text-decoration-line: underline;
+    text-underline-position: under;
+    text-underline-offset: 0.1em;
+    color: #4779b2;
+    margin-right: -34px;
+}

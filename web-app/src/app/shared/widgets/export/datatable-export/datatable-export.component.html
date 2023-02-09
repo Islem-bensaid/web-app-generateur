@@ -1,0 +1,10 @@
+<div class="cursor-pointer mx-3" fxLayoutAlign="center center" [matMenuTriggerFor]="exportMenu" #exportMenuTrigger>
+    <mat-icon>output</mat-icon>
+</div>
+<mat-menu #exportMenu="matMenu" [overlapTrigger]="false" xPosition="before" class="app-menu-panel">
+    <ng-container *ngFor="let opt of options ">
+        <button mat-menu-item (click)="onGenerateFile.emit(opt.code)" class="backbutt text-uppercase">
+            {{ opt.title }}
+        </button>
+    </ng-container>
+</mat-menu>

@@ -1,0 +1,42 @@
+th.mat-header-cell {
+    color: black;
+    background-color: #f0f1f1;
+    text-align: center !important;
+    text-decoration-color: black;
+    -webkit-text-fill-color: black;
+    border-radius: 0 !important;
+}
+::ng-deep .mat-sort-header-container {
+    display: flex;
+    justify-content: center;
+    font-size: 16px;
+    font-weight: bold;
+}
+
+
+.mat-column-dateLog {
+    text-align: center !important;
+    width: 15%!important;
+    padding: 0 5px !important;
+}
+.mat-column-nameService {
+    text-align: left !important;
+    width: 20%!important;
+    padding: 0 5px !important;
+}
+.mat-column-uri{
+    text-align: left !important;
+    width: 15%!important;
+    padding: 0 5px !important;
+}
+.mat-column-case_ {
+    text-align: center !important;
+    width: 10%!important;
+    padding: 0 5px !important;
+}
+.mat-column-httpMethod {
+    text-align: center !important;
+    width: 15%!important;
+    padding: 0 5px !important;
+}
+

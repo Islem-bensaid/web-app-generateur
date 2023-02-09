@@ -1,0 +1,13 @@
+<div class="cp5" fxLayout="row wrap">
+    <div fxFlex="100" fxFlex.lt-md="100">
+        <app-filtre-gestion-profils (searchoptions)="onSearch($event)"></app-filtre-gestion-profils>
+    </div>
+    <div fxFlex="100" fxFlex.lt-md="100">
+        <app-table-gestion-profils
+                #table
+                [responsePayload]="responsePayload"
+                (sort)="onSort($event)"
+                (paginate)="onPaginate($event)">
+        </app-table-gestion-profils>
+    </div>
+</div>

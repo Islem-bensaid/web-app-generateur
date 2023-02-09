@@ -1,0 +1,12 @@
+spring:
+ profiles:
+  active: test
+ application:
+  name: GURU
+
+app: 
+ message: Copyright by GURU Team ${spring.application.name}
+
+application:
+ title: GURU
+ version: 1.0.0

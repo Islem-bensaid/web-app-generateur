@@ -1,0 +1,37 @@
+.app-menu-panel {
+    text-align: center;
+    cursor: pointer;
+}
+
+.changecolora{
+    padding: 0 !important;
+}
+
+.changecolora:hover {
+    color: #ffffff !important;
+    background-color: #35363a;
+    /*padding: 0 !important;*/
+}
+
+.backbutt {
+    border: none;
+    text-align: center;
+    cursor: pointer;
+    font-weight: 600;
+    /*font-size: 16.5px;*/
+    line-height: 1rem;
+    padding: 0 !important;
+}
+.backbutt:hover{
+    background-color: rgba(114, 114, 114, .3);
+    font-size: 130% !important;
+}
+
+.flag-name {
+    margin-right: 4px;
+    width: 50px;
+    height: 50px;
+    border-radius: 60px;
+    font-weight: bold;
+    font-size: 20px;
+}

@@ -1,0 +1,14 @@
+<body [dir]="appTranslateService.getDir()">
+<link
+  *ngIf="appTranslateService.getDir() === 'ltr'"
+  href="/assets/css/ltr.css"
+  rel="stylesheet"
+/>
+<link
+  *ngIf="appTranslateService.getDir() === 'rtl'"
+  href="/assets/css/rtl.css"
+  rel="stylesheet"
+/>
+<router-outlet></router-outlet>
+
+</body>

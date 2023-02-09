@@ -1,0 +1,15 @@
+<input
+    #fileInput
+    (change)="onChange($event)"
+    [size]="upload.maxSize"
+    accept=".*"
+    style="display: none"
+    type="file"
+/>
+<mat-form-field (click)="fileInput.click()" appearance="outline">
+    <mat-label translate>{{ label }}</mat-label>
+    <input [formControl]="control" matInput/>
+    <button [disabled]="true" color="primary" mat-icon-button matPrefix>
+        <mat-icon>{{ "attachment" }}</mat-icon>
+    </button>
+</mat-form-field>

@@ -1,0 +1,24 @@
+:root {
+    --navbar-height-lt-md: 85px;
+    --navbar-height-gt-md: 85px;
+    --navbar-bg: #eaeaea;
+}
+
+.navbar-bg {
+    color: black !important;
+    background-color: var(--navbar-bg);
+}
+
+
+
+@media (min-width: 600px){
+    .navbar-height {
+        height: var(--navbar-height-gt-md);
+    }
+}
+
+@media (max-width: 599px) {
+    .navbar-height {
+        height: var(--navbar-height-lt-md);
+    }
+}

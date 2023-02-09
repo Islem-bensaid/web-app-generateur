@@ -1,0 +1,77 @@
+<section id="login">
+  <div class="container-fluid">
+    <div class="row full-height-vh m-0">
+      <div class="col-12 d-flex align-items-center justify-content-center">
+        <st2i-card [metadata]="{classList: {cardContent: 'p-0'}}">
+          <div fxFlex="100" fxLayout="row wrap" fxLayoutAlign="center" class="card-container">
+            <div fxFlex="50" fxHide.lt-lg class="auth-card-side {{'auth-card-side-image-'+appTranslateService.getDefaultLang()}}"></div>
+            <div fxFlex="50" fxFlex.lt-md="100" class="px-3 pt-4 pb-1" fxLayout="column"
+                 fxLayoutAlign="space-between none">
+              <div fxFlex="100" fxLayout="row nowrap" fxLayoutAlign="center center" class="auth-card-content-header px-3">
+<!--                <div fxFlex="30" fxLayoutAlign="end center" class="">-->
+                  <img class="header-image" src="assets/images/logos/logo_guru.png">
+<!--                </div>-->
+<!--                <div fxFlex="1" class="mx-3 {{'header-sep-'+appTranslateService.getDir()}}"></div>-->
+<!--                <div fxLayoutAlign="center center">-->
+<!--                  <span class="header-text {{'header-text-'+appTranslateService.getDir()}}">-->
+<!--                    {{ 'athentification.login.content.cardAuthentification.header.text' | translate }}-->
+<!--                  </span>-->
+<!--                </div>-->
+              </div>
+              <div fxFlex="100" fxLayout="row nowrap" class="auth-card-content-wrapper mt-3"
+                   fxLayoutAlign="center center">
+                <span class="wrapper-text">
+                    {{ 'athentification.login.content.cardAuthentification.wrapper.text' | translate }}
+                  </span>
+              </div>
+              <div fxFlex="100" fxLayout="row wrap" class="auth-card-content-body">
+                <form [formGroup]="form" fxFlex="100" fxLayout="row nowrap" (keydown.enter)="authentificate()">
+                  <div fxFlex="100" fxLayout="column" fxLayoutAlign="space-between stretch">
+                    <div fxFlex="100">
+                      <st2i-text-field
+                        [control]="getFormControl('login')"
+                        [label]="'athentification.login.content.cardAuthentification.body.form.login'"
+                        prefix="person"
+                        [isIconPrefix]="true">
+                      </st2i-text-field>
+                    </div>
+                    <div fxFlex="100" class="mt-2">
+                      <st2i-text-field
+                        #password
+                        type="password"
+                        [control]="getFormControl('password')"
+                        [label]="'athentification.login.content.cardAuthentification.body.form.password'"
+                        prefix="lock"
+                        [isIconPrefix]="true"
+                        [suffix]="password.type == 'password'? 'visibility_off':'visibility'"
+                        [isIconSuffix]="true"
+                        [isSuffixClicked]="true"
+                        (suffixClickedEvent)="password.type = password.type == 'password'? 'text':'password'">
+                      </st2i-text-field>
+                    </div>
+                  </div>
+                </form>
+                <div fxFlex="100" fxLayout="row wrap" fxLayoutAlign="center center">
+                  <st2i-button-loading color="primary" (click)="authentificate()" [loading]="isLoginLoading">
+                    {{ 'athentification.login.content.cardAuthentification.body.connexionBtn' | translate }}
+                  </st2i-button-loading>
+                </div>
+              </div>
+              <div fxFlex="100" fxLayout="row nowrap" fxLayoutAlign="end end" class="auth-card-content-footer">
+                <ng-container *ngFor="let lang of langs; let last = last">
+                  <ng-container *ngIf="appTranslateService.getDefaultLang() != lang">
+                    <a (click)="useLanguage(lang)">
+                      <small
+                        class="footer-lang-btn">{{ ('athentification.login.content.cardAuthentification.footer.btn.' + lang) | translate }}</small>
+                    </a>
+                    <span style="color: grey" *ngIf="!last">&nbsp; &#9472; &nbsp;</span>
+                  </ng-container>
+                </ng-container>
+              </div>
+            </div>
+          </div>
+        </st2i-card>
+      </div>
+    </div>
+  </div>
+</section>

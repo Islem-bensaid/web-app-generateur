@@ -1,0 +1,240 @@
+<st2i-card [metadata]="{title: 'gp.ap.formAddProject.title'}">
+  <div *ngIf="form" fxFlex="100" fxFlex.lt-md="100" fxLayout="column" fxLayoutAlign="space-between stretch">
+    <form [formGroup]="form" fxFlex="100" fxFlex.lt-md="100" fxLayout="row nowrap" fxLayoutAlign="start center">
+      <div fxFlex="100" fxLayout="column" fxLayoutAlign="space-between stretch">
+        <div fxFlex="100" class="cp5" fxLayout="row wrap">
+<!--          <div fxFlex.lt-md="100" fxLayoutAlign="center start" class="project-image-container">-->
+<!--            <img class="project-image" alt="{{'Project Image'|translate}}" [src]="params['pImageAsB64']" />-->
+<!--            <div class="hover-project-image" [matMenuTriggerFor]="changeImgMenu">-->
+<!--              <mat-icon style="font-size: 2rem;height: 35px;width: 35px;">image</mat-icon>-->
+<!--              <p class="text-uppercase">Change the project image</p>-->
+<!--            </div>-->
+<!--            <mat-menu #changeImgMenu="matMenu" [overlapTrigger]="true" xPosition="before" yPosition="above"-->
+<!--                      class="app-menu-panel">-->
+<!--              <input type="file" class="file-input" accept="image/*" (change)="onPrjImgSelected($event)" #pImageUpload>-->
+<!--              <button mat-menu-item (click)="pImageUpload.click()">-->
+<!--                {{ 'general.image.uploadImg' | translate }}-->
+<!--              </button>-->
+<!--              <button mat-menu-item (click)="handleProjectImageChnage('deleteImg')">-->
+<!--                {{ 'general.image.deleteImg' | translate }}-->
+<!--              </button>-->
+<!--            </mat-menu>-->
+<!--          </div>-->
+          <div fxFlex fxFlex.lt-md="100" fxLayout="row wrap">
+            <div fxFlex="100" class="cp5" fxLayout="row wrap" fxLayoutAlign="start start">
+              <div fxFlex="25" fxFlex.lt-md="100">
+                <st2i-text-field [control]="getFormControl(0)"
+                                 [label]="getLabel(0)"
+                ></st2i-text-field>
+              </div>
+              <div fxFlex fxFlex.lt-md="100">
+                <st2i-text-field [control]="getFormControl(1)"
+                                 [label]="getLabel(1)"
+                ></st2i-text-field>
+              </div>
+            </div>
+            <div fxFlex="100" class="cp5" fxLayout="row wrap" fxLayoutAlign="start center">
+              <div fxFlex="100" fxFlex.lt-md="100">
+                <st2i-text-area
+                  [control]="getFormControl(2)"
+                  [label]="getLabel(2)"
+                  rows="2">
+                </st2i-text-area>
+              </div>
+            </div>
+            <div fxFlex="100" class="cp5" fxLayout="row wrap" fxLayoutAlign="start center">
+              <div fxFlex="50" fxFlex.lt-md="100">
+                <st2i-text-field [control]="getFormControl(3)"
+                                 [label]="getLabel(3)"
+                ></st2i-text-field>
+              </div>
+              <div fxFlex="50" fxFlex.lt-md="100">
+                <st2i-text-field [control]="getFormControl(4)"
+                                 [label]="getLabel(4)"
+                ></st2i-text-field>
+              </div>
+            </div>
+            <div fxFlex="100" class="cp5" fxLayout="row wrap" fxLayoutAlign="start center">
+              <div fxFlex="25" fxFlex.lt-md="100">
+                <st2i-text-field [control]="getFormControl(5)"
+                                 [label]="getLabel(5)"
+                ></st2i-text-field>
+              </div>
+              <div fxFlex="25" fxFlex.lt-md="100">
+                <st2i-text-field [control]="getFormControl(6)"
+                                 [label]="getLabel(6)"
+                ></st2i-text-field>
+              </div>
+              <div fxFlex="25" fxFlex.lt-md="100">
+                <st2i-text-field [control]="getFormControl(7)"
+                                 [label]="getLabel(7)"
+                ></st2i-text-field>
+              </div>
+              <div fxFlex="25" fxFlex.lt-md="100">
+                <st2i-text-field [control]="getFormControl(11)"
+                                 [label]="getLabel(11)"
+                ></st2i-text-field>
+              </div>
+            </div>
+          </div>
+        </div>
+
+
+        <div fxFlex="100" class="cp5" fxLayout="row wrap" fxLayoutAlign="start center">
+          <div fxFlex="33" fxFlex.lt-md="100">
+            <st2i-text-field [control]="getFormControl(8)"
+                             [label]="getLabel(8)"
+
+            ></st2i-text-field>
+          </div>
+          <div fxFlex="33" fxFlex.lt-md="100">
+            <st2i-text-field [control]="getFormControl(9)"
+                             [label]="getLabel(9)"
+                             [number]="true"
+            ></st2i-text-field>
+          </div>
+          <div fxFlex="34" fxFlex.lt-md="100">
+            <st2i-text-field [control]="getFormControl(10)"
+                             [label]="getLabel(10)"
+                             [number]="true"
+            ></st2i-text-field>
+          </div>
+        </div>
+        <div fxFlex="100" class="cp5" fxLayout="row wrap">
+          <div fxFlex="33" fxFlex.lt-md="100">
+            <st2i-select-date [control]="getFormControl(12)"
+                              [label]="getLabel(12)"
+                              (onChangeEvent)="onProjectDatesChange($event, 'commencementDate')">
+            </st2i-select-date>
+          </div>
+          <div fxFlex="33" fxFlex.lt-md="100">
+            <st2i-select-date [control]="getFormControl(13)"
+                              [label]="getLabel(13)"
+                              [min]="getFormControl(13).value"
+                              (onChangeEvent)="onProjectDatesChange($event, 'projectCompletion')">
+            </st2i-select-date>
+          </div>
+          <div fxFlex="34" fxFlex.lt-md="100">
+            <st2i-text-field [control]="getFormControl(14)"
+                             [label]="getLabel(14)"
+                             suffix="general.years"
+                             (onChangeEvent)="onProjectDurationChange($event)"
+                             [number]="true"
+            ></st2i-text-field>
+          </div>
+        </div>
+        <div fxFlex="100" class="cp5" fxLayout="row wrap" fxLayoutAlign="start center">
+          <div fxFlex="100" fxFlex.lt-md="100">
+            <st2i-text-area
+              [control]="getFormControl(15)"
+              [label]="getLabel(15)"
+              rows="7">
+            </st2i-text-area>
+          </div>
+        </div>
+<!--        <div fxFlex="100" class="cp5" fxLayout="row wrap" fxLayoutAlign="start center">-->
+<!--          <div fxFlex="100" fxFlex.lt-md="100">-->
+<!--            <st2i-text-area-->
+<!--              [control]="getFormControl(16)"-->
+<!--              [label]="getLabel(16)"-->
+<!--              rows="7">-->
+<!--            </st2i-text-area>-->
+<!--          </div>-->
+<!--        </div>-->
+        <div fxFlex="100" class="cp5" fxLayout="row wrap" fxLayoutAlign="start center">
+          <div fxFlex="50" fxFlex.lt-md="100">
+            <st2i-select
+              [metadata]="params?.idProjectPrimavera?.metadata"
+              [listItems]="params?.idProjectPrimavera?.data"
+              [control]="getFormControl(17)"
+            ></st2i-select>
+          </div>
+        </div>
+        <div fxFlex="100" class="cp5 mt-2 mb-3" fxLayout="row wrap" fxLayoutAlign="start center">
+          <div fxFlex="100" fxFlex.lt-md="100">
+<!--            <div fxLayoutAlign="center center">-->
+<!--              <mat-radio-group [formControl]="getFormControl(16)">-->
+<!--                <mat-radio-button class="mx-3"-->
+<!--                                  value="fromFile">{{"gp.ap.formAddProject.labels.rvtSourceFromFile" | translate}}</mat-radio-button>-->
+<!--                <mat-radio-button-->
+<!--                  value="fromBIM">{{ "gp.ap.formAddProject.labels.rvtSourceFromBIM" | translate }}</mat-radio-button>-->
+<!--              </mat-radio-group>-->
+<!--            </div>-->
+<!--            <div fxFlex="45" fxFlex.lt-md="100" fxLayoutAlign="center center"-->
+<!--                 *ngIf="getFormControl(16).value == 'fromFile'">-->
+<!--              <input type="file" class="file-input" (change)="onFileSelected($event)" #fileUpload>-->
+<!--              <span class="mx-2">{{params['file']?.name || ("general.no_file_selected" | translate)}}</span>-->
+<!--              <button mat-mini-fab color="primary" class="upload-btn my-fab" (click)="fileUpload.click()">-->
+<!--                <mat-icon class="upload-btn-icon">attach_file</mat-icon>-->
+<!--              </button>-->
+<!--            </div>-->
+<!--            <div fxFlex="45" fxFlex.lt-md="100" fxLayoutAlign="center center"-->
+<!--                 *ngIf="getFormControl(16).value == 'fromBIM'">-->
+<!--              <button mat-raised-button color="primary" (click)="getBim360DocumentsMangement()">-->
+<!--                <mat-icon style="font-size: 150%;">cloud</mat-icon>-->
+<!--                <span class="mx-2">{{ 'BIM' | translate }}</span>-->
+<!--              </button>-->
+<!--            </div>-->
+          </div>
+        </div>
+      </div>
+    </form>
+    <ng-container *ngIf="getFormControl(16).value == 'fromBIM'">
+      <app-tree-view-bim-doc-management #treeViewBimDocManagementComponent
+        [data]="params.tableListBimDocuments">
+      </app-tree-view-bim-doc-management>
+<!--      <div class="cp5 mt-3" fxFlex="100" fxLayout="row nowrap" fxLayoutAlign="start center">-->
+<!--        <st2i-datatable fxFlex="100" fxFlex.lt-md="100"-->
+<!--                        [responsePayload]="params.tableListBimHubs.responsePayload"-->
+<!--                        [metadata]="params?.tableListBimHubs.metadata"-->
+<!--                        (onAction)="onAction(this,$event)"-->
+<!--        ></st2i-datatable>-->
+<!--      </div>-->
+<!--      <div class="cp5" fxFlex="100" fxLayout="row nowrap" fxLayoutAlign="start center">-->
+<!--        <st2i-datatable fxFlex="100" fxFlex.lt-md="100"-->
+<!--                        [responsePayload]="params.tableListBimProjet.responsePayload"-->
+<!--                        [metadata]="params?.tableListBimProjet.metadata"-->
+<!--                        (onAction)="onAction(this,$event)"-->
+<!--        ></st2i-datatable>-->
+<!--      </div>-->
+<!--      <div class="cp5" fxFlex="100" fxLayout="row nowrap" fxLayoutAlign="start center">-->
+<!--        <st2i-datatable fxFlex="100" fxFlex.lt-md="100"-->
+<!--                        [responsePayload]="params.tableListBimDocs.responsePayload"-->
+<!--                        [metadata]="params?.tableListBimDocs.metadata"-->
+<!--                        (onAction)="onAction(this,$event)"-->
+<!--        ></st2i-datatable>-->
+<!--      </div>-->
+    </ng-container>
+    <span style="color: red">{{(params['urnRequiredMsg'] || '') | translate}}</span>
+    <div class="cp5 mt-3" fxFlex="100" fxLayout="row nowrap" fxLayoutAlign="start center">
+      <input accept="image/*" type="file" class="upload-project-images" [hidden]="true" (change)="onProjectImagesSelected($event)" #fileUpload [multiple]="true">
+      <st2i-datatable fxFlex="100" fxFlex.lt-md="100"
+                      #projectImagesDatatable
+                      [responsePayload]="params.tableListProjectImages.responsePayload"
+                      [metadata]="params?.tableListProjectImages.metadata"
+                      (onAction)="onAction(this,$event)"
+      ></st2i-datatable>
+    </div>
+
+    <div class="cp5 mt-3" fxFlex="100" fxLayout="row nowrap" fxLayoutAlign="start center">
+      <st2i-datatable fxFlex="100" fxFlex.lt-md="100"
+                      [responsePayload]="params.tableListContacts.responsePayload"
+                      [metadata]="params?.tableListContacts.metadata"
+                      (onAction)="onAction(this,$event)"
+      ></st2i-datatable>
+    </div>
+    <div fxFlex="100" fxLayout="row wrap" fxLayoutAlign="end center">
+      <st2i-button-loading (click)="onSave(params['_type'])" [loading]="params.isSaveLoading" btnClass="save-btn">
+        <div fxLayoutAlign="center center">
+          <mat-icon class="mx-1" style="font-size: 1.4rem;">save_outline</mat-icon>
+          <span>{{ 'general.save' | translate }}</span>
+        </div>
+      </st2i-button-loading>
+      <!--      <button (click)="onPrecedent()" mat-raised-button type="button" class="cancel-btn  mx-2">-->
+      <!--        &lt;!&ndash;              *ngIf="params['_type'] === ROUTING_TYPES.EMR">&ndash;&gt;-->
+      <!--        <mat-icon class="mx-1" style="font-size: 1.4rem;">arrow_back_outline</mat-icon>-->
+      <!--        <span>{{ 'general.back' | translate }}</span>-->
+      <!--      </button>-->
+    </div>
+  </div>
+</st2i-card>

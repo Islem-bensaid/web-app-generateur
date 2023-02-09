@@ -1,0 +1,35 @@
+<st2i-card
+  [metadata]="{title: metadata.title,classList: {card:metadata['classList']?.card ,cardContent: metadata['classList']?.cardContent ||'p-0'}}">
+  <table mat-table [dataSource]="dataSource" style="width: 100%;">
+    <ng-container matColumnDef="label" sticky="true">
+      <td mat-cell *matCellDef="let row" class="text-averta text-14">{{ row.label | translate }}</td>
+    </ng-container>
+    <ng-container matColumnDef="value">
+      <td mat-cell *matCellDef="let row" class="text-14">
+        <!--        {{row | json}}-->
+        <ng-container [ngSwitch]="row.type">
+          <span *ngSwitchCase="'typedValue'">
+              {{ row.value |typedValue|async| translate }}
+          </span>
+          <span *ngSwitchCase="'montant'">
+              {{ row.value | montant }}
+          </span>
+          <span *ngSwitchCase="'datetime'">
+              {{ row.value | dhf }}
+          </span>
+          <span *ngSwitchCase="'other'">
+            <ng-template
+              [ngTemplateOutletContext]="{row: row}"
+              [ngTemplateOutlet]="templateRef">
+            </ng-template>
+          </span>
+        </ng-container>
+      </td>
+    </ng-container>
+    <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+  </table>
+  <st2i-empty-list-container
+    [list]="dataSource.data"
+    [withoutBorder]="true"
+  ></st2i-empty-list-container>
+</st2i-card>

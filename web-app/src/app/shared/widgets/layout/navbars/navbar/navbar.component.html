@@ -1,0 +1,192 @@
+<div style="display: flex">
+    <mat-drawer-container [hasBackdrop]="true" class="example-container">
+        <mat-drawer #drawer mode="over">
+            <mat-list>
+                <ng-container *ngFor="let icon of links">
+                    <ng-container>
+                        <mat-list-item [routerLink]="icon.path">
+                            <mat-icon mat-list-icon>{{ icon.icon }}</mat-icon>
+                            <div mat-line>{{ icon.title | translate }}</div>
+                        </mat-list-item>
+
+                        <mat-list *ngIf="hasSubMenu(icon)" [style]="getMargin()">
+                            <ng-container *ngFor="let subItem of icon.submenus">
+                                <ng-container>
+                                    <mat-list-item [routerLink]="subItem.path">
+                                        <mat-icon mat-list-icon>{{ subItem.icon }}</mat-icon>
+                                        <span translate>{{ subItem.title }}</span>
+                                    </mat-list-item>
+                                </ng-container>
+                            </ng-container>
+                        </mat-list>
+                    </ng-container>
+                </ng-container>
+            </mat-list>
+        </mat-drawer>
+        <mat-drawer-content>
+            <div>
+                <mat-toolbar style="min-height: 85px; background-color: #eaeaea;">
+                    <mat-toolbar-row style="height: 85px;    padding: 0 2vw;">
+                        <div fxLayout="row wrap" fxLayoutAlign="space-between center"
+                             style="width: 100%; justify-content: flex-start">
+
+                            <div fxFlex>
+                                <div fxHide.lt-md fxLayout="row wrap" fxLayoutAlign="start center" style="    margin-left: 1%;
+                ">
+                                    <img
+                                            alt="République Tunisiennee"
+
+                                            src="../../../../../../assets/images/logos/logo_st2i.png"
+                                            style="height: 70px;"
+                                    />
+
+                                </div>
+                            </div>
+                            <div fxLayout="row wrap" fxLayoutAlign=" center" style="    margin-right: 3%;
+              ">
+                                <div translate style="font-weight:bold;font-size: 16px;"> La Société Tunisienne d’Informatique pour l’Ingénierie</div>
+                            </div>
+
+                        </div>
+                        <!--     <app-user-menu>
+                                   [subtitle]="menuSubtitle"
+                                   [title]="menuTitle"
+                                 </app-user-menu>-->
+                    </mat-toolbar-row>
+                </mat-toolbar>
+                <mat-divider></mat-divider>
+                <mat-toolbar class="mat-elevation-z0" style="background-color:#C0392B; color: rgb(255, 255, 255)">
+                    <mat-toolbar-row style="height: auto; min-height: 64px ;     padding: 0 2vw;
+          ">
+                        <div fxLayoutAlign="space-between center" style="width: 100% ;flex-wrap: nowrap; ">
+
+                            <div>
+                                <ng-container *ngFor="let path of links;last as last ;first as first ;let index=i">
+                                    <ng-container>
+                                        <a class="changecolora" *ngIf="!hasSubMenu(path)" [routerLink]="path.path"
+                                           fxHide.lt-md mat-button>
+                                            <mat-icon *ngIf="path.title===Accueil" class="mat-icon"> home</mat-icon>
+
+                                            <span style="font-size: 16px;font-weight: bold;" translate>{{
+                                                path.title
+                                                }}</span>
+                                            <div *ngIf="getdir()=='ltr'"
+                                                 class="vertical-line"
+                                                 style="
+                          height: 45px;
+                          margin-right: -17px;
+                          margin-left: 20px;
+                        "
+
+                                            ></div>
+                                            <div *ngIf="getdir()=='rtl'&&!first"
+                                                 class="vertical-line"
+                                                 style="
+                          height: 45px;
+                          margin-right: -17px;
+                          margin-left: 20px;
+                        "
+                                            ></div>
+                                        </a>
+
+                                        <ng-container *ngIf="hasSubMenu(path)">
+
+                                            <mat-menu #appMenu="matMenu">
+                                                <ng-container *ngFor="let submenu of path.submenus">
+                                                    <ng-container *ngIf="!hasSubMenu(submenu)">
+                                                        <a [routerLink]="submenu.path" mat-menu-item>
+                                                            <span style="font-size: 16px;font-weight: bold;"
+                                                                  translate>{{ submenu.title }}</span>
+                                                        </a>
+                                                    </ng-container>
+                                                    <ng-container *ngIf="hasSubMenu(submenu)">
+                                                        <button mat-menu-item [matMenuTriggerFor]="subMenuTemplate">
+                                                            <span style="font-size: 16px;font-weight: bold;"
+                                                                  translate>{{submenu.title}}</span>
+                                                            <!--                                                            <mat-icon *ngIf="getdir()=='ltr'">keyboard_arrow_right</mat-icon>-->
+                                                            <!--                                                            <mat-icon *ngIf="getdir()=='rtl'">keyboard_arrow_left</mat-icon>-->
+                                                        </button>
+                                                        <mat-menu #subMenuTemplate="matMenu">
+                                                            <ng-container *ngFor="let subsubmenu of submenu.submenus">
+                                                                <ng-container *ngIf="!hasSubMenu(subsubmenu)">
+                                                                    <a [routerLink]="subsubmenu.path" mat-menu-item>
+                                                                        <span style="font-size: 16px;font-weight: bold;"
+                                                                              translate>{{ subsubmenu.title }}</span>
+                                                                    </a>
+                                                                </ng-container>
+                                                            </ng-container>
+                                                        </mat-menu>
+
+                                                    </ng-container>
+                                                </ng-container>
+                                            </mat-menu>
+                                            <button [matMenuTriggerFor]="appMenu" fxHide.lt-md mat-button>
+                                                <span style="font-size: 16px;font-weight: bold;"
+                                                      translate>{{path.title}}</span>
+                                                <div *ngIf="getdir()=='ltr'&&!last"
+                                                     class="vertical-line"
+                                                     style="
+                          height: 45px;
+                          margin-right: -17px;
+                          margin-left: 20px;
+                        "
+                                                ></div>
+                                                <div *ngIf="getdir()=='rtl'&&index!=0"
+                                                     class="vertical-line"
+                                                     style="
+                          height: 45px;
+                          margin-right: -17px;
+                          margin-left: 20px;
+                        "
+                                                ></div>
+                                                <mat-icon>keyboard_arrow_down</mat-icon>
+                                            </button>
+                                        </ng-container>
+                                    </ng-container>
+
+                                </ng-container>
+                                <button (click)="drawer.toggle()" fxHide.gt-sm mat-icon-button>
+                                    <mat-icon>menu_horiz</mat-icon>
+                                </button>
+                            </div>
+
+
+                            <div fxLayoutAlign="end center"
+                                 style="width: 100% ;flex-wrap: nowrap; justify-content: center; ">
+                                <div fxflex="25" (click)="login()" style="cursor: pointer;">
+                                    <!-- <mat-icon  style="font-size: 30px; margin-top: 20%;">account_circle</mat-icon>  -->
+                                    <img style="height: 32px;" src="../../../../../../assets/images/gallery/iconseconnecter.svg" alt="image"/>
+                                    <span style="font-size: 16px; font-weight: bold; margin-left: 2%;margin-right: 2%;">{{"Se_connecter"|translate}}</span>
+                                </div>
+
+                                <div fxlflex="25" fxHide.lt-md class="margin-date-nav">
+                                    <img style="height: 32px;" src="../../../../../../assets/images/gallery/date.svg" alt="image"/>
+                                </div>
+                                <div fxlflex="25" fxHide.lt-md style="
+         font-size: 16px;
+         text-align: center;margin-right: 4%;
+         ">
+                                    <div>
+
+                                        {{myDate  | date : 'dd/MM/yyyy'}}
+                                    </div>
+                                    <div style=" margin-top:-20%">
+                                        {{myDate  | date : 'H:mm:ss'}}
+
+                                    </div>
+
+                                </div>
+                                <st2i-select-app-language></st2i-select-app-language>
+                            </div>
+
+
+                        </div>
+
+
+                    </mat-toolbar-row>
+                </mat-toolbar>
+                <mat-divider></mat-divider>
+            </div>
+        </mat-drawer-content>
+    </mat-drawer-container>
+</div>

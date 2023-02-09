@@ -1,0 +1,64 @@
+<st2i-card [metadata]="{title: 'adm.gu.table', hasExport: false, forDatatable: true, classList: {cardContent: 'p-0'}}"
+           (onFilterKeyUp)="onFilter($event)"
+           (onGenerateFile)="generateFile($event)"
+           (onAddClicked)="onAdd()">
+    <table
+            matSort
+            (matSortChange)="onSortChange($event)"
+            [dataSource]="dataSource"
+            mat-table
+            style="width: 100%">
+        <ng-container *ngFor="let column of tableGestionProfilsDetails.displayedColumns" [matColumnDef]="column">
+            <ng-container [ngSwitch]="checkIfSpecificColumn(column, 'sortable')">
+                <ng-container *ngSwitchCase="true">
+                    <th *matHeaderCellDef mat-header-cell mat-sort-header class="text-center">
+                        <span> {{ tableGestionProfilsDetails.labels[column] | translate }}</span>
+                    </th>
+                </ng-container>
+
+                <ng-container *ngSwitchCase="false">
+                    <th *matHeaderCellDef mat-header-cell class="text-center">
+                        <span> {{ tableGestionProfilsDetails.labels[column] | translate }}</span>
+                    </th>
+                </ng-container>
+            </ng-container>
+
+            <td *matCellDef="let type" mat-cell translate>
+      <span *ngIf="!checkIfSpecificColumn(column, 'all')">
+           {{ type[column] | typedValue | async | translate}}
+      </span>
+                <span *ngIf="checkIfSpecificColumn(column, 'montant')">
+           {{ type[column] | montant}}
+      </span>
+                <span *ngIf="checkIfSpecificColumn(column, 'date')">
+           {{ type[column] | df}}
+      </span>
+                <span *ngIf="checkIfSpecificColumn(column, 'datetime')">
+           {{ type[column] | dhf}}
+      </span>
+                <span *ngIf="checkIfSpecificColumn(column, 'others')" class="display-flex">
+                 <a (click)="openDetails(type)" mat-icon-button class="actions-btn display-flex">
+                          <mat-icon style="color: #0daef9;">info_outline</mat-icon>
+                        </a>
+                      <a (click)="editUtilisateur(type)" mat-icon-button class="actions-btn mx-2 display-flex">
+                          <mat-icon style="color:  #19c8a6">edit</mat-icon>
+                        </a>
+                   <a (click)="deleteUser(type)" mat-icon-button class="actions-btn display-flex">
+                          <mat-icon style="color:  #e64d42">delete_outline</mat-icon>
+                        </a>
+      </span>
+            </td>
+        </ng-container>
+        <tr *matHeaderRowDef="tableGestionProfilsDetails.displayedColumns" mat-header-row></tr>
+        <tr *matRowDef="let row; columns: tableGestionProfilsDetails.displayedColumns" mat-row></tr>
+    </table>
+    <st2i-empty-list-container
+            [list]="dataSource.data"
+            [withoutBorder]="true"
+    ></st2i-empty-list-container>
+    <st2i-paginator
+        #p
+        (paginate)="onPaginateChange($event)"
+        [total]="totalCount"
+    ></st2i-paginator>
+</st2i-card>

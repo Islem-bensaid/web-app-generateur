@@ -1,0 +1,1113 @@
+{
+  "general": {
+    "confirmationaccuser": "Accusé de réception",
+    "confirmationsoumission": "Soumission requête",
+    "errors": {
+      "required": "Champ Obligatoire",
+      "server_error": "Erreur Serveur",
+      "waiting": "Veuillez patienter",
+      "eamil_invalid": "L'adresse mail est erronée",
+      "phonenumber_err": "N° téléphone invalide",
+      "cin_error": "Numéro CIN invalide"
+    },
+    "search_filter": "Filtre de recherche",
+    "submit": "Soumettre",
+    "reset": "Réinitialiser",
+    "search": "Rechercher",
+    "filter": "Filtrer parmi ces éléments ...",
+    "empty_list_table": "Désolé! La liste est actuellement vide",
+    "form_invalid": "Formulaire non valide",
+    "back": "Retour",
+    "list": "Liste",
+    "edit": "Modifier",
+    "coutinvalide": "Le coût max doit être supérieur au coût min",
+    "ajout": "Ajout bailleur",
+    "save": "Enregistrer",
+    "accuser": "Approuver",
+    "soummetre": "Approuver",
+    "success_download": "Téléchargé avec succès",
+    "success_save": "Enregistré avec succès",
+    "delete_confirmation": "Êtes-vous sûr de vouloir supprimer ?",
+    "success_delete": "Supprimé avec succès",
+    "cancel": "Annuler",
+    "approve": "Approuver",
+    "maj": "Mettre à jour",
+    "years": "années",
+    "days": "jours",
+    "download": "PDF",
+    "downloadWord": "WORD",
+    "prévisions": "Saisie des prévisions",
+    "details": "Détail",
+    "base_info": "Informations générales",
+    "code_exist": "Code existe déjà",
+    "downloadSucces": "Téléchargement a été effectué avec succès",
+    "no": "Non",
+    "yes": "Oui",
+    "confirm_dialog": {
+      "description": "Êtes-vous sûr de vouloir enregistrer les données saisies ?",
+      "title": "Confirmation de l'opération"
+    },
+    "add_doc_dialog": {
+      "titledetatails": "Détail document",
+      "title": "Ajouter document",
+      "content": {
+        "form": {
+          "labels": {
+            "numDoc": "N°",
+            "typeDoc": "Type",
+            "nomFichier": "Intitulé",
+            "observation": "Observation",
+            "ListBailleurs": "Liste Bailleurs",
+            "bailleur": "Bailleur",
+            "montant": "Montant",
+            "typefinancement": "Type Financement"
+          }
+        },
+        "tableAF": {
+          "title": "Pièces jointes",
+          "columns": {
+            "fileNm": "Nom fichier"
+          }
+        }
+      }
+    }
+  },
+  "PAGINATOR": {
+    "paginator.next_page": "Page suivante",
+    "paginator.previous_page": "Page précédente",
+    "paginator.of": "de",
+    "paginator.items_per_page": ""
+  },
+  "layout": {
+    "navbar": {
+      "text1": "République Tunisienne",
+      "text2": "Ministère de l’économie et de la planification",
+      "logout": "Se déconnecter"
+    }
+  },
+  "athentification": {
+    "login": {
+      "title": "Authentification",
+      "content": {
+        "cardAuthentification": {
+          "header": {
+            "text": "Ministère de l’économie et de la planification"
+          },
+          "wrapper": {
+            "text": "Connectez-vous"
+          },
+          "body": {
+            "form": {
+              "login": "Nom utilisateur",
+              "password": "Mot de passe"
+            },
+            "connexionBtn": "CONNEXION"
+          },
+          "footer": {
+            "btn": {
+              "ar": "Arabe",
+              "fr": "Français",
+              "en": "Anglais"
+            }
+          }
+        }
+      },
+      "errors": {
+        "userErrorAuth": "Nom utilisateur ou mot de passe incorrect",
+        "userErrorAuthInvalid": "Cet utilisateur est actuellement désactivé."
+      }
+    }
+  },
+  "adm": {
+    "admin": "Administration",
+    "gp": {
+      "title": "Gestion des profils",
+      "table": "Liste des profils",
+      "details": "Détail profil",
+      "detailsdoc": "Détail document",
+      "add": "Ajout profil",
+      "edit": "Modification profil",
+      "list_menu": "Liste des menus",
+      "add_succes": "L'insertion a été effectuée avec succès.",
+      "update_succes": "La modification a été effectuée avec succès.",
+      "code_dupliquer": "Le code doit être unique.",
+      "content": {
+        "tableGp": {
+          "code": "Code",
+          "libelle": "Nom profil",
+          "role": "Rôle",
+          "dtAjout": "Date ajout",
+          "dtAjoutBefore": "Date ajout (au)",
+          "dtAjoutAfter": "Date ajout (du)",
+          "title": "Liste des profils",
+          "ordre": "Ordre"
+        },
+        "details": {
+          "num": "N°",
+          "type": "Type document",
+          "intitule": "Intitulé",
+          "dtmaj": "Date mise à jour",
+          "code": "Code",
+          "libelleAr": "Nom profil (Arabe)",
+          "libelleFr": "Nom profil (Français)",
+          "libelleEn": "Nom profil (Anglais)",
+          "role": "Rôle",
+          "dtAjout": "Date ajout",
+          "dtMaj": "Date Mise à jour",
+          "flgActif": "État utilisateur",
+          "statusValid": "Actif",
+          "statusInvalid": "Non actif",
+          "ordre": "Ordre",
+          "flgActif1": "État utilisateur"
+        }
+      }
+    },
+    "gu": {
+      "title": "Gestion des utilisateurs",
+      "table": "Liste des utilisateurs",
+      "details": "Détail utilisateur",
+      "add": "Ajout utilisateur",
+      "edit": "Modification utilisateur",
+      "user_info": "Données utilisateur",
+      "user_auth": "Données d'authentification",
+      "afProfil": "Affectation des profils",
+      "code_dupliquer": "Le login doit être unique.",
+      "content": {
+        "details": {
+          "nom": "Nom et prénom",
+          "name": "Nom",
+          "prenom": "Prénom",
+          "sexe": "Sexe",
+          "dtNaissance": "Date de naissance",
+          "dateN": "Date de naissance",
+          "matricule": "Matricule",
+          "mail": "Email",
+          "num_tel": "Numéro téléphone",
+          "phone": "Numéro téléphone",
+          "organisme": "Organisme",
+          "login": "Login",
+          "mdp": "Mot de passe",
+          "cMdp": "Confirmer mot de passe",
+          "status": "Actif",
+          "cin": "CIN",
+          "ordre": "Ordre",
+          "etatUser": "État utilisateur",
+          "dtExpiration": "Date d'expiration"
+        },
+        "tableGu": {
+          "login": "Login",
+          "nom": "Nom et prénom",
+          "matricule": "Matricule",
+          "orgFr": "Organisme",
+          "isActifFr": "État utilisateur",
+          "title": "Liste des utilisateurs",
+          "isActif": "État"
+        }
+      },
+      "mdpError": "Le mot de passe est incorrect. Essayez de nouveau"
+    },
+    "tda": {
+      "title": "Traçage des accès",
+      "details": "Détail traçage des accès",
+      "table": "Liste des accès",
+      "content": {
+        "table": {
+          "codeAccess": "Statut",
+          "ipAddress": "Adresse IP",
+          "dateAuth": "Date authentification",
+          "nomUser": "Nom utilisateur",
+          "login": "Login"
+        }
+      }
+    },
+    "tdd": {
+      "title": "Traçage des données",
+      "table": "Journal des données",
+      "details": "Détail traçage des données",
+      "content": {
+        "table": {
+          "case_": "Statut",
+          "uri": "Uri",
+          "dateLog": "Date log",
+          "nomUser": "Nom utilisateur",
+          "nameService": "Nom service",
+          "httpMethod": "Méthode http"
+        }
+      }
+    }
+  },
+  "nom": {
+    "nom": "Référentiel",
+    "gb": {
+      "title": "Liste des bailleurs de fonds",
+      "details": "Détail du bailleur de fond",
+      "add": "Ajout d'un bailleur de fond",
+      "edit": "Modification du bailleur de fond ",
+      "add_succes": "L'insertion a été effectuée avec succès.",
+      "update_succes": "La modification a été effectuée avec succès.",
+      "delete_succes": "La supression a été effectuée avec succès.",
+      "code_dupliquer": "Le code doit être unique.",
+      "content": {
+        "tableGb": {
+          "idRcPays": "Pays",
+          "idRcOrg": "Entité en charge",
+          "idNmTypeCoop": "Type Coopération",
+          "code": "Code",
+          "libelle": "Bailleur",
+          "ordre": "Ordre"
+        },
+        "details": {
+          "idRcPays": "Pays",
+          "idNmTypeCoop": "Type Coopération",
+          "idRcOrg": "Entité en charge",
+          "code": "Code",
+          "libelleAr": " Bailleur (Ar)",
+          "libelleFr": " Bailleur (Fr)",
+          "libelleEn": " Bailleur (Ang)",
+          "ordre": "Ordre"
+        }
+      }
+    },
+    "go": {
+      "title": "Liste des Organismes",
+      "details": "Détail de l'organisme",
+      "add": "Ajout d'un organisme",
+      "edit": "Modification d'un organisme",
+      "add_succes": "L'insertion a été effectuée avec succès.",
+      "update_succes": "La modification a été effectuée avec succès.",
+      "delete_succes": "La supression a été effectuée avec succès.",
+      "code_dupliquer": "Le code doit être unique.",
+      "content": {
+        "tableGo": {
+          "idRcSecteur": "Secteur",
+          "idNmTypeOrg": "Type Organisme",
+          "code": "Code",
+          "libelle": "Organisme",
+          "ordre": "Ordre"
+        },
+        "details": {
+          "idRcSecteur": "Secteur",
+          "code": "Code",
+          "libelleAr": " Organisme (Ar)",
+          "libelleFr": " Organisme (Fr)",
+          "libelleEn": " Organisme (Ang)",
+          "ordre": "Ordre",
+          "idNmTypeOrg": "Type Organisme"
+        }
+      }
+    },
+    "gs": {
+      "title": "Liste des secteurs",
+      "details": "Détail du secteur",
+      "add": "Ajout d'un secteur",
+      "edit": "Modification du secteur",
+      "add_succes": "L'insertion a été effectuée avec succès.",
+      "update_succes": "La modification a été effectuée avec succès.",
+      "delete_succes": "La supression a été effectuée avec succès.",
+      "code_dupliquer": "Le code doit être unique.",
+      "content": {
+        "tableGs": {
+          "code": "Code",
+          "libelle": "Secteur",
+          "ordre": "Ordre"
+        },
+        "details": {
+          "code": "Code",
+          "libelleAr": " Secteur (Ar)",
+          "libelleFr": " Secteur (Fr)",
+          "libelleEn": " Secteur (Ang)",
+          "ordre": "Ordre"
+        }
+      }
+    },
+    "gd": {
+      "title": "Liste Gouvernorats/Délégations ",
+      "details": "Détail du découpage",
+      "add": "Ajout Gouvernorat/Délégation",
+      "edit": "Modification Gouvernorat/Délégation",
+      "add_succes": "L'insertion a été effectuée avec succès.",
+      "update_succes": "La modification a été effectuée avec succès.",
+      "delete_succes": "La supression a été effectuée avec succès.",
+      "code_dupliquer": "Le code doit être unique.",
+      "content": {
+        "tableGd": {
+          "code": "Code",
+          "libelle": "Gouvernorat/Délégation",
+          "ordre": "Ordre"
+        },
+        "details": {
+          "code": "Code",
+          "libelleAr": " Gouvernorat/Délégation (Ar)",
+          "libelleFr": " Gouvernorat/Délégation (Fr)",
+          "libelleEn": " Gouvernorat/Délégation (Ang)",
+          "ordre": "Ordre"
+        }
+      }
+    },
+    "gt": {
+      "title": "Liste des thématiques",
+      "details": "Détail thématique",
+      "add": "Ajout d'une thématique",
+      "edit": "Modification thématique",
+      "add_succes": "L'insertion a été effectuée avec succès.",
+      "update_succes": "La modification a été effectuée avec succès.",
+      "delete_succes": "La supression a été effectuée avec succès.",
+      "code_dupliquer": "Le code doit être unique.",
+      "content": {
+        "tableGt": {
+          "code": "Code",
+          "libelle": "Thématique",
+          "ordre": "Ordre"
+        },
+        "details": {
+          "code": "Code",
+          "libelleAr": " Thématique (Ar)",
+          "libelleFr": " Thématique (Fr)",
+          "libelleEn": " Thématique (Ang)",
+          "ordre": "Ordre"
+        }
+      }
+    }
+  },
+  "req": {
+    "title": "Gestion des requêtes",
+    "lr": {
+      "title": "Liste des requêtes",
+      "content": {
+        "table": {
+          "title": "Liste des requêtes",
+          "columns": {
+            "numReq": "N° requête",
+            "intitule": "Intitulé",
+            "dtSoumission": "Date soumission",
+            "orgDem": "Organisme demandeur",
+            "orgBenef": "Organisme bénéficiaire",
+            "montant": "Montant en devise (M)",
+            "etatReq": "État requête"
+          }
+        },
+        "filtre": {
+          "labels": {
+            "code": "N° requête",
+            "dtEmissionStart": "Date soumission (du)",
+            "dtEmissionEnd": "Date soumission (au)",
+            "codeEtatReq": "État requête",
+            "codeOrgBenef": "Organisme bénéficiaire",
+            "idRcOrgDem": "Organisme demandeur",
+            "bailleur": "Bailleur de fonds",
+            "type": "Type financement",
+            "devise": "Devise",
+            "dtSoumissionafter": "Date soumission (au)",
+            "dtSoumissionbefore": "Date soumission (du)",
+            "idRcOrgDemParent": "Ministère tutelle de l'organisme demandeur",
+            "libelle": "Intitulé"
+          }
+        }
+      }
+    },
+    "lmr": {
+      "title": "Mes requêtes",
+      "content": {
+        "table": {
+          "title": "Liste des requêtes"
+        }
+      }
+    },
+    "add_req": {
+      "title": "Ajout requête",
+      "content": {
+        "fiche_ajout": {
+          "title": "Fiche requête",
+          "general": {
+            "add_project_req_required": "La requête doit être enregistrée avant de procéder à l'ajout d'un projet. Souhaitez-vous sauvegarder votre requête ?",
+            "add_doc_req_required": "La requête doit être enregistrée avant de procéder à l'ajout d'un document. Souhaitez-vous sauvegarder votre requête ?"
+          },
+          "form": {
+            "labels": {
+              "numReq": "N° requête",
+              "intitule": "Intitulé de la requête",
+              "idRcOrgDemParent": "Ministère tutelle de l'organisme demandeur",
+              "idRcOrgDem": "Organisme demandeur",
+              "numOrdDep": "Numéro d'ordre départ",
+              "dtEmission": "Date émission",
+              "numOrdArr": "Numéro d'ordre arrivée",
+              "dtReception": "Date réception",
+              "isDemarchEntam": "Démarche entamée",
+              "txtDemarch": "Texte démarche",
+              "observation": "Observation"
+            },
+            "errors": {
+              "num_req_exist": "Numéro de la requête existe déjà"
+            }
+          },
+          "tableLP": {
+            "title": "Liste des projets",
+            "columns": {
+              "code": "Code",
+              "intitule": "Intitulé",
+              "orgOuvrage": "Bénéficiaire",
+              "cout": "Coût (M)",
+              "dtDebPrevue": "Date début",
+              "dtFinPrevue": "Date fin"
+            }
+          },
+          "dialogSelectExiPro": {
+            "title": "Sélectionner des projets existants",
+            "message": {
+              "select_error": "Vous devez séléctionner au moins un projet"
+            }
+          },
+          "tableLD": {
+            "title": "Document",
+            "columns": {
+              "type": "Type",
+              "intitule": "Intitulé"
+            }
+          },
+          "apod": {
+            "add": "Ajouter un nouveau projet",
+            "selectSomeProject": "Sélectionner un/des projet(s) existant(s)",
+            "description": "Voulez-vous ajouter un nouveau projet ou un/des projet(s) existant(s) ?"
+          }
+        }
+      },
+      "children": {
+        "add_proj": {
+          "title": "Ajout projet",
+          "content": {
+            "fiche_ajout": {
+              "title": "Fiche projet",
+              "general": {
+                "add_objSpe_projet_required": "Le projet doit être enregistré avant d'ajouter un objectif spécifique. Souhaitez-vous sauvegarder votre projet ?",
+                "add_TheTrans_projet_required": "Le projet doit être enregistré avant d'ajouter une thématique transverse. Souhaitez-vous sauvegarder votre projet ?",
+                "add_compo_projet_required": "Le projet doit être enregistré avant d'ajouter une composante. Souhaitez-vous sauvegarder votre projet ?",
+                "add_doc_projet_required": "Le projet doit être enregistré avant d'ajouter un document. Souhaitez-vous sauvegarder votre projet ?"
+              },
+              "form": {
+                "subheaders": {
+                  "title1": "Identification du projet",
+                  "title2": "Qualification",
+                  "title3": "Parties prenantes"
+                },
+                "labels": {
+                  "code": "Code du projet",
+                  "intitule": "Intitulé du programme/projet",
+                  "numCnap": "N° projet CNAP",
+                  "dtCnap": "Date accord CNAP",
+                  "idRcOrgBenefP": "Ministère tutelle du bénéficiaire",
+                  "idRcOrgBenef": "Bénéficiaire",
+                  "idRcOrgOeuvreP": "Ministère tutelle du maître d'oeuvre",
+                  "idRcOrgOeuvre": "Maître d'oeuvre",
+                  "idRcOrgOuvrageP": "Ministère tutelle du maître d'ouvrage",
+                  "idRcOrgOuvrage": "Maître d'ouvrage",
+                  "idRcSecteur": "Secteurs",
+                  "idRcThematique": "Thématiques transverses",
+                  "isProjetNat": "Projet national",
+                  "isPrioritaire": "Projet prioritaire",
+                  "isPilote": "Projet pilote",
+                  "dtDebPrevue": "Date début prévue",
+                  "dtFinPrevue": "Date fin prévue",
+                  "dureeInit": "Durée initiale",
+                  "idRcDecGeo": "Gouvernorat/Délégation",
+                  "idNmDevise": "Devise",
+                  "coutGlob": "Coût global du projet en million",
+                  "coursRef": "Taux de change",
+                  "coutGlobTnd": "Montant en million TND",
+                  "besoinFinExt": "Besoin en financement extérieur en million",
+                  "objectifGeneral": "Objectif général",
+                  "beneficiaires": "Bénéficiaire",
+                  "miniTutOrgOuv": "Ministère tutelle du maître d'ouvrage"
+                },
+                "errors": {
+                  "num_projet_exist": "Numéro du projet existe déjà",
+                  "multiple_gov_dele": "Vous devez sélectionner des délégations appartenants à un seul gouvernorat"
+                }
+              },
+              "tableOS": {
+                "title": "Objectifs spécifiques",
+                "columns": {
+                  "code": "Code",
+                  "txt_objectif": "Objectif spécifique"
+                }
+              },
+              "dialogAddObjSpe": {
+                "title": "Ajout d'un objectif spécifique",
+                "content": {
+                  "form": {
+                    "labels": {
+                      "numObjectif": "Code",
+                      "txtObjectif": "Objectif spécifique"
+                    }
+                  }
+                }
+              },
+              "tableTheTrans": {
+                "title": "Thématiques transverses",
+                "columns": {
+                  "code": "Code",
+                  "txt_thematique": "Intitulé"
+                }
+              },
+              "dialogAddTheTrans": {
+                "title": "Ajout d'une thématique transverse",
+                "content": {
+                  "form": {
+                    "labels": {
+                      "numThem": "Code",
+                      "txtThematique": "Thématique transverse"
+                    },
+                    "errors": {
+                      "code_obj_spe_exist": "Code du projet existe déjà"
+                    }
+                  }
+                }
+              },
+              "tableCompo": {
+                "title": "Composantes",
+                "columns": {
+                  "code": "Code",
+                  "intitule": "Intitulé",
+                  "orgBenef": "Entité bénéficiaire",
+                  "cout": "Montant (M)",
+                  "poid": "Poids"
+                }
+              },
+              "tableDocuments": {
+                "title": "Documents",
+                "columns": {
+                  "numDoc": "N°",
+                  "nmTypeDoc": "Type",
+                  "nomFichier": "Intitulé"
+                }
+              }
+            },
+            "children": {
+              "add_compo": {
+                "title": "Ajout composante",
+                "general": {
+                  "add_ind_compo_required": "La composante doit être enregistrée avant d'ajouter un indicateur. Souhaitez-vous sauvegarder votre composante ?"
+                },
+                "fiche_ajout": {
+                  "form": {
+                    "labels": {
+                      "code": "Code de la composante",
+                      "intitule": "Intitulé de la composante",
+                      "idRcOrgBenefP": "Ministère tutelle du bénéficiaire",
+                      "idRcOrgBenef": "Bénéficiaire",
+                      "coutGlob": "Coût global de la composante en million",
+                      "idNmDevise": "Devise",
+                      "coursRef": "Taux de change",
+                      "coutGlobTnd": "Montant  en million TND"
+                    }
+                  },
+                  "tableIndicateurs": {
+                    "title": "Liste des indicateurs",
+                    "columns": {
+                      "numero": "N°",
+                      "intitule": "Intitulé",
+                      "quantite": "Quantité cible",
+                      "unite": "Unité",
+                      "type": "Type",
+                      "frequence": "Fréquence de suivi",
+                      "progression": "Progression escomptée"
+                    }
+                  },
+                  "dialogAddIndica": {
+                    "title": "Ajout d'un indicateur",
+                    "content": {
+                      "form": {
+                        "labels": {
+                          "numero": "N°",
+                          "intitule": "Intitulé",
+                          "type": "Type",
+                          "frequence": "Fréquence de suivi",
+                          "idNmProgress": "Progression escomptée",
+                          "quantite": "Quantité",
+                          "unite": "Unité"
+                        }
+                      }
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "edit_req": {
+      "title": "Modifier requête",
+      "children": {
+        "edit_proj": {
+          "title": "Modifier projet",
+          "children": {
+            "edit_compo": {
+              "title": "Modifier composante"
+            }
+          }
+        }
+      }
+    },
+    "details_req": {
+      "title": "Détail requête",
+      "breadcrumb": "Détail requête",
+      "content": {
+        "ficheDetailsReq": {
+          "code": "N° requête",
+          "intitule": "Intitulé de la requête",
+          "isDemarchEntam": "Démarche entamée",
+          "txtDemarch": "Texte démarche",
+          "dtSoumission": "Date soumission",
+          "numOrdDep": "Numéro d'ordre départ",
+          "numOrdArr": "Numéro d'ordre arrivée",
+          "orgDem": "Organisme demandeur",
+          "dtEmission": "Date émission",
+          "dtReception": "Date réception"
+        },
+        "tableLP": {
+          "title": "Liste des projets",
+          "columns": {
+            "code": "Code",
+            "intitule": "Intitulé",
+            "orgOuvrage": "Bénéficiaire",
+            "cout": "Coût (M)",
+            "dtDebPrevue": "Date début",
+            "dtFinPrevue": "Date fin"
+          }
+        },
+        "btns": {
+          "submit": "Soumettre",
+          "edit": "Modifier",
+          "mineReq": "Mes requêtes",
+          "success_submit": "Soumise avec succès",
+          "submit_confirmation": "Êtes-vous sûr de vouloir soumettre cette requête ?",
+          "accuserRecepReq": "Accusé réception",
+          "success_accuserRecepReq": "Accusé réception avec succès",
+          "accuserRecepReq_confirmation": "Êtes-vous sûr de vouloir accuser la réception de cette requête ?",
+          "projet_required_confirmation": "Il faut ajouter au moins un projet avant la soumission de votre requête. Voulez-vous être redirigé vers la page de correction de la requête ?"
+        }
+      },
+      "children": {
+        "ficheDetailsProjet": {
+          "title": "Détail du projet",
+          "breadcrumb": "Détail du projet",
+          "infoBaseProjet": {
+            "orgBenef": "Organisme bénéficiaire",
+            "numCnap": "N° projet CNAP",
+            "dtCnap": "Date accord CNAP",
+            "code": "Code du projet",
+            "intitule": "Intitulé du programme/projet",
+            "miniTutOrgOuv": "Ministère tutelle du maitre d'ouvrage",
+            "orgOuvrage": "Maître d'ouvrage",
+            "orgOeuvre": "Maître d'oeuvre",
+            "orgGest": "Structure de gestion",
+            "listRcSecteur": "Secteur",
+            "projetNat": "Projet national",
+            "listRcDecoupeGeo": "Gouvernorat/Délégation",
+            "pilote": "Projet pilote",
+            "prioritaire": "Projet prioritaire",
+            "dtDebPrevue": "Date début prévue",
+            "dtFinPrevue": "Date fin prévue",
+            "dureeInit": "Durée initiale",
+            "cout": "Coût global du projet en million",
+            "idNmDevise": "Devise",
+            "coursRef": "Taux de change TND",
+            "coutGlobTnd": "Montant en million TND",
+            "besoinFin": "Besoin en financement extérieur en million",
+            "objectifGeneral": "Objectif général"
+          },
+          "children": {
+            "ficheDetCompo": {
+              "title": "Détail de la composante",
+              "breadcrumb": "Détail de la composante",
+              "infoBaseCompo": {
+                "code": "Code de la composante",
+                "intitule": "Intitulé de la composante",
+                "orgOuvrage": "Maître d'ouvrage",
+                "cout": "Coût global de la composante en million",
+                "coursRef": "Taux de change TND",
+                "coutGlobTnd": "Montant en million TND"
+              }
+            },
+            "tableIndi": {
+            }
+          },
+          "btns": {
+            "mesProjet": "Mes projets",
+            "avisCGDSR": {
+              "label": "Avis CGDSR",
+              "confirmation": "Êtes-vous sûr de vouloir soumettre votre avis CGDSR ?",
+              "success": "Avis CGDSR enregistré avec succès"
+            },
+            "avisCR": {
+              "label": "Décision CR",
+              "confirmation": "Êtes-vous sûr de vouloir soumettre votre Décision CR ?",
+              "success": "Décision CR enregistrée avec succès"
+            }
+          }
+        }
+      }
+    },
+    "gp": {
+      "title": "Gestion des projets"
+    }
+  },
+  "rbf": {
+    "title": "Gestion des financements",
+    "table": {
+      "projet": "Projet",
+      "code": "Code",
+      "code_intitule": "Projet",
+      "idRequete": "N° requête",
+      "intitule": "Intitulé",
+      "intituleProjet": "Intitulé",
+      "montant": "Coût (M)",
+      "montantDev": "Coût en devise (M)",
+      "montantTND": "Coût en TND (M)",
+      "codeDevise": "Intitulé",
+      "dtDebRemn": "Intitulé",
+      "dtFinPrevuAfter": "Date fin prévue (du)",
+      "dtFinPrevuBefore": "Date fin prévue (au)",
+      "dtDebPrevuAfter": "Date début prévue (du)",
+      "dtDebPrevuBefore": "Date début prévue (au)",
+      "organismeOuvrage": "Bénéficiaire",
+      "detDebut": "Date début",
+      "detFin": "Date fin",
+      "Bénéficiaire": "Bénéficiaire",
+      "montantinf": "Coût min (M)",
+      "montantsup": "Coût max (M)",
+      "numbai": "N° financement",
+      "bailleur": "Bailleur de fonds",
+      "typeF": "Type financement",
+      "montantt": "Montant (M)",
+      "devise": "Devise",
+      "montantTnd": "Montant TND (M)"
+    },
+    "details": {
+      "title": "Fiche projet",
+      "titlef": "Détail financement",
+      "dtEnvBailleur": "Date envoi au bailleur",
+      "nature": "Nature",
+      "bailleur": "Bailleur",
+      "etatReq": "État requête",
+      "numReq": "Code de la requête",
+      "etatF": "État financement",
+      "typeF": "Type financement"
+    },
+    "rbf": {
+      "numbai": "N°",
+      "bailleur": "Bailleur de fonds",
+      "typeF": "Type",
+      "montantt": "Montant (M)",
+      "devise": "Devise",
+      "montantTnd": "Montant TND (M)",
+      "title": "Saisie des financements",
+      "titleChild": "Détail du projet",
+      "titleChild2edit": "Modification financement",
+      "titleChild2add": "Ajout financement",
+      "listF": "Liste des financements",
+      "table": {
+        "projet": "Projet",
+        "numbai": "N°",
+        "bailleur": "Bailleur de fonds",
+        "typeF": "Type",
+        "montantt": "Montant (M)",
+        "montant": "Montant (M)",
+        "devise": "Devise",
+        "montantTnd": "Montant TND (M)"
+      },
+      "finan": {
+        "title": "Détail du financement"
+      },
+      "Ech": "Echéance",
+      "tableCondition": {
+        "title": "Liste des conditions",
+        "entitB": "Entité bénéficiaire",
+        "etat": "État",
+        "titleAdd": "Ajout condition",
+        "titleEdit": "Modification condition",
+        "idEcheance": "idEcheance",
+        "numCondition": "N°",
+        "intitule": "Intitulé",
+        "idRcOrg": "idRcOrg",
+        "idNmTypeCondition": "idNmTypeCondition",
+        "idNmEtatCondition": "idNmEtatCondition",
+        "livrables": "Description",
+        "dtLimiteRea": "Date limite",
+        "dtRea": "dtRea",
+        "rcB": "Ministère tutelle de l'entité en charge",
+        "rcSubB": "Entité en charge",
+        "type": "Type"
+      }
+    },
+    "fiche": {
+      "Type": "Type",
+      "Bailleur": "Bailleur",
+      "inst": "Instruction",
+      "DonnéeF": "Données du financement",
+      "Pret": "Prêt ",
+      "don": "Don ",
+      "autre": "Autre ",
+      "numFin": "N° financement",
+      "idRcBailleur": "Bailleur",
+      "dtEnvBailleur": "Date envoi au bailleur",
+      "commanditaire": "Commanditaire",
+      "bureauEtude": "Bureau d’étude",
+      "conclusionInst": "Conclusion mission",
+      "idNmTypeFin": "Type financement",
+      "idNmNaturePret": "Nature financement",
+      "montant": "Montant (M)",
+      "idNmDevise": "Devise",
+      "courRef": "Taux de change",
+      "montantTnd": "Montant TND (M)",
+      "tauxInteret": "Taux d'interet %",
+      "commOuv": "Commision ouverture %",
+      "commEng": "Commision engagement %",
+      "commAnn": "Commision annulation %",
+      "commAutre": "Autre commssions",
+      "chargAdmin": "Charge administrative %",
+      "margeBenef": "Marge bénéficiaire %",
+      "idemnRemb": "Indemnité de remboursement %",
+      "delaisRemb": "Délais de remboursement",
+      "dtDebRemb": "Date début",
+      "dtFinRemb": "Date fin",
+      "dtFinRembdtFinRemb": "Fréquence de remboursement",
+      "descriptionDon": "Description",
+      "dtLimiteDon": "Date limite",
+      "description": "Description",
+      "dtDebInst": "Date début instruction",
+      "dtFinInst": "Date fin instruction",
+      "tableE": "Liste des écheances",
+      "Num": "N°",
+      "Mon": "Montant du décaissement (M)",
+      "dev": "Devise",
+      "bai": "Bailleur",
+      "DateL": "Date limite",
+      "freqFrace": "Délai de Grâce",
+      "dtDeb": "Date début",
+      "dtFinPrev": "Date fin prévue",
+      "dtFin": "Date fin",
+      "desc": "Description",
+      "ordre": "Ordre",
+      "add_ech": "Ajout d'une échéance",
+      "update_ech": "Modification de l'échéance",
+      "etatF": "État du financement",
+      "add_list3": "Ajout état du financement",
+      "edit_list3": "Modification état du financement",
+      "etatTitileF": "État du financement",
+      "dtLimite": "",
+      "numEcheance": "N° échéance"
+    }
+  },
+  "arr": {
+    "title": "Accusé réception requêtes"
+  },
+  "ac": {
+    "title": "Avis CGDSR",
+    "dialogAddAvisCGDSR": {
+      "title": "Avis CGDSR",
+      "content": {
+        "form": {
+          "labels": {
+            "idNmDecision": "Avis",
+            "dtDecision": "Date",
+            "idNmMotifDecision": "Motif",
+            "txtMotif": "Motivation de l’avis du CGDSR"
+          }
+        }
+      }
+    }
+  },
+  "dcr": {
+    "title": "Décision CR",
+    "dialogCR": {
+      "title": "Décision CR",
+      "content": {
+        "ficheAvisCGDSR": {
+          "title": "Avis CGDSR",
+          "content": {
+            "idNmDecision": "Avis",
+            "dtDecision": "Date",
+            "idNmMotifDecision": "Motif",
+            "txtMotif": "Commentaire"
+          }
+        },
+        "form": {
+          "labels": {
+            "idNmDecision": "Avis",
+            "dtDecision": "Date",
+            "listeIdRcBailleurs": "Bailleur de fond",
+            "typeFin": "Type financement",
+            "txtMotif": "Commentaire"
+          }
+        }
+      },
+      "numEcheance": "N° échéance"
+    }
+  },
+  "sp": {
+    "details": "Détail incident",
+    "detailsc": "Détail décaissement",
+    "add": "Ajout Incident",
+    "addc": "Ajout décaissement",
+    "edit": "Modification Incident",
+    "editc": "Modification décaissement",
+    "title": "Suivi projet",
+    "numDiff": "Numéro Incident",
+    "idNmTypeDiff": "Type Incident",
+    "idNmEtatDiff": "Etat Incident",
+    "description": "Description",
+    "idNmSeveriteDiff": "Sévérité",
+    "idRcOrg": "Organisme",
+    "demarche": "Démarche",
+    "si": {
+      "dtResolution": "Date résolution",
+      "dtApparition": "Date apparition",
+      "details": "Détail",
+      "suividec": "Suivi décaissement",
+      "title": "Suivi incident",
+      "idNmDevise": "Devise",
+      "content": {},
+      "table": {
+        "code": "Entité bénéficiaire",
+        "intituleProjet": "Etat projet",
+        "montant": "Secteur",
+        "codeDevise": "Thématique",
+        "dtDebRemn": "Bailleur de fonds impliqué",
+        "dtFinPrevuAfter": "Montant projet en TND (M)",
+        "dtFinPrevuBefore": "Date soumission (au)",
+        "dtDebPrevuAfter": "Date soumission (du)"
+      },
+      "tableLI": {
+        "idRcBailleur": "Bailleur",
+        "montant": "Montant",
+        "idNmTypeFin": "Type du financement",
+        "list": "Liste des projets",
+        "projet": "Projet",
+        "title": "Liste des incidents",
+        "titlle": "Liste des décaissements",
+        "id": "id",
+        "idFinancement": "Id Financement",
+        "mnt": "Montant (M)",
+        "idNmDevise": "Devise",
+        "mntTnd": "Montant en TND (M)",
+        "dtDecaiss": "Date décaissement",
+        "dtMaj": "Date de Mise à jour",
+        "organisme": "Organisme en charge",
+        "numDiff": "N°",
+        "idNmTypeDiff": "Type Incident",
+        "idNmSeveriteDiff": "Sévérité",
+        "dtApparition": "Date Apparition",
+        "demarche": "Démarche",
+        "idRcOrg": "Organisme",
+        "description": "Description",
+        "idNmEtatDiff": "Etat",
+        "dtResolution": "Date résolution",
+        "add_succes": "L'insertion a été effectuée avec succès.",
+        "update_succes": "La modification a été effectuée avec succès.",
+        "input3": "Secteur",
+        "input5": "Bailleur de fonds impliqué",
+        "input6": "Type incident",
+        "input7": "Etat",
+        "input8": "Sévérité",
+        "input9": "Organisme en charge",
+        "input10": "devise"
+      }
+    }
+  },
+  "previ": {
+    "pre": "Prévisions"
+  },
+  "ed": {
+    "add_echenace_fin_required": "Le financement  doit être enregistré avant d'ajouter une échéance. Souhaitez-vous sauvegarder votre financement ?",
+    "add_prevision_fin_required": "Le financement  doit être enregistré avant de saisir des prévivions. Souhaitez-vous sauvegarder votre financement ?",
+    "add_etat_fin_required": "Le financement  doit être enregistré avant d'ajouter l'état de finanecment. Souhaitez-vous sauvegarder votre financement ?",
+    "add_etat_doc_required": "Le financement  doit être enregistrée avant d'ajouter les documents. Souhaitez-vous sauvegarder votre financement ?",
+    "add_etat_cond_required": "L'écheance  doit être enregistré avant d'ajouter une condition. Souhaitez-vous sauvegarder votre financement ?",
+    "title": "États d'édition",
+    "fiche": {
+      "titre": "Liste des états d'édition",
+      "dialog": {
+        "title": "Critères",
+        "dateS": "Date Situation",
+        "bf": "Bailleur de fonds",
+        "secteur": "Secteur",
+        "typeC": "Type coopération",
+        "dateCons": "Date considérée",
+        "finan": "Financement",
+        "typeF": "Type financement",
+        "etatProjet": "Etat projet",
+        "typeBF": "Type bailleur de fond",
+        "dateDeb": "Date début convention",
+        "dateFin": "Date fin convention",
+        "projet": "Intitulé du projet",
+        "benef": "Bénéficiaire",
+        "nature": "Nature difficulté",
+        "anneDeb": "Année début",
+        "annfin": "Année fin"
+      }
+    }
+  },
+  "gc": {
+    "title": "Gestion des conventions",
+    "filtre": {
+      "numFinancement": "N° financement",
+      "numConvention": "N° convention",
+      "dateSinApres": "Date signature (du)",
+      "dateSinAvant": "Date signature (au)",
+      "idEtatConvention": "État convention",
+      "projet": "Projet",
+      "date": "Date"
+    },
+    "table": {
+      "title": "Liste des conventions"
+    },
+    "fiche": {
+      "details": "Détail convention",
+      "detailsC": "Détail",
+      "title": "Saisie des conventions",
+      "add": "Ajout convention",
+      "edit": "Modification convention",
+      "numFinancement": "N° financement",
+      "irRcBailleur": "Bailleur de fonds",
+      "montant": "Montant du financement (M)",
+      "typeFinancement": "Type financement",
+      "intitile": "Intitulé du projet",
+      "numConv": "N°convention",
+      "dtDebNegoc": "Date début négociation",
+      "dtFinNegoc": "Date fin négociation",
+      "dtSignatures": "Date signature",
+      "dtMiseVig": "Date mise en vigueur",
+      "dtEnvoiCm": "Date envoi CM",
+      "dtApprobCm": "Date approbation CM",
+      "dtEnvArp": "Date envoi ARP",
+      "dtRatSess": "Date ratification commision spéciale",
+      "dtRatPlanif": "Date ratification session Plénière",
+      "dtPubJort": "Date publication JORT",
+      "numJort": "N° JORT",
+      "dtRecept": "Date réception"
+    }
+  },
+  "gp": {
+    "title": "Gestion des projets",
+    "lp": {
+      "title": "Liste projets",
+      "children": {
+        "detailsProjets": {
+          "title": "Détail du projet"
+        }
+      }
+    },
+    "lmp": {
+      "title": "Mes projets",
+      "children": {
+        "detailsProjets": {
+          "title": "Détail du projet"
+        }
+      }
+    }
+  }
+}
+
+
+

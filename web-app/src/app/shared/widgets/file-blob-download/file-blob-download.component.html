@@ -1,0 +1,13 @@
+<ng-container *ngIf="file">
+    <a
+            [download]="file.download"
+            [href]="file.href"
+            color="primary"
+            mat-button
+            rel="noopener"
+            target="_blank"
+    >
+        <mat-icon>cloud_download</mat-icon>
+        {{ file.download }}
+    </a>
+</ng-container>

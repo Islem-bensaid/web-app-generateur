@@ -1,0 +1,8 @@
+.label {
+    display: flex;
+    background: #ffd0db;
+    color: #7c152e;
+    border-radius: 16px;
+    padding: 4px 15px;
+    margin: 0 10px;
+}

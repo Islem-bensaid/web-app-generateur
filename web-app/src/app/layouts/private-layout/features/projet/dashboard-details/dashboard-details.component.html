@@ -1,0 +1,285 @@
+<div fxFlex="100" fxLayout="column" fxLayoutAlign="space-between stretch" *ngIf="form">
+  <st2i-fiche-details
+    [data]="params['infoProjet'].data"
+    [metadata]="params['infoProjet'].metadata">
+  </st2i-fiche-details>
+  <div class="cp5 mt-3" fxFlex="100" fxLayout="row nowrap" fxLayoutAlign="start center">
+    <st2i-datatable fxFlex="100" fxFlex.lt-md="100"
+                    [responsePayload]="params.tableListExecutiveReports.responsePayload"
+                    [metadata]="params?.tableListExecutiveReports.metadata"
+                    (onAction)="onAction(this,$event)"
+    ></st2i-datatable>
+  </div>
+  <st2i-card [metadata]="{ title: params.sCurve.metadata.title}">
+    <st2i-charts [data]="params.sCurve.data" [metadata]="params.sCurve.metadata"></st2i-charts>
+  </st2i-card>
+  <div class="cp5 mt-3" fxFlex="100" fxLayout="row nowrap" fxLayoutAlign="start center">
+    <st2i-datatable fxFlex="100" fxFlex.lt-md="100"
+                    [responsePayload]="params.tableListAreas.responsePayload"
+                    [metadata]="params?.tableListAreas.metadata"
+                    (onAction)="onAction(this,$event)"
+    ></st2i-datatable>
+  </div>
+
+  <div fxFlex="100" class="cp5" fxLayout="row wrap" fxLayoutAlign="start center">
+    <div fxFlex="50" fxFlex.lt-md="100">
+      <st2i-select
+        [metadata]="params?.codeLaborHistogram?.metadata"
+        [listItems]="params?.codeLaborHistogram?.data"
+        [control]="getFormControl('code')"
+        (onValueChangeEvent)="onCodeLaborHistChanged($event)"
+      ></st2i-select>
+    </div>
+  </div>
+  <st2i-card [metadata]="{ title: params.laborHistogram.metadata.title}">
+    <st2i-charts [data]="params.laborHistogram.data" [metadata]="params.laborHistogram.metadata"></st2i-charts>
+  </st2i-card>
+  <input accept="text/csv" type="file" class="upload-csv-file" [hidden]="true"
+         (change)="onFileSelected($event, 'text/csv')" #fileUpload>
+  <st2i-card
+    [metadata]="{ title: params.materialSubmittalStatus.metadata.title,
+    forDatatable: true,
+    hasAdd: false,
+    hasExport: false,
+    hasPagination: false,
+    hasFilter: false,
+    hasUpload: true}"
+    (onUploadClicked)="onCsvUpload('tableMaterialSubmittalStatus')"
+  >
+    <div fxFlex="100" fxLayout="column" fxLayoutAlign="space-between stretch">
+      <st2i-charts [data]="params.materialSubmittalStatus.data"
+                   [metadata]="params.materialSubmittalStatus.metadata">
+      </st2i-charts>
+
+      <st2i-datatable #materialSubmittalStatusDatatable [responsePayload]="params.tableMaterialSubmittalStatus.responsePayload"
+                      [metadata]="params?.tableMaterialSubmittalStatus.metadata"
+                      (onAction)="onAction(this,$event)"
+      ></st2i-datatable>
+      <div fxFlex="100" fxLayout="row wrap" fxLayoutAlign="end center">
+        <st2i-button-loading (click)="onSaveData('tableMaterialSubmittalStatus','materialSubmittalStatus', materialSubmittalStatusDatatable.dataSource.data)"
+                             btnClass="save-btn mx-2"
+                             [loading]="params['saveLoading']" [disabled]="!params.tableMaterialSubmittalStatus.responsePayload.data.length">
+          <div fxLayoutAlign="center center">
+            <mat-icon class="mx-1" style="font-size: 1.4rem;">save_outline</mat-icon>
+            <span>{{ 'general.save' | translate }}</span>
+          </div>
+        </st2i-button-loading>
+      </div>
+    </div>
+  </st2i-card>
+  <st2i-card
+    [metadata]="{ title: params.shopDrawingStatus.metadata.title,
+    forDatatable: true,
+    hasAdd: false,
+    hasExport: false,
+    hasPagination: false,
+    hasFilter: false,
+    hasUpload: true}"
+    (onUploadClicked)="onCsvUpload('tableShopDrawingStatus')"
+  >
+    <div fxFlex="100" fxLayout="column" fxLayoutAlign="space-between stretch">
+      <st2i-charts [data]="params.shopDrawingStatus.data"
+                   [metadata]="params.shopDrawingStatus.metadata">
+      </st2i-charts>
+
+      <st2i-datatable #shopDrawingStatusDatatable
+        [responsePayload]="params.tableShopDrawingStatus.responsePayload"
+                      [metadata]="params?.tableShopDrawingStatus.metadata"
+                      (onAction)="onAction(this,$event)"
+      ></st2i-datatable>
+      <div fxFlex="100" fxLayout="row wrap" fxLayoutAlign="end center">
+        <st2i-button-loading (click)="onSaveData('tableShopDrawingStatus','shopDrawingStatus', shopDrawingStatusDatatable.dataSource.data)"
+                             btnClass="save-btn mx-2"
+                             [loading]="params['saveLoading']" [disabled]="!params.tableShopDrawingStatus.responsePayload.data.length">
+          <div fxLayoutAlign="center center">
+            <mat-icon class="mx-1" style="font-size: 1.4rem;">save_outline</mat-icon>
+            <span>{{ 'general.save' | translate }}</span>
+          </div>
+        </st2i-button-loading>
+      </div>
+    </div>
+  </st2i-card>
+  <st2i-card
+    [metadata]="{ title: params.hseReport.metadata.title,
+    forDatatable: true,
+    hasAdd: false,
+    hasExport: false,
+    hasPagination: false,
+    hasFilter: false,
+    hasUpload: true}"
+    (onUploadClicked)="onCsvUpload('tableHseReport')"
+  >
+    <div fxFlex="100" fxLayout="column" fxLayoutAlign="space-between stretch">
+      <st2i-charts [data]="params.hseReport.data"
+                   [metadata]="params.hseReport.metadata">
+      </st2i-charts>
+
+      <st2i-datatable #hseReportDatatable
+        [responsePayload]="params.tableHseReport.responsePayload"
+                      [metadata]="params?.tableHseReport.metadata"
+                      (onAction)="onAction(this,$event)"
+      ></st2i-datatable>
+      <div fxFlex="100" fxLayout="row wrap" fxLayoutAlign="end center">
+        <st2i-button-loading (click)="onSaveData('tableHseReport','hseReport', hseReportDatatable.dataSource.data)"
+                             btnClass="save-btn mx-2"
+                             [loading]="params['saveLoading']" [disabled]="!params.tableHseReport.responsePayload.data.length">
+          <div fxLayoutAlign="center center">
+            <mat-icon class="mx-1" style="font-size: 1.4rem;">save_outline</mat-icon>
+            <span>{{ 'general.save' | translate }}</span>
+          </div>
+        </st2i-button-loading>
+      </div>
+    </div>
+  </st2i-card>
+  <st2i-card
+    [metadata]="{ title: params.asBuiltDrawingStatus.metadata.title,
+    forDatatable: true,
+    hasAdd: false,
+    hasExport: false,
+    hasPagination: false,
+    hasFilter: false,
+    hasUpload: true}"
+    (onUploadClicked)="onCsvUpload('tableAsBuiltDrawingStatus')"
+  >
+    <div fxFlex="100" fxLayout="column" fxLayoutAlign="space-between stretch">
+      <st2i-charts [data]="params.asBuiltDrawingStatus.data"
+                   [metadata]="params.asBuiltDrawingStatus.metadata">
+      </st2i-charts>
+
+      <st2i-datatable #asBuiltDrawingStatusDatatable
+        [responsePayload]="params.tableAsBuiltDrawingStatus.responsePayload"
+                      [metadata]="params?.tableAsBuiltDrawingStatus.metadata"
+                      (onAction)="onAction(this,$event)"
+      ></st2i-datatable>
+      <div fxFlex="100" fxLayout="row wrap" fxLayoutAlign="end center">
+        <st2i-button-loading (click)="onSaveData('tableAsBuiltDrawingStatus','asBuiltDrawingStatus', asBuiltDrawingStatusDatatable.dataSource.data)"
+                             btnClass="save-btn mx-2"
+                             [loading]="params['saveLoading']" [disabled]="!params.tableAsBuiltDrawingStatus.responsePayload.data.length">
+          <div fxLayoutAlign="center center">
+            <mat-icon class="mx-1" style="font-size: 1.4rem;">save_outline</mat-icon>
+            <span>{{ 'general.save' | translate }}</span>
+          </div>
+        </st2i-button-loading>
+      </div>
+    </div>
+  </st2i-card>
+
+  <st2i-card
+    [metadata]="{ title: 'Contractor Payment Status',
+    forDatatable: true,
+    hasAdd: false,
+    hasExport: false,
+    hasPagination: false,
+    hasFilter: false,
+    hasUpload: true}"
+    (onUploadClicked)="onCsvUpload('tableContractorPaymentStatus')"
+  >
+    <div fxFlex="100" fxLayout="column" fxLayoutAlign="space-between stretch">
+      <st2i-datatable #contractorPaymentStatusDatatable
+                      [responsePayload]="params.tableContractorPaymentStatus.responsePayload"
+                      [metadata]="params?.tableContractorPaymentStatus.metadata"
+                      (onAction)="onAction(this,$event)"
+      ></st2i-datatable>
+      <div fxFlex="100" fxLayout="row wrap" fxLayoutAlign="end center">
+        <st2i-button-loading (click)="onSaveData('tableContractorPaymentStatus','', contractorPaymentStatusDatatable.dataSource.data)"
+                             btnClass="save-btn mx-2"
+                             [loading]="params['saveLoading']" [disabled]="!params.tableContractorPaymentStatus.responsePayload.data.length">
+          <div fxLayoutAlign="center center">
+            <mat-icon class="mx-1" style="font-size: 1.4rem;">save_outline</mat-icon>
+            <span>{{ 'general.save' | translate }}</span>
+          </div>
+        </st2i-button-loading>
+      </div>
+    </div>
+  </st2i-card>
+
+  <st2i-card
+    [metadata]="{ title: 'Consultant Payment Status',
+    forDatatable: true,
+    hasAdd: false,
+    hasExport: false,
+    hasPagination: false,
+    hasFilter: false,
+    hasUpload: true}"
+    (onUploadClicked)="onCsvUpload('tableConsultantPaymentStatus')"
+  >
+    <div fxFlex="100" fxLayout="column" fxLayoutAlign="space-between stretch">
+      <st2i-datatable #consultantPaymentStatusDatatable
+                      [responsePayload]="params.tableConsultantPaymentStatus.responsePayload"
+                      [metadata]="params?.tableConsultantPaymentStatus.metadata"
+                      (onAction)="onAction(this,$event)"
+      ></st2i-datatable>
+      <div fxFlex="100" fxLayout="row wrap" fxLayoutAlign="end center">
+        <st2i-button-loading (click)="onSaveData('tableConsultantPaymentStatus','', consultantPaymentStatusDatatable.dataSource.data)"
+                             btnClass="save-btn mx-2"
+                             [loading]="params['saveLoading']" [disabled]="!params.tableConsultantPaymentStatus.responsePayload.data.length">
+          <div fxLayoutAlign="center center">
+            <mat-icon class="mx-1" style="font-size: 1.4rem;">save_outline</mat-icon>
+            <span>{{ 'general.save' | translate }}</span>
+          </div>
+        </st2i-button-loading>
+      </div>
+    </div>
+  </st2i-card>
+
+  <st2i-card
+    [metadata]="{ title: 'Variation Orders',
+    forDatatable: true,
+    hasAdd: false,
+    hasExport: false,
+    hasPagination: false,
+    hasFilter: false,
+    hasUpload: true}"
+    (onUploadClicked)="onCsvUpload('tableVariationOrders')"
+  >
+    <div fxFlex="100" fxLayout="column" fxLayoutAlign="space-between stretch">
+      <st2i-datatable #variationOrdersDatatable
+                      [responsePayload]="params.tableVariationOrders.responsePayload"
+                      [metadata]="params?.tableVariationOrders.metadata"
+                      (onAction)="onAction(this,$event)"
+      ></st2i-datatable>
+      <div fxFlex="100" fxLayout="row wrap" fxLayoutAlign="end center">
+        <st2i-button-loading (click)="onSaveData('tableVariationOrders','', variationOrdersDatatable.dataSource.data)"
+                             btnClass="save-btn mx-2"
+                             [loading]="params['saveLoading']" [disabled]="!params.tableVariationOrders.responsePayload.data.length">
+          <div fxLayoutAlign="center center">
+            <mat-icon class="mx-1" style="font-size: 1.4rem;">save_outline</mat-icon>
+            <span>{{ 'general.save' | translate }}</span>
+          </div>
+        </st2i-button-loading>
+      </div>
+    </div>
+  </st2i-card>
+
+  <st2i-card
+    [metadata]="{ title: 'Claims',
+    forDatatable: true,
+    hasAdd: false,
+    hasExport: false,
+    hasPagination: false,
+    hasFilter: false,
+    hasUpload: true}"
+    (onUploadClicked)="onCsvUpload('tableClaims')"
+  >
+    <div fxFlex="100" fxLayout="column" fxLayoutAlign="space-between stretch">
+      <st2i-datatable #claimsDatatable
+                      [responsePayload]="params.tableClaims.responsePayload"
+                      [metadata]="params?.tableClaims.metadata"
+                      (onAction)="onAction(this,$event)"
+      ></st2i-datatable>
+      <div fxFlex="100" fxLayout="row wrap" fxLayoutAlign="end center">
+        <st2i-button-loading (click)="onSaveData('tableClaims','', claimsDatatable.dataSource.data)"
+                             btnClass="save-btn mx-2"
+                             [loading]="params['saveLoading']" [disabled]="!params.tableClaims.responsePayload.data.length">
+          <div fxLayoutAlign="center center">
+            <mat-icon class="mx-1" style="font-size: 1.4rem;">save_outline</mat-icon>
+            <span>{{ 'general.save' | translate }}</span>
+          </div>
+        </st2i-button-loading>
+      </div>
+    </div>
+  </st2i-card>
+
+</div>
+<!--<st2i-spinner-container [isLoading]="params.uploadLoading"></st2i-spinner-container>-->
+<!--<st2i-spinner-container [isLoading]="params['saveLoading']"></st2i-spinner-container>-->

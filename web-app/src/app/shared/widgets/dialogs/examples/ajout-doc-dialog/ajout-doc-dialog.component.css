@@ -1,0 +1,33 @@
+.dialog-title {
+    font-weight: 700;
+    font-size: 22px;
+    margin-bottom: 0 !important;
+}
+
+.dialog-close-btn {
+    /*width: 1.8rem !important;*/
+    /*height: 1.8rem !important;*/
+    line-height: 0 !important;
+    /*background-color: #dadada;*/
+}
+
+
+.dialog-headline {
+    margin-bottom: 0.625rem;
+}
+
+.st2i-dialog-header {
+    display: flex;
+    flex-direction: row;
+    color: white;
+    background-color: #1680b3;
+    padding: 0.313rem 1.5rem;
+    /*border-radius: 0.625rem 0;*/
+    width: 100% !important;
+    height: 2.563rem !important;
+}
+
+.st2i-dialog-content {
+    margin: 0 !important;
+    padding: 1.5rem !important;
+}

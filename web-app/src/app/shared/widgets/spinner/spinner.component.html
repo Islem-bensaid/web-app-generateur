@@ -1,0 +1,18 @@
+<div [ngStyle]="{' background-color':spinnerConfig.mode != 'determinate'? 'rgba(22, 128, 179, 0.3)': null}"  class="spinner__container spinner-wrapper">
+  <div>
+    <ng-template [ngIf]="spinnerConfig.msg" [ngIfThen]="withMsgTemp" [ngIfElse]="defaultTemp"></ng-template>
+    <ng-template #defaultTemp>
+      <mat-spinner *ngIf="spinnerConfig.withSpinner" [diameter]="spinnerConfig.diametre"></mat-spinner>
+    </ng-template>
+    <ng-template #withMsgTemp>
+      <mat-spinner [color]="spinnerConfig.color" [mode]="spinnerConfig.mode"
+                   [value]="spinnerConfig.value"></mat-spinner>
+      <div class="spinner-msg">
+        {{spinnerConfig.msg}}
+      </div>
+    </ng-template>
+  </div>
+</div>
+
+<!--<mat-spinner  [diameter]="50" style="margin: 0 auto;"></mat-spinner>-->
+<!--<span>{{message}}</span>-->

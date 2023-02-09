@@ -1,0 +1,11 @@
+<a class="changecolora" mat-button [matMenuTriggerFor]="langMenu" #langMenuTrigger="matMenuTrigger">
+    <span class="text-uppercase flag-name ">{{ current.label }}</span>
+    <mat-icon class="mat-icon-sm caret">arrow_drop_down</mat-icon>
+</a>
+<mat-menu #langMenu="matMenu" [overlapTrigger]="false" xPosition="before" class="app-menu-panel">
+    <ng-container *ngFor="let flag of options ">
+        <button mat-menu-item *ngIf="flag!=current" (click)="useLanguage(flag.key)" class="backbutt text-uppercase">
+            {{ flag.label }}
+        </button>
+    </ng-container>
+</mat-menu>

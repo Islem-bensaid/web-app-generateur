@@ -1,0 +1,91 @@
+/*-------------- Loading buttons --------------*/
+.search-btn {
+  color: #ffffff;
+  background-color: #3E90D0 !important;
+  border: solid 2px #3E90D0 !important;
+  line-height: 2.2rem !important;
+}
+
+.reset-btn {
+  text-align: center !important;
+  background-color: #ffffff !important;
+  /*font-size: 0.79rem !important;*/
+  /*font-weight: 600 !important;*/
+  color: #e54d42 !important;
+  border: solid 2px #e54d42 !important;
+  line-height: 2.2rem !important;
+}
+
+.reset-btn:hover {
+  text-align: center !important;
+  background-color: #e54d42 !important;
+  /*font-size: 0.79rem !important;*/
+  /*font-weight: 600 !important;*/
+  color: #ffffff !important;
+  border-color: #e54d42 !important;
+  line-height: 2.2rem !important;
+}
+
+.save-btn {
+  background-color:#19c8a6;
+  color: white;
+}
+
+.edit-btn {
+  background-color:#727272;
+  color: white;
+}
+
+.button-loading {
+  .mat-button-wrapper {
+    display: flex;
+    align-items: center;
+  }
+}
+
+.btn-spinner {
+  width: 1em;
+  height: 1em;
+  background: transparent;
+  border-radius: 50%;
+  margin: 0 16px 0 0;
+  border: 2px solid transparent;
+  animation: btn-glow 1s ease infinite;;
+}
+
+@keyframes btn-glow {
+  0% {
+    box-shadow: 0 0 0 .4em darken(#777676, 10%), 0 0 0 .1em darken(#777676, 10%);
+    transform: rotate(360deg);
+  }
+  50% {
+    border-top-color: #777676;
+  }
+  100% {
+    box-shadow: 0 0 0 .4em darken(#777676, 10%), 0 0 0 3.6em transparent;
+  }
+}
+
+//.login-outline-btn {
+//  text-align: center !important;
+//  background-color: white !important;
+//  /*font-size: 0.8rem !important;*/
+//  font-weight: 600 !important;
+//  color: #35363a !important;
+//  border: solid 2px #35363a !important;
+//  width: 14rem !important;
+//  line-height: 1.6rem !important;
+//  text-shadow: .5px .5px .5px #a19f9f;
+//  /*border-radius: 5%;*/
+//}
+//
+//.login-outline-btn:hover {
+//  text-align: center !important;
+//  background-color: #35363a !important;
+//  /*font-size: 0.79rem !important;*/
+//  font-weight: 600 !important;
+//  color: white !important;
+//  border-color: #35363a !important;
+//  line-height: 1.5rem !important;
+//  text-shadow: none !important;
+//}

@@ -1,0 +1,83 @@
+<ng-container>
+    <mat-form-field appearance="outline" [hideRequiredMarker]="metadata.hideRequiredMarker">
+        <mat-label>{{metadata.label | translate}}</mat-label>
+
+        <mat-select disableOptionCentering [disabled]="metadata.disabled" #select [formControl]="control"
+                    [multiple]="metadata.muliple"
+                    (selectionChange)="change($event) "
+                    (valueChange)="changeValue($event)"
+        >
+            <!--                [matTooltipDisabled]="!metadata.tooltip"-->
+            <!--                [matTooltip]="!isEmptyValue(control?.value)?(control?.value):(metadata.label|translate)"-->
+            <ng-container *ngIf="metadata.filter">
+                <mat-select-filter *ngIf="select.focused"
+                                   (filteredReturn)="listsearch = $event"
+                                   [array]="listItems"
+                                   [displayMember]="'motcle'"
+                                   [noResultsMessage]="'general.empty_list_table' | translate"
+                                   [placeholder]="'general.search' | translate"
+                                   [showSpinner]="true">
+                </mat-select-filter>
+            </ng-container>
+            <ng-container *ngIf="select.focused">
+                <ng-container *ngIf="listsearch?.length>0; else emptyOptionnTemp">
+                    <ng-container *ngIf="metadata.grouping; else simpleTemp">
+                        <mat-optgroup *ngFor="let group of listsearch" [label]="getOptionLabel(group)"
+                                      [disabled]="group.disabled">
+                            <mat-option *ngFor="let c of group.children" [value]="getValue(c)">
+                                {{getOptionLabel(c) | translate}}
+                            </mat-option>
+                        </mat-optgroup>
+                    </ng-container>
+                    <ng-template #simpleTemp>
+                        <mat-option *ngFor="let c of listsearch" [value]="getValue(c)">
+                            {{getOptionLabel(c)  | translate}}
+                        </mat-option>
+                    </ng-template>
+                </ng-container>
+                <ng-template #emptyOptionnTemp>
+                    <mat-option>
+                        <span>{{'general.empty_list_table'| translate}}</span>
+                    </mat-option>
+                </ng-template>
+            </ng-container>
+
+            <ng-container *ngIf="!select.focused">
+                <ng-container *ngIf="listItems?.length>0; else emptyOptionnTemp">
+                    <ng-container *ngIf="metadata.grouping; else simpleTemp">
+                        <mat-optgroup *ngFor="let group of listItems" [label]="getOptionLabel(group)"
+                                      [disabled]="group.disabled">
+                            <mat-option *ngFor="let c of group.children" [value]="getValue(c)">
+                                {{getOptionLabel(c)  | translate}}
+                            </mat-option>
+                        </mat-optgroup>
+                    </ng-container>
+                    <ng-template #simpleTemp>
+                        <mat-option *ngFor="let c of listItems" [value]="getValue(c)">
+                            {{getOptionLabel(c)}}
+                        </mat-option>
+                    </ng-template>
+                </ng-container>
+                <ng-template #emptyOptionnTemp>
+                    <mat-option>
+                        <span>{{'general.empty_list_table'| translate}}</span>
+                    </mat-option>
+                </ng-template>
+
+            </ng-container>
+
+        </mat-select>
+        <mat-error [control]="control" appControlError></mat-error>
+        <button
+                (click)="clear($event)"
+                *ngIf="control?.value&&metadata.reset"
+                aria-label="Clear"
+                mat-button
+                mat-icon-button
+                matSuffix
+                type="button"
+        >
+            <mat-icon style="color: red;">close</mat-icon>
+        </button>
+    </mat-form-field>
+</ng-container>

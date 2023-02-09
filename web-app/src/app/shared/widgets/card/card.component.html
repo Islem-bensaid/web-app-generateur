@@ -1,0 +1,69 @@
+<mat-card appCard style="box-shadow: 0 6px 22px -8px rgba(0, 0, 0, 0.2)" [class]="metadata.classList.card">
+    <mat-card-header class="st2i-card-header" *ngIf="metadata.title">
+        <ng-template *ngIf="metadata.forDatatable; then forDatatableTemp; else titleTemp"></ng-template>
+    </mat-card-header>
+<!--    <mat-card-content [class]="metadata.classList.cardContent" [ngStyle]="{'overflow-y': metadata.forDatatable? 'hidden': 'auto', height: metadata.forViewer?'400px': 'auto'}" style="overflow-x: auto">-->
+    <mat-card-content [class]="metadata.classList.cardContent" [ngStyle]="{'overflow-y': metadata.forDatatable? 'hidden': 'auto'}" style="overflow-x: auto">
+        <ng-content></ng-content>
+    </mat-card-content>
+</mat-card>
+
+
+<!-- Templates -->
+<ng-template #titleTemp>
+    <span class="st2i-card-title">{{metadata.title | translate }}</span>
+</ng-template>
+
+<ng-template #datatableHeaderActionsTemp>
+    <div [ngClass]="{'mx-3': metadata.hasUpload == true}"
+         *ngIf="metadata.hasUpload !== false"
+         class="cursor-pointer"
+         fxLayoutAlign="center center"
+         (click)="onUploadClicked.emit()">
+        <mat-icon>upload</mat-icon>
+    </div>
+    <div [ngClass]="{'mx-3': metadata.hasExport == false}"
+         *ngIf="metadata.hasAdd !== false"
+         class="cursor-pointer"
+         fxLayoutAlign="center center"
+         (click)="onAddClicked.emit()">
+        <mat-icon>add_circle_outline</mat-icon>
+    </div>
+    <st2i-datatable-export [ngClass]="{'mx-3': metadata.hasFilter == false}"
+                           *ngIf="metadata.hasExport !== false"
+                           (onGenerateFile)="onGenerateFile.emit($event)">
+    </st2i-datatable-export>
+</ng-template>
+
+<ng-template #forDatatableTemp>
+    <div fxFlex="100" fxLayout="row wrap">
+        <div fxFlex="50" fxFlex.lt-md="100" fxLayoutAlign="start center">
+            <div fxLayoutAlign="start center" fxFlex="100" fxFlex.lt-md="50">
+                <ng-template [ngTemplateOutlet]="titleTemp"></ng-template>
+            </div>
+            <div fxLayoutAlign="end center" fxFlex.lt-md="50" *ngIf="params['isSmallScreen']">
+                <ng-template [ngTemplateOutlet]="datatableHeaderActionsTemp"></ng-template>
+            </div>
+        </div>
+        <div fxFlex="50" fxFlex.lt-md="100" fxLayoutAlign="end center" style="padding: 0 5px">
+            <div *ngIf="!params['isSmallScreen']" [ngTemplateOutlet]="datatableHeaderActionsTemp"></div>
+            <div fxFlex.lt-md="100" *ngIf="metadata.hasFilter !== false">
+                <form [formGroup]="params['formRapidSearch']">
+                    <st2i-text-field [control]="params['formRapidSearch'].get('typedValue')"
+                                     [placeholder]="'general.filter'"
+                                     [isDatatableHeaderSearchField]="true"
+                                     (keyUpEvent)="onFilterKeyUp.emit($event)"
+                                     [suffix]="params['formRapidSearch'].get('typedValue').value?'close':''"
+                                     [isIconSuffix]="true"
+                                     [isSuffixClicked]="true"
+                                     [suffixStyleList]="'color: red; font-size: 100%'"
+                                     (suffixClickedEvent)="clear()"
+                                     [matFormFieldStyle]="'width: 284px !important'">
+                    </st2i-text-field>
+                </form>
+            </div>
+        </div>
+    </div>
+</ng-template>
+
+

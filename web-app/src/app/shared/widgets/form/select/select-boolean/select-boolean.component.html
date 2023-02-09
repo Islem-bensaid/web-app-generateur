@@ -1,0 +1,51 @@
+<mat-form-field appearance="outline">
+    <mat-label
+    >{{ label
+        }}<span *ngIf="required(control)" style="color: red">*</span></mat-label
+    >
+    <ng-container *ngIf="!reciproque">
+        <mat-select disableOptionCentering [formControl]="control">
+            <mat-option [value]="true">
+                <span >{{'yes'  | translate }}</span>
+            </mat-option>
+            <mat-option [value]="false">
+
+                <span>{{ "no" | translate }}</span>
+
+            </mat-option>
+        </mat-select>
+    </ng-container>
+    <ng-container *ngIf="isstring">
+        <mat-select disableOptionCentering [formControl]="control">
+            <mat-option [value]="'false'">
+              <span >{{'yes'  | translate }}</span>
+            </mat-option>
+            <mat-option [value]="'true'">
+                <span>{{ "no" | translate }}</span>
+            </mat-option>
+        </mat-select>
+    </ng-container>
+
+    <ng-container *ngIf="reciproque">
+        <mat-select disableOptionCentering [formControl]="control">
+            <mat-option [value]="false">
+              <span >{{'yes'  | translate }}</span>
+            </mat-option>
+            <mat-option [value]="true">
+                <span>{{ "no" | translate }}</span>
+            </mat-option>
+        </mat-select>
+    </ng-container>
+    <mat-error [control]="control" appControlError></mat-error>
+    <button
+            (click)="clear($event)"
+            *ngIf="control.value == true || control.value == false"
+            aria-label="Clear"
+            mat-button
+            mat-icon-button
+            matSuffix
+    >
+        <mat-icon>close</mat-icon>
+    </button>
+
+</mat-form-field>

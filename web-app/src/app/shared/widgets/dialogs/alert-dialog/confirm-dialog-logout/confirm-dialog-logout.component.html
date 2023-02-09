@@ -1,0 +1,19 @@
+<h1 mat-dialog-title translate>{{ title }}</h1>
+<div mat-dialog-content>
+    {{ description | translate }}{{ time }} {{ minute | translate }}
+</div>
+
+<div mat-dialog-actions>
+    <button
+            (click)="respond(false)"
+            [mat-dialog-close]
+            color="primary"
+            mat-button
+    >
+      <span translate>{{ "cancel"  }}</span>
+    </button>
+
+    <button (click)="respond(true)" [mat-dialog-close] color="primary" mat-button>
+        <span translate>{{ "logout"  }}</span>
+    </button>
+</div>

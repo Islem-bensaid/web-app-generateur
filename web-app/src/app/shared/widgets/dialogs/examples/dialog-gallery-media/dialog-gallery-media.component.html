@@ -1,0 +1,71 @@
+<div fxLayout="row wrap" fxLayoutAlign="end center" class="st2i-dialog-header">
+  <mat-icon class="mx-3 header-icon" (click)="downloadImage(selectedImage)">download</mat-icon>
+  <button mat-dialog-close  mat-raised-button class="dialog-close-btn text-wrap">
+    {{'Close' | translate}}
+  </button>
+</div>
+
+<div mat-dialog-content class="st2i-dialog-content">
+  <div fxFlex="100" fxLayout="row nowrap" *ngIf="imageDimensions">
+    <div fxFlex="5" fxLayoutAlign="center center">
+      <mat-icon class="main-image-arrow" (click)="move('previous')" *ngIf="selectedImageIdx !=0">arrow_back_ios
+      </mat-icon>
+    </div>
+    <div fxFlex fxLayout="row " fxLayoutAlign="center center">
+      <ng-container [ngSwitch]="metadata.type">
+        <ng-container *ngSwitchDefault>
+          <img [ngStyle]="{'width.px': imageDimensions.w, 'height.px': imageDimensions.h}"
+               alt="{{'Main Image' | translate}}" [src]="serializeBase64(selectedImage.base, 'image/png')" />
+        </ng-container>
+        <ng-container *ngSwitchCase="'video/mp4'">
+          <video autoplay controls [ngStyle]="{'width.px': imageDimensions.w, 'height.px': imageDimensions.h}"
+                 [src]="serializeBase64(selectedImage.base, 'video/mp4')">
+            The “video” tag is not supported by your browser. You can download the video file.
+          </video>
+        </ng-container>
+      </ng-container>
+    </div>
+    <div fxFlex="5" fxLayoutAlign="center center">
+      <mat-icon class="main-image-arrow" (click)="move('next')" *ngIf="selectedImageIdx !=metadata.listMedias.length-1">
+        arrow_forward_ios
+      </mat-icon>
+    </div>
+  </div>
+</div>
+
+<div mat-dialog-actions class="st2i-actions-content">
+  <div fxFlex="100" fxLayout="row nowrap">
+    <div fxFlex="5" fxLayoutAlign="center center">
+      <mat-icon class="list-image-arrow" (click)="move('previous')" *ngIf="selectedImageIdx !=0">arrow_back_ios
+      </mat-icon>
+    </div>
+    <div fxFlex fxLayout="row " fxLayoutAlign="center center"  #listMinimizedImagesContainer style="overflow-x: auto">
+<!--      <ng-container *ngFor="let media of getListMinimizedImages(metadata.listMedias, listMinimizedImagesContainer.getBoundingClientRect()); let index = index">-->
+      <ng-container *ngFor="let media of metadata.listMedias; let index = index">
+        <ng-container [ngSwitch]="metadata.type">
+          <ng-container *ngSwitchDefault>
+            <img (click)="selectImage(index)" class="minimized-image mx-2" [ngClass]="{'selected-image-glow': index == selectedImageIdx}"
+                 alt="{{'image-'+index}}" [src]="serializeBase64(media.base, 'image/png')" />
+          </ng-container>
+          <ng-container *ngSwitchCase="'video/mp4'">
+            <video controls (click)="selectImage(index)" class="minimized-image mx-2" [ngClass]="{'selected-image-glow': index == selectedImageIdx}"
+                   [src]="serializeBase64(selectedImage.base, 'video/mp4')">
+              The “video” tag is not supported by your browser. You can download the video file.
+            </video>
+          </ng-container>
+        </ng-container>
+      </ng-container>
+    </div>
+    <div fxFlex="5" fxLayoutAlign="center center">
+      <mat-icon class="list-image-arrow" (click)="move('next')" *ngIf="selectedImageIdx !=metadata.listMedias.length-1">
+        arrow_forward_ios
+      </mat-icon>
+    </div>
+  </div>
+</div>
+
+
+<!--<ng-template let-media="media" let-dim="dimension" let-i="index" #img>-->
+<!--    <img [ngStyle]="{'width.px': 30, 'height.px': 20}"-->
+<!--         alt="{{'image-'+i}}" [src]="serializeBase64(media.base, 'image/png')" />-->
+<!--</ng-template>-->

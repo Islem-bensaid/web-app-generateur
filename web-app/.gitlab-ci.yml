@@ -1,0 +1,21 @@
+stages:
+ - deploy
+
+
+Deploy:
+ stage: deploy
+ script:
+    - ls 
+    - cat Dockerfile
+    - if [ "docker ps | grep -i $CI_PROJECT_NAME" ] ; then
+         docker stop $CI_PROJECT_NAME ;
+         docker rm $CI_PROJECT_NAME ;
+         docker rmi -f $CI_PROJECT_NAME:1.0 ;
+      fi;
+    - docker build . -t $CI_PROJECT_NAME:1.0
+    - docker run -d --name $CI_PROJECT_NAME -p 4200:80 $CI_PROJECT_NAME:1.0
+
+ tags:
+    - guru-project-deploy-runner
+ only:
+    - prod

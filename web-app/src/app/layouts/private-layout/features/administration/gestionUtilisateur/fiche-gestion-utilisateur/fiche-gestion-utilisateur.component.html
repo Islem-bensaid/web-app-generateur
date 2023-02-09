@@ -1,0 +1,15 @@
+<div class="cp5" fxLayout="row wrap">
+    <div fxFlex="100" fxFlex.lt-md="100">
+        <app-filtre-fiche-utilisateur (searchoptions)="onSearch($event)"></app-filtre-fiche-utilisateur>
+    </div>
+    <div fxFlex="100" fxFlex.lt-md="100">
+        <app-table-fiche-utilisateur
+                #table
+                [responsePayload]="responsePayload"
+                (sort)="onSort($event)"
+                (paginate)="onPaginate($event)"
+                (delete)="deleteUser($event)"
+        ></app-table-fiche-utilisateur>
+
+    </div>
+</div>

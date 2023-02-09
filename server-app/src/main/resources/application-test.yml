@@ -1,0 +1,8 @@
+# Server
+server:
+ port: 6666
+
+## Banner config
+spring:
+ banner:
+  location: classpath:banner/banner-test.txt

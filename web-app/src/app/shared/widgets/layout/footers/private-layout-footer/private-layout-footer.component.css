@@ -1,0 +1,31 @@
+:root {
+    --footer_min_height_lt_md: 10px;
+    --footer_min_height_gt_md: 40px;
+    --footer_max_height: 40px;
+}
+
+.footer {
+    /*position: fixed; !*fixed || reative*!*/
+    bottom: 0 !important;
+    position: relative !important; /*fixed || reative*/
+    background-color: #444444;
+    color: rgba(255, 255, 255, 0.6);
+    max-height: var(--footer_max_height) ;
+}
+
+mat-toolbar-row ::ng-deep {
+    padding: 0 10vw;
+}
+
+@media (min-width: 768px) {
+    .footer-height {
+        min-height: var(--footer_min_height_lt_md);
+    }
+}
+
+@media (max-width: 767px) {
+    .footer-height {
+        /*min-height: 150px;*/
+        min-height: var(--footer_min_height_gt_md);
+    }
+}

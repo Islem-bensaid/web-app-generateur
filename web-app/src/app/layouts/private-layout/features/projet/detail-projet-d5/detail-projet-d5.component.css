@@ -1,0 +1,8 @@
+::ng-deep canvas[data-viewer-canvas="true"] {
+    height: 400px !important;
+    border-radius:  0  0 10px 10px !important;
+}
+::ng-deep .adsk-viewing-viewer {
+    height: 400px !important;
+    border-radius:  0  0 10px 10px !important;
+}

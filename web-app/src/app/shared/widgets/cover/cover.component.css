@@ -1,0 +1,47 @@
+.profile-header {
+    height: 40vh;
+}
+
+.cover {
+    width: 100%;
+    height: 30vh;
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+    border-radius: 10px;
+}
+
+.picture {
+    position: relative;
+    margin-bottom: 15px;
+    top: -12vh;
+    right: 2vw;
+    background-size: cover;
+    width: 10vw;
+    height: 20vh;
+    border-radius: 10px;
+}
+
+.profile-header-content {
+    position: relative;
+    right: 14vw;
+    bottom: 21vh;
+    max-width: 40vw;
+}
+
+.full-name {
+    font-size: 28px;
+    font-weight: 700;
+}
+
+.profile-header .profile-header-content .right-part {
+    margin-top: 3%;
+}
+
+.profile-header .profile-header-content .right-part .mat-raised-button {
+    margin-top: 10%;
+}
+
+.action-bar {
+    margin-top: 5px;
+}

@@ -1,0 +1,12 @@
+<button mat-button [color]="color" class="button-loading {{btnClass}}" [type]="type" [disabled]="loading || disabled"
+        [ngClass]="{
+    loading: loading,
+    'mat-button': !raised,
+    'mat-raised-button': raised
+  }">
+  <div fxFlex="100" fxLayout="row nowrap" fxLayoutAlign="center center" style="align-items: center;">
+    <span class="btn-spinner" *ngIf="loading"></span>
+    <span *ngIf="!loading"><ng-content></ng-content></span>
+    <span *ngIf="loading">{{loadingText |translate}}</span>
+  </div>
+</button>

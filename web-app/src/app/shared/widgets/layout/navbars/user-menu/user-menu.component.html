@@ -1,0 +1,66 @@
+<div
+  style="flex-flow: row wrap;box-sizing: border-box;display: flex;flex-wrap: nowrap;justify-content: flex-end;align-items: center;flex-direction: row;">
+  <div *ngIf="!isContentLayout">
+    <mat-icon style="font-size: 50px;
+      height: auto;
+      width: auto;color: #000000;
+    background-color: transparent" *ngIf="!avatar">account_circle
+    </mat-icon>
+    <img *ngIf="avatar" [src]="avatar" />
+    <div style="display: inline-block;">
+      <div>
+        <div>
+          <button mat-button>
+            <span style="font-size: 18px; font-weight: bold;" translate>Se connecter</span>
+          </button>
+        </div>
+        <div [matMenuTriggerFor]="menu">
+          <button mat-button>
+            <span style="font-size: 18px; font-weight: bold;" translate>S'inscrire </span>
+          </button>
+          <mat-icon>keyboard_arrow_down</mat-icon>
+        </div>
+      </div>
+
+    </div>
+  </div>
+
+  <div *ngIf="isContentLayout" fxLayout="row " style="width: 100%; justify-content: end; align-items: center;"
+       [matMenuTriggerFor]="menu" class="cursor-pointer ">
+    <mat-icon style="font-size: 50px;height: auto; width: auto;color: #000000; background-color: transparent">
+      account_circle
+    </mat-icon>
+    <!--    <img alt="avatar" style="width: 50px; height: 50px; border-radius: 50%" src="assets/images/gallery/ahmed_amine_amiri_avatar.jpeg" />-->
+    <div class="logo-description">
+      <!--      <div class="mx-2 mt-3" style="font-weight:600;font-size: 18px;" *ngIf="!isSmallScreen">-->
+      <div class="mx-2" style="font-weight:600;font-size: 18px;">
+        <div>{{ userInfo?.fullName || '-'}}</div>
+<!--        <div><small><i>{{ userInfo?.profile || '-'}}</i></small></div>-->
+      </div>
+    </div>
+    <div class="mt-2 mx-1">
+      <mat-icon class="font-weight-bold">keyboard_arrow_down</mat-icon>
+    </div>
+  </div>
+
+  <mat-menu #menu="matMenu" dense xPosition="before">
+    <div fxLayout="row" fxLayoutAlign="none" class="px-1">
+      <!--      <div class="mx-1">-->
+      <!--&lt;!&ndash;                <img alt="" src="../../../../../../assets/images/gallery/user.jpg" width="50"/>&ndash;&gt;-->
+      <!--        <img alt="avatar" style="width: 50px; height: 50px;" src="assets/images/gallery/ahmed_amine_amiri_avatar.jpeg" />-->
+      <!--      </div>-->
+      <div class="mx-1 mb-3">
+        <b>{{ userInfo?.fullName || '-'}}</b>
+        <br />
+        <small>
+          <i>{{ userInfo?.profile || '-'}}</i>
+        </small>
+      </div>
+    </div>
+    <mat-divider></mat-divider>
+    <button (click)="logout()" mat-menu-item>
+      <mat-icon>power_settings_new</mat-icon>
+      <span>{{ 'athentification.logout' | translate }}</span>
+    </button>
+  </mat-menu>
+</div>

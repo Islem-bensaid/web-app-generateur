@@ -1,0 +1,127 @@
+mat-badge-content {
+    border: 2px solid #ff7d9d !important;
+    background: #9e465c !important;
+}
+
+.top-part {
+    height: 10%;
+    margin-top: 25px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.top-part .coat-arms-logo {
+    width: 65px;
+    height: 65px;
+    border-radius: 50%;
+    background: #6b0820;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.top-part .coat-arms-logo .c-a-picture {
+    background-image: url(https://upload.wikimedia.org/wikipedia/commons/thumb/8/80/Coat_of_arms_of_Tunisia.svg/2000px-Coat_of_arms_of_Tunisia.svg.png);
+    background-repeat: no-repeat;
+    background-size: cover;
+    width: 32px;
+    height: 50px;
+}
+
+.middle-part {
+    display: flex;
+    margin-top: 50px;
+    flex-direction: column;
+    align-items: center;
+    height: 60%;
+}
+
+.middle-part .mat-button {
+    min-width: 45px;
+    background: #6b0820;
+    color: #b89da4;
+    height: 40px;
+    padding: 0;
+    margin: 10px 0;
+}
+
+.bottom-part {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 10%;
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+}
+
+.bottom-part .mat-button {
+    min-width: 45px;
+    background: #6b0820;
+    color: #3c0412;
+    height: 40px;
+    padding: 0;
+    margin: 10px 0;
+}
+
+.mat-drawer-container {
+    position: inherit;
+    flex: 1 1 auto;
+}
+
+mat-toolbar-row ::ng-deep {
+    padding: 0 10vw;
+}
+
+.logo-description {
+    padding: 0 0;
+    position: relative;
+    /*top: 3px;*/
+}
+
+.logo-description > div {
+    line-height: 17px;
+    font-size: 14px;
+}
+
+div.vertical-line {
+
+    display: inline;
+    width: 2px;
+    background-color: white;
+    height: 100%;
+    float: right;
+    opacity: 0.4;
+}
+
+.minister-logo {
+    height: 46px;
+    width: 46px;
+}
+
+.changecolora:hover {
+    color: rgb(0, 0, 0);
+    background-color: #C0392B;
+}
+
+.mat-mini-fab {
+    width: 30px;
+    height: 30px;
+    line-height: 10px;
+    font-size: 14px;
+}
+
+.changecolorbutton:hover {
+    background-color: #C0392B;
+}
+
+.hoverbutt {
+    font-display: auto;
+
+}
+
+::ng-deep .mat-menu-panel.mat-menu-panel {
+    max-width: none;
+}
+

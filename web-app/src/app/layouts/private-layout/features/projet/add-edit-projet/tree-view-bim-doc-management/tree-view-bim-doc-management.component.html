@@ -1,0 +1,66 @@
+<st2i-card [metadata]="{title:'BIM360 Document Management'}">
+  <div *ngIf="treeControl && dataSource.data.length; then treeView; else emptyListContainer"></div>
+  <ng-template #treeView>
+    <mat-tree [dataSource]="dataSource" [treeControl]="treeControl">
+       <mat-tree-node *matTreeNodeDef="let node" matTreeNodeToggle matTreeNodePadding>
+        <ng-container [ngSwitch]="node.type">
+          <ng-container *ngSwitchCase="'document'">
+            <mat-checkbox class="checklist-leaf-node" color="primary"
+                          [checked]="node.isChecked"
+                          (change)="todoLeafItemSelectionToggle(node, $event)">
+              <ng-container>
+
+                <ng-container [ngTemplateOutlet]="nodeIconTemp"
+                              [ngTemplateOutletContext]="{type: node.type, name: node.displayName}"></ng-container>
+              </ng-container>
+            </mat-checkbox>
+          </ng-container>
+          <ng-container *ngSwitchDefault>
+            <button mat-icon-button>
+              <mat-icon class="mat-icon-rtl-mirror" style="color: white; cursor: default">
+                {{'chevron_right'}}
+              </mat-icon>
+
+              <ng-container [ngTemplateOutlet]="nodeIconTemp"
+                            [ngTemplateOutletContext]="{type: node.type, name: node.displayName}"></ng-container>
+            </button>
+          </ng-container>
+
+        </ng-container>
+
+      </mat-tree-node>
+
+     <mat-tree-node *matTreeNodeDef="let node; when: hasChild" matTreeNodePadding [ngClass]="{'indterminate-parent-node': descendantsPartiallySelected(node)}">
+        <!--        <ng-container [ngSwitch]="node.type">-->
+        <!--          <ng-container *ngSwitchCase="'document'">-->
+        <!--            <mat-checkbox class="checklist-leaf-node" color="primary" >-->
+        <!--              <ng-container [ngTemplateOutlet]="nodeIconTemp"-->
+        <!--                            [ngTemplateOutletContext]="{type: node.type, name: node.displayName}"></ng-container>-->
+        <!--            </mat-checkbox>-->
+        <!--          </ng-container>-->
+        <!--          <ng-container *ngSwitchDefault>-->
+<!--        descendantsPartiallySelected(node)-->
+        <button mat-icon-button matTreeNodeToggle [attr.aria-label]="'Toggle ' + node.title">
+          <mat-icon class="mat-icon-rtl-mirror">
+            {{treeControl.isExpanded(node) ? 'expand_more' : 'chevron_right'}}
+          </mat-icon>
+          <ng-container [ngTemplateOutlet]="nodeIconTemp"
+                        [ngTemplateOutletContext]="{type: node.type, name: node.displayName}"></ng-container>
+        </button>
+        <!--          </ng-container>-->
+        <!--        </ng-container>-->
+
+      </mat-tree-node>
+    </mat-tree>
+  </ng-template>
+</st2i-card>
+<ng-template #emptyListContainer></ng-template>
+<ng-template #nodeIconTemp let-type="type" let-name="name">
+  <ng-container [ngSwitch]="type">
+    <mat-icon class="name-icon" *ngSwitchCase="'hub'">{{'hub'}}</mat-icon>
+    <mat-icon class="name-icon" *ngSwitchCase="'project'">{{'local_parking'}}</mat-icon>
+    <mat-icon class="name-icon" *ngSwitchCase="'folder'">{{'folder'}}</mat-icon>
+    <mat-icon style="transform: scale(.8);vertical-align: top;" *ngSwitchCase="'document'">{{'description'}}</mat-icon>
+  </ng-container>
+  <span class="mx-2">{{name}}</span>
+</ng-template>

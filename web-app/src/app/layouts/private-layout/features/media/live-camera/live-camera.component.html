@@ -1,0 +1,16 @@
+<div fxFlex="100" fxLayout="column" fxLayoutAlign="space-between stretch">
+  <st2i-fiche-details
+    [data]="params['infoProjet'].data"
+    [metadata]="params['infoProjet'].metadata">
+  </st2i-fiche-details>
+  <div fxFlex="100" fxFlex.lt-md="100">
+    <app-filtre-live-camera (searchoptions)="onSearch($event)"></app-filtre-live-camera>
+  </div>
+  <div fxFlex="100" fxFlex.lt-md="100">
+    <st2i-datatable
+      [metadata]="params['liveCameraList'].metadata"
+      [responsePayload]="params['liveCameraList'].responsePayload"
+      (onAction)="onAction(this,$event)"
+    ></st2i-datatable>
+  </div>
+</div>

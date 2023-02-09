@@ -1,0 +1,22 @@
+<div fxFlex="100" fxLayout="column" fxLayoutAlign="space-between stretch">
+  <st2i-fiche-details
+    [data]="params['infoProjet'].data"
+    [metadata]="params['infoProjet'].metadata">
+  </st2i-fiche-details>
+  <div fxFlex="100" fxFlex.lt-md="100">
+    <app-filtre-list-medias (searchoptions)="onSearch($event)"></app-filtre-list-medias>
+  </div>
+  <div fxFlex="100" fxFlex.lt-md="100">
+    <st2i-datatable
+      [metadata]="params.documentsList.metadata"
+      [responsePayload]="params.documentsList.responsePayload"
+      (onAction)="onAction(this,$event)"
+    ></st2i-datatable>
+  </div>
+  <div fxFlex="100" fxLayout="row wrap" fxLayoutAlign="end center">
+    <button (click)="onPrecedent()" mat-raised-button type="button" class="cancel-btn">
+      <mat-icon class="mx-1" style="font-size: 1.4rem;">arrow_back_outline</mat-icon>
+      <span>{{ 'Back' | translate }}</span>
+    </button>
+  </div>
+</div>

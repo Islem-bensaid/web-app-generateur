@@ -1,0 +1,30 @@
+.custom-card {
+    box-shadow: rgb(0 0 0 / 20%) 0px 6px 22px -8px;
+    border: solid 3px #0a4d6c !important;
+    border-radius: 10px;
+    padding-top: 5px;
+    padding-bottom: 5px
+}
+
+.position-btn {
+    cursor: default;
+    color: #0a4d6c ;
+    border:  solid 2px #0a4d6c !important;
+    background-color: white !important;
+}
+.position-btn:hover {
+    cursor: default;
+    color: white ;
+    border:  solid 2px #0a4d6c !important;
+    background-color: #0a4d6c !important;
+}
+
+
+.titree {
+    display: flex;
+    flex-direction: row;
+    font-weight: 600;
+    font-size: 20px;
+    color: #0a4d6c;
+}
+

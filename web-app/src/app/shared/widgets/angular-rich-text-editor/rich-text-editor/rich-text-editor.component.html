@@ -1,0 +1,18 @@
+<form [formGroup]="form">
+    <angular-editor [label]="label"
+                    [appearance]="appearance"
+                    [control]="control"
+                    [config]="richTextEditorConfig"
+                    [id]="id"
+                    [formControlName]="id"
+    >
+    </angular-editor>
+    <mat-error *ngIf="control.touched && !control.value"
+               [style.margin-top]="'-1.375rem'"
+               [style.padding-right]="'.75rem'"
+               [style.padding-left]="'.75rem'"
+               style="font-size: 70%">
+        {{'required'|translate}}
+    </mat-error>
+</form>
+

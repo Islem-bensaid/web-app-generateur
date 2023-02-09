@@ -1,0 +1,11 @@
+/.metadata/
+.settings/
+.vscode/*
+.idea/*
+guru-webapp/target/
+guru-webapp/dist/
+guru-webapp/.history/
+guru-webapp/node/
+guru-webapp/node_modules/
+guru-server/target/
+guru-webapp/package-lock.json

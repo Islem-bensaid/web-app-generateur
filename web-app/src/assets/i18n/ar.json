@@ -1,0 +1,860 @@
+{
+  "general": {
+    "errors": {
+      "required": "خانة اجبارية",
+      "server_error": "تعذر جلب المعطيات",
+      "waiting": "يرجى الانتظار"
+    },
+    "submit": "إرسال",
+    "search_filter": "بحث معمّق",
+    "search": "البحث",
+    "reset": "إعادة",
+    "filter": "تصفية بين هذه العناصر ...",
+    "empty_list_table": "آسف! القائمة فارغة حاليا",
+    "success_save": "مسجل بنجاح",
+    "delete_confirmation": "هل أنت متأكد أنك تريد حذف؟",
+    "success_delete": "تم الحذف بنجاح",
+    "maj": "تحديث",
+    "days": "أيام",
+    "back": "الخلف ",
+    "edit": "تعديل",
+    "save": "حفظ",
+    "cancel": "إلغاء",
+    "approve": "المصادقة",
+    "confirm_dialog": {
+      "description": "الرجاء التأكد من التفاصيل قبل تأكيد الخيارات بصفة نهائية",
+      "title": "تأكيد العملية"
+    }
+  },
+  "PAGINATOR": {
+    "paginator.next_page": "الصفحة التالية",
+    "paginator.previous_page": "الصفحة السابقة",
+    "paginator.of": "من",
+    "paginator.items_per_page": ""
+  },
+  "layout": {
+    "navbar": {
+      "text1": "الجمهورية التونسية",
+      "text2": "وزارة الاقتصاد والتخطيط",
+      "logout": "تأكيد الخروج"
+    }
+  },
+  "athentification": {
+    "login": {
+      "title": "تسجيل الدخول",
+      "content": {
+        "cardAuthentification": {
+          "header": {
+            "text": "وزارة الإقتصاد والتخطيط"
+          },
+          "wrapper": {
+            "text": "تسجيل الدخول"
+          },
+          "body": {
+            "form": {
+              "login": "اسم المستخدم",
+              "password": "كلمة العبور"
+            },
+            "connexionBtn": "تسجيل الدخول"
+          },
+          "footer": {
+            "btn": {
+              "ar": "عربية",
+              "fr": "فرنسيّة",
+              "en": "أنجليزيّة"
+            }
+          }
+        }
+      },
+      "errors": {
+        "userErrorAuth": "اسم المستخدم أو كلمة المرور غير صحيحة ",
+        "required": "خانة إجبارية",
+        "server_error": "خطأ في الخادم",
+        "waiting": "الرجاء الإنتظار",
+        "eamil_invalid": "عنوان البريد الإلكتروني خاطئ ",
+        "phonenumber_err": "رقم الهاتف غير صحيح",
+        "cin_error": "رقم بطاقة الهوية غير صالح"
+      }
+    }
+  },
+  "adm": {
+    "admin": "إدارة ",
+    "gp": {
+      "title": "إدارة الملف الشخصي",
+      "details": "تفاصيل الملف الشخصي",
+      "add": "تعديل الملف الشخصي",
+      "edit": "تعديل الملف الشخصي",
+      "table": "جدول  الملف الشخصي",
+      "add_succes": "تمت الإضافة بنجاح ",
+      "update_succes": "تمت التعديل   بنجاح ",
+      "code_dupliquer": "يجب أن يكون الرمز فريدًا",
+      "content": {
+        "tableGp": {
+          "code": "الرمز ",
+          "libelle": "اسم الملف الشخصي",
+          "title": "جدول  الملف الشخصي",
+          "role": "الوظيفة",
+          "dtAjout": "تاريخ الإضافة",
+          "dtAjoutBefore": "تاريخ الإضافة (قبل)",
+          "dtAjoutAfter": "تاريخ الإضافة(بعد)"
+        },
+        "details": {
+          "code": "الرمز",
+          "libelleAr": "اسم الملف الشخصي(عربية )",
+          "libelleFr": "اسم الملف الشخصي (فرنسية )",
+          "libelleEn": "اسم الملف الشخصي (انقليزية)",
+          "role": "الوظيفة",
+          "dtAjout": "تاريخ الإضافة",
+          "dtMaj": "تاريخ التعديل ",
+          "flgActif": "حالة الملف الشخصي",
+          "statusValid": "صالح",
+          "statusInvalid": "غير صالح"
+        }
+      }
+    },
+    "gu": {
+      "title": "إدارة المستخدمين",
+      "details": "تفاصيل المستخدم",
+      "table": "جدول  المستخدمين",
+      "add": "إضافة مستخدم",
+      "edit": "تعديل المستخدم",
+      "user_info": "بيانات المستخدم",
+      "user_auth": "بيانات المصادقة",
+      "afProfil": "احالة الملف الشخصي",
+      "code_dupliquer": "يجب أن يكون تسجيل الدخول فريدًا",
+      "content": {
+        "details": {
+          "nom": "الإسم واللقب",
+          "name": "الإسم",
+          "prenom": "اللقب",
+          "dtNaissance": "تاريخ الميلاد",
+          "dateN": "تاريخ الميلاد",
+          "matricule": "رقم التسجيل",
+          "mail": "البريد الإلكتروني",
+          "num_tel": "رقم الهاتف",
+          "phone": "رقم الهاتف",
+          "organisme": "الهيئة",
+          "login": "تسجيل الدخول",
+          "mdp": "كلمة السر",
+          "cMdp": "تأكيد كلمة المرور",
+          "status": "الحالة ",
+          "sexe": "الجنس",
+          "cin": "بطاقة الهوية"
+        },
+        "tableGu": {
+          "login": "تسجيل الدخول",
+          "nom": "الإسم واللقب",
+          "matricule": "رقم التسجيل",
+          "orgFr": "الهيئة",
+          "isActif": "الحالة "
+        }
+      },
+      "mdpError": "كلمة المرور غير صحيحة. حاول من جديد"
+    },
+    "tda": {
+      "title": "تتبع الوصول",
+      "table": "جدول  تتبع الوصول",
+      "details": "تفاصيل  تتبع الوصول",
+      "content": {
+        "table": {
+          "codeAccess": "الحالة ",
+          "ipAddress": "عنوان IP",
+          "dateAuth": "تاريخ المصادقة",
+          "nomUser": "اسم المستخدم",
+          "login": "كلمة الدخول"
+        }
+      }
+    },
+    "tdd": {
+      "title": "تتبع البيانات",
+      "table": "جدول  تتبع البيانات",
+      "details": "تفاصيل  تتبع البيانات",
+      "content": {
+        "table": {
+          "case_": "الحالة",
+          "uri": "معرف الموارد الموحد",
+          "dateLog": "سجل التاريخ",
+          "nomUser": "اسم المستخدم",
+          "nameService": "اسم الخدمة",
+          "httpMethod": "طريقة HTTP"
+        }
+      }
+    }
+  },
+  "nom": {
+    "nom": "مرجع البيانات",
+    "gb": {
+      "title": "إدارة المانحين",
+      "details": "تفاصيل المؤجر",
+      "add": "ضم المؤجر ",
+      "edit": "تعديل المؤجر  ",
+      "add_succes": "تمت الإضافة بنجاح ",
+      "update_succes": "تمت التعديل   بنجاح .",
+      "delete_succes": "تم الحذف بنجاح",
+      "code_dupliquer": "يجب أن يكون الرمز فريدًا",
+      "content": {
+        "tableGb": {
+          "idRcPays": "دولة",
+          "idNmTypeCoop": "نوع التعاون",
+          "idRcOrg": "الكيان المسؤول",
+          "code": "الرمز",
+          "libelle": "المؤجر",
+          "ordre": "أمر"
+        },
+        "details": {
+          "idRcPays": "دولة",
+          "idNmنوعCoop": "نوع التعاون",
+          "idRcOrg": "الكيان المسؤول",
+          "code": "الرمز",
+          "libelleAr": " المؤجر (عربي)",
+          "libelleFr": " المؤجر (فرنسي)",
+          "libelleEn": " المؤجر (إنجليزي)",
+          "ordre": "أمر"
+        }
+      }
+    },
+    "go": {
+      "title": "قائمة المنظمات",
+      "details": "تفاصيل المنظمة",
+      "add": "إضافة منظمة ",
+      "edit": "تغيير المنظمة",
+      "add_succes": "تمت الإضافة بنجاح ",
+      "update_succes": "تمت التعديل   بنجاح ",
+      "delete_succes": "تم الحذف بنجاح",
+      "code_dupliquer": "يجب أن يكون الرمز فريدًا",
+      "content": {
+        "tableGo": {
+          "idRcSecteur": "قطاع",
+          "idNmTypeOrg": "نوع القطاع ",
+          "code": "الرمز",
+          "libelle": "هيئة",
+          "ordre": "أمر"
+        },
+        "details": {
+          "idRcSecteur": "قطاع",
+          "رقم": "الرمز",
+          "libelleAr": " هيئة (عرب)",
+          "libelleFr": " هيئة (فرنسي)",
+          "libelleEn": " هيئة (إنجليزي)",
+          "ordre": "أمر",
+          "idNmTypeOrg": "نوع القطاع "
+        }
+      }
+    },
+    "gs": {
+      "title": "قائمة القطاعات ",
+      "details": "تفاصيل القطاع",
+      "add": "إضافة قطاع",
+      "edit": "تغيير القطاع ",
+      "add_succes": "تمت الإضافة بنجاح ",
+      "update_succes": "تمت التعديل   بنجاح ",
+      "delete_succes": "تم الحذف بنجاح",
+      "code_dupliquer": "يجب أن يكون الرمز فريدًا",
+      "content": {
+        "tableGs": {
+          "رقم": "الرمز",
+          "libelle": "القطاع",
+          "ordre": "أمر"
+        },
+        "details": {
+          "code": "الرمز",
+          "libelleAr": " القطاع (عرب)",
+          "libelleFr": " القطاع (فرنسي)",
+          "libelleEn": " القطاع (إنجليزي)",
+          "ordre": "أمر"
+        }
+      }
+    },
+    "gd": {
+      "title": "قائمة التقسيم الجغرافي    ",
+      "details": "تفاصيل التقسيم الجغرافي    ",
+      "add": "إضافة تقسيم جغرافي    ",
+      "edit": "تعديل التقسيم الجغرافي    ",
+      "add_succes": "تمت الإضافة بنجاح ",
+      "update_succes": "تمت التعديل   بنجاح ",
+      "delete_succes": "تم الحذف بنجاح",
+      "code_dupliquer": "يجب أن يكون الرمز فريدًا",
+      "content": {
+        "tableGd": {
+          "code": "الرمز",
+          "libelle": "محافظة",
+          "ordre": "أمر"
+        },
+        "details": {
+          "code": "الرمز",
+          "libelleAr": " محافظة (عرب)",
+          "libelleFr": " محافظة (فرنسي)",
+          "libelleEn": " محافظة (إنجليزي)",
+          "ordre": "أمر"
+        }
+      }
+    }
+  },
+  "req": {
+    "title": "طلب الإدارة",
+    "lr": {
+      "title": "قائمة الاستفسارات",
+      "content": {
+        "table": {
+          "title": "قائمة الاستفسارات",
+          "columns": {
+            "numReq": "رقم الطلب ",
+            "intitule": "مخول",
+            "dtEmission": "تاريخ التقديم",
+            "orgDem": "المنظمة المتقدمة",
+            "orgBenef": "المنظمة المستفيدة",
+            "montant": "مقدار العملة",
+            "etatReq": "وضع الاستعلام"
+          }
+        },
+        "filtre": {
+          "labels": {
+            "code": "رقم الطلب ",
+            "dtEmissionStart": "تاريخ التقديم (بعد)",
+            "dtEmissionEnd": "تاريخ التقديم (قبل)",
+            "codeEtatReq": "وضع الاستعلام",
+            "codeOrgBenef": "المنظمة المستفيدة",
+            "codeOrgDem": "المنظمة المتقدمة",
+            "bailleur": "ممول",
+            "type": "نوع التمويل",
+            "devise": "عملة"
+          }
+        }
+},
+  "sp": {
+    "detailsc": "تفاصيل الصرف    ",
+    "details": "تفاصيل الحادثة",
+    "add": "إضافة الحوادث",
+    "edit": "تعديل الحادث",
+    "title": "رصد المشاريع",
+    "addc": "اضافة الصرف    ",
+
+    "editc": "تعديل الصرف    ",
+    "numDiff": "رقم الحادثة",
+    "idNmTypeDiff": "نوع الحادث",
+    "idNmEtatDiff": "حالة الحادث",
+    "description": "وصف",
+    "idNmSeveriteDiff": "خطورة",
+    "idRcOrg": "هيئة",
+    "demarche":"خطوات",
+    "si": {
+      "dtResolution": "تاريخ القرار",
+      "dtApparition": "تاريخ الظهور",
+      "suividec":"مراقبة الصرف      ",
+
+      "details":"تفاصيل",
+      "title": "تتبع الحوادث",
+      "content": {},
+      "table" :{
+       "code":"الكيان المستفيد",
+       "intituleProjet":"حالة المشروع",
+       "montant":"قطاع",
+       "codeDevise":"موضوعي",
+       "dtDebRemn":"المتبرع متورط",
+       "dtFinPrevuAfter":"مبلغ المشروع بالدولار التونسي",
+       "dtFinPrevuBefore":"تاريخ التقديم (قبل)",
+       "dtDebPrevuAfter":"تاريخ التقديم (بعد)"
+      },
+      "tableLI": 
+      {
+        "organisme":"المنظمة المسؤولة        ",
+        "list": "قائمة المشاريع        ",
+        "input10":"عملة",
+        "titlle":"قائمة المصروفات        ",
+      "id":"معرّف",
+      "idFinancement":" التمويل      ",
+      "mnt":"المبلغ",
+      "idNmDevise": "عملة",
+      "mntTnd":"المبلغ بالدينار التونسي",
+      "dtDecaiss":"تاريخ صرف      ",
+       "dtMaj":"تاريخ التحديث       ",
+      "title":"قائمة الحوادث",
+      "numDiff":"رقم",
+      "idNmTypeDiff":"نوع الحادث",
+      "idNmSeveriteDiff":"الخطورة",
+      "dtApparition":"تاريخ الظهور",
+      "demarche":"الخطة      ",
+      "idRcOrg":"هيئة",
+      "description":"الوصف",
+      "idNmEtatDiff":"حالة",
+      "dtResolution":"تاريخ القرار",
+      "add_succes": "تم الإدخال بنجاح.",
+      "update_succes": "تم إجراء التغيير بنجاح.",
+      "input3":"قطاع",
+      "input5":"المتبرع متورط",
+      "input6":"نوع الحادث",
+      "input7":"حالة",
+      "input8":"الخطورة",
+      "input9":"المنظمة المسؤولة" }
+    }
+  }
+}},
+  "rbf": {
+    "title": "ترحيب",
+    "table": {
+      "projet":"المشروع",
+      "title":"gggg",
+      "numbai":"رقم التمويل      ",
+      "bailleur": "الممول      ",
+      "typeF": "نوع التمويل      ",
+      "montantt": "المبلغ",
+      "devise":"عملة",
+      "montantTnd": "المبلغ (دينار)      ",
+      "code": "الرمز",
+      "intitule": "العنوان ",
+      "intituleProjet": "عنوان المشروع      ",
+      "montant": "المبلغ",
+      "montantDev": "التكلفة (بالعملة)      ",
+      "montantTND": "التكلفة بالدينار التونسي",
+      "codeDevise": "مسمى",
+      "dtDebRemn":  "مسمى",
+      "dtFinPrevuAfter": "تاريخ الانتهاء المتوقع (بعد)      ",
+      "dtFinPrevuBefore": "تاريخ الانتهاء المتوقع (قبل)",
+      "dtDebPrevuAfter":  "تاريخ البدء المتوقع (بعد)      ",
+      "dtDebPrevuBefore": "تاريخ البدء المتوقع (قبل)      ",
+      "organismeOuvrage": "المستفيد",
+      "detDebut": "تاريخ البداية",
+      "detFin": "تاريخ الانتهاء      ",
+      "Bénéficiaire": "المستفيد",
+      "montantinf": "التكلفة الدنيا      ",
+      "montantsup": "التكلفة القصوى      "
+    },
+    "details": {
+      "title": "ملف المشروع ",
+      "titlef":"تفاصيل التمويل      "
+
+    },
+
+
+    "lmr": {
+      "title": "طلباتي",
+      "content": {
+        "table": {
+          "title": "قائمة الاستفسارات"
+        }
+      }
+    },
+    "add_req": {
+      "title": "طلب إضافة",
+      "content": {
+        "fiche_ajout": {
+          "title": "نموذج طلب",
+          "general": {
+            "add_project_req_required": "يجب حفظ الطلب قبل إضافة مشروع. هل ترغب في حفظ استفسارك؟"
+          },
+          "form": {
+            "labels": {
+              "numReq": "رقم",
+              "intitule": "عنوان الطلب",
+              "idRcOrgDemParent": "الوزارة المسؤولة عن المنظمة المتقدمة",
+              "idRcOrgDem": "المنظمة المتقدمة",
+              "numOrdDep": "رقم أمر البدء",
+              "dtEmission": "يوم الاصدار",
+              "numOrdArr": "رقم وصول الطلب",
+              "dtReception": "تاريخ الاستلام",
+              "isDemarchEntam": "بدأت العملية",
+              "txtDemarch": "نهج النص",
+              "observation": "الملاحظة"
+            },
+            "errors": {
+              "num_req_exist": "رقم الطلب موجود بالفعل"
+            }
+          },
+          "tableLP": {
+            "title": "قائمة المشاريع",
+            "columns": {
+              "code": "رقم",
+              "intitule": "مخول",
+              "orgOuvrage": "المستفيد",
+              "cout": "كلفة",
+              "dtDebPrevue": "تاريخ البداية",
+              "dtFinPrevue": "تاريخ الانتهاء"
+            }
+          },
+          "dialogSelectExiPro": {
+            "title": "حدد المشاريع الحالية",
+            "message": {
+              "select_error": "يجب عليك اختيار مشروع واحد على الأقل"
+            }
+          },
+          "tableLD": {
+            "title": "وثيقة",
+            "columns": {
+              "type": "نوع",
+              "intitule": "مخول"
+            }
+          },
+          "apod": {
+            "add": "إضافة مشروع جديد",
+            "selectSomeProject": "حدد مشروعًا أو أكثر من المشاريع الحالية",
+            "description": "هل تريد إضافة مشروع جديد أو واحد أو أكثر من المشاريع الحالية?"
+          }
+        }
+      },
+      "children": {
+        "add_proj": {
+          "title": "أضف المشروع",
+          "content": {
+            "fiche_ajout": {
+              "title": "ورقة المشروع",
+              "general": {
+                "add_objSpe_projet_required": "يجب تسجيل المشروع قبل إضافة هدف محدد. هل ترغب في حفظ مشروعك؟ ?",
+                "add_TheTrans_projet_required": "يجب تسجيل المشروع قبل إضافة سمة عرضية. هل ترغب في حفظ مشروعك؟",
+                "add_compo_projet_required": "يجب تسجيل المشروع قبل لإضافة مكون. هل ترغب في حفظ مشروعك؟"
+              },
+              "form": {
+                "labels": {
+                  "رقم": "رقم المشروع",
+                  "intitule": "مخول من البرنامج / المشروع  ",
+                  "miniTutOrgOuv": "الوزارة المشرفة على الجهة المتعاقدة",
+                  "idRcOrgOuvrage": "صاحب المشروع",
+                  "miniTutOrgOeuv": "الوزارة المشرفة على مدير المشروع",
+                  "idRcOrgOeuvre": "مدير المشروع",
+                  "miniTutOrgGest": "الوزارة المسؤولة عن الهيكل الإداري",
+                  "idRcOrgGest": "الهيكل الإداري",
+                  "idRcSecteur": "قطاع",
+                  "isProjetNat": "مشروع وطني",
+                  "isPrioritaire": "مشروع ذو أولوية",
+                  "isPilote": "مشروع طيار",
+                  "dtDebPrevue": "تاريخ البداية مخطط",
+                  "dtFinPrevue": "تاريخ الانتهاء مخطط",
+                  "dureeInit": "فترة أولية",
+                  "idRcDecGeo": "المحافظة / التفويض",
+                  "idNmDevise": "عملة",
+                  "coutGlob": "كلفة مشروع بصورة شاملة",
+                  "coursRef": "سعر صرف الدينار التونسي",
+                  "coutGlobTnd": "المبلغ بالدينار التونسي",
+                  "besoinFinExt": "بحاجة إلى تمويل خارجي",
+                  "objectifGeneral": "الهدف الرئيسي"
+                },
+                "errors": {
+                  "num_projet_exist": "رقم المشروع موجود بالفعل"
+                }
+              },
+              "tableOS": {
+                "title": "اهداف محددة",
+                "columns": {
+                  "code": "رقم",
+                  "txt_objectif": "هدف معين"
+                }
+              },
+              "dialogAddObjSpe": {
+                "title": "إضافة هدف معين",
+                "content": {
+                  "form": {
+                    "labels": {
+                      "numObjectif": "رقم",
+                      "txtObjectif": "هدف معين"
+                    }
+                  }
+                }
+              },
+              "tableTheTrans": {
+                "title": "مواضيع شاملة",
+                "columns": {
+                  "code": "رقم",
+                  "txt_thematique": "مخول"
+                }
+              },
+              "dialogAddTheTrans": {
+                "title": "إضافة  موضوع عرضي",
+                "content": {
+                  "form": {
+                    "labels": {
+                      "numThem": "رقم",
+                      "txtThematique": "موضوع عرضي"
+                    },
+                    "errors": {
+                      "code_obj_spe_exist": "رقم المشروع موجود بالفعل"
+                    }
+                  }
+                }
+              },
+              "tableCompo": {
+                "title": "عناصر",
+                "columns": {
+                  "code": "رقم",
+                  "intitule": "مخول",
+                  "org_ouvrage": "كيان المستفيد",
+                  "cout": "المبلغ",
+                  "poid": "الوزن"
+                }
+              },
+              "tableDocuments": {
+                "title": "وثيقة",
+                "columns": {
+                  "nmTypeDoc": "نوع",
+                  "nomFichier": "مخول"
+                }
+              }
+            },
+            "children": {
+              "add_compo": {
+                "title": "ورقة مكون",
+                "general": {
+                  "add_ind_compo_required": "يجب تسجيل المكون قبل إضافة مؤشر. هل ترغب في حفظ المكون الخاص بك؟?"
+                },
+                "fiche_ajout": {
+                  "form": {
+                    "labels": {
+                      "رقم": "رقم المكون",
+                      "intitule": "مخول المكون",
+                      "miniTutOrgOuv": "الوزارة المسؤولة عن صاحب المشروع ",
+                      "idRcOrgOuvrage": "صاحب المشروع",
+                      "coutGlob": "كلفة مشروع بصورة شاملة",
+                      "idNmDevise": "عملة",
+                      "coursRef": "سعر صرف الدينار التونسي",
+                      "coutGlobTnd": "المبلغ بالدينار التونسي"
+                    }
+                  },
+                  "tableIndicateurs": {
+                    "title": "قائمة المؤشرات",
+                    "columns": {
+                      "numero": "رقم",
+                      "intitule": "مخول",
+                      "quantite": "الكمية المستهدفة",
+                      "unite": "وحدة",
+                      "type": "نوع",
+                      "frequence": "تردد التتبع",
+                      "progression": "التقدم المتوقع"
+                    }
+                  },
+                  "dialogAddIndica": {
+                    "title": "إضافة مؤشر",
+                    "content": {
+                      "form": {
+                        "labels": {
+                          "numero": "رقم",
+                          "intitule": "مخول",
+                          "type": "نوع",
+                          "frequence": "تردد التتبع",
+                          "idNmProgress": "التقدم المتوقع",
+                          "quantite": "مقدار",
+                          "unite": "وحدة"
+                        }
+                      }
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "details_req": {
+      "title": "طلب تفاصيل",
+      "breadcrumb": "طلب تفاصيل",
+      "content": {
+        "ficheDetailsReq": {
+          "رقم": "رقم",
+          "intitule": "عنوان الطلب",
+          "isDemarchEntam": "بدأت العملية",
+          "txtDemarch": "نهج النص",
+          "numOrdDep": "رقم بدء الطلب",
+          "numOrdArr": "رقم وصول الطلب",
+          "orgDem": "المنظمة المتقدمة",
+          "dtEmission": "تاريخ التقديم",
+          "dtReception": "تاريخ الاستلام"
+        },
+        "tableLP": {
+          "title": "قائمة المشاريع",
+          "columns": {
+            "code": "رقم",
+            "intitule": "مخول",
+            "orgOuvrage": "المستفيد",
+            "cout": "كلفة",
+            "dtDebPrevue": "تاريخ البداية",
+            "dtFinPrevue": "تاريخ الانتهاء"
+          }
+        },
+        "btns": {
+          "submit": "يُقدِّم",
+          "success_submit": "المزايدة بنجاح",
+          "submit_confirmation": "هل أنت متأكد أنك تريد تقديم هذا الطلب",
+          "accuserRecepReq": "وصل استلام",
+          "success_accuserRecepReq": "وصل استلام بنجاح",
+          "accuserRecepReq_confirmation": "هل أنت متأكد أنك تريد الإقرار باستلام هذا الطلب  "
+        }
+      },
+      "children": {
+        "ficheDetailsProjet": {
+          "title": "تفاصيل المشروع",
+          "breadcrumb": "تفاصيل المشروع",
+          "infoBaseProjet": {
+            "code": "رقم المشروع",
+            "intitule": "مخول البرنامج / المشروع",
+            "miniTutOrgOuv": "الوزارة المسؤولة عن صاحب المشروع",
+            "orgOuvrage": "صاحب المشروع ",
+            "orgOeuvre": "مدير المشروع",
+            "orgGest": "الهيكل الإداري",
+            "listRcSecteur": "قطاع",
+            "projetNat": "مشروع وطني",
+            "listRcDecoupeGeo": "المحافظة / التفويض",
+            "pilote": "مشروع طيار",
+            "prioritaire": "مشروع ذو أولوية",
+            "dtDebPrevue": "تاريخ البداية مخطط",
+            "dtFinPrevue": "تاريخ الانتهاء مخطط",
+            "dureeInit": "فترة أولية",
+            "cout": "كلفة مشروع بصورة شاملة",
+            "idNmDevise": "عملة",
+            "coursRef": "سعر صرف الدينار التونسي",
+            "coutGlobTnd": "المبلغ بالدينار التونسي",
+            "besoinFin": "بحاجة إلى تمويل خارجي",
+            "objectifGeneral": "الهدف الرئيسي"
+          },
+          "children": {
+            "ficheDetCompo": {
+              "title": "Détails المكون",
+              "breadcrumb": "Détails المكون",
+              "infoBaseCompo": {
+                "code": "رقم المكون",
+                "intitule": "مخول المكون",
+                "orgOuvrage": "صاحب المشروع",
+                "cout": "كلفةالمكون العام",
+                "coursRef": "سعر صرف الدينار التونس",
+                "coutGlobTnd": "المبلغ بالدينار التونسي"
+              }
+            },
+            "tableIndi": {}
+          },
+          "btns": {
+            "avisCGDSR": {
+              "label": "Avis CGDSR",
+              "confirmation": "Êtes-vous sûr de vouloir soummettre votre avis CGDSR ?",
+              "success": "تم إرسال المراجعة بنجاح"
+            },
+            "avisCR": {
+              "label": "Décision CR",
+              "confirmation": "Êtes-vous sûr de vouloir soummettre votre Décision CR ?",
+              "success": "تم إرسال المراجعة بنجاح"
+            }
+          }
+        }
+      }
+    },
+    "sp": {
+      "detailsc": "تفاصيل الصرف    ",
+      "details": "تفاصيل الحادثة",
+      "add": "إضافة الحوادث",
+      "edit": "تعديل الحادث",
+      "title": "رصد المشاريع",
+      "addc": "اضافة الصرف    ",
+      "editc": "تعديل الصرف    ",
+      "numDiff": "رقم الحادثة",
+      "idNmTypeDiff": "نوع الحادث",
+      "idNmEtatDiff": "حالة الحادث",
+      "description": "وصف",
+      "idNmSeveriteDiff": "خطورة",
+      "idRcOrg": "هيئة",
+      "demarche": "خطوات",
+      "si": {
+        "dtResolution": "تاريخ القرار",
+        "dtApparition": "تاريخ الظهور",
+        "suividec": "مراقبة الصرف      ",
+        "details": "تفاصيل",
+        "title": "تتبع الحوادث",
+        "content": {},
+        "table": {
+          "code": "الكيان المستفيد",
+          "intituleProjet": "حالة المشروع",
+          "montant": "قطاع",
+          "codeDevise": "موضوعي",
+          "dtDebRemn": "المتبرع متورط",
+          "dtFinPrevuAfter": "مبلغ المشروع بالدولار التونسي",
+          "dtFinPrevuBefore": "تاريخ التقديم (قبل)",
+          "dtDebPrevuAfter": "تاريخ التقديم (بعد)"
+        },
+        "tableLI": {
+          "input10": "عملة",
+          "titlle": "قائمة المصروفات        ",
+          "id": "معرّف",
+          "idFinancement": " التمويل      ",
+          "mnt": "المبلغ",
+          "idNmDevise": "عملة",
+          "mntTnd": "المبلغ بالدينار التونسي",
+          "dtDecaiss": "تاريخ صرف      ",
+          "dtMaj": "تاريخ التحديث       ",
+          "title": "قائمة الحوادث",
+          "numDiff": "رقم",
+          "idNmTypeDiff": "نوع الحادث",
+          "idNmSeveriteDiff": "خطورة",
+          "dtApparition": "تاريخ الظهور",
+          "demarche": "خطوات",
+          "idRcOrg": "هيئة",
+          "description": "وصف",
+          "idNmEtatDiff": "حالة",
+          "dtResolution": "تاريخ القرار",
+          "add_succes": "تم الإدخال بنجاح.",
+          "update_succes": "تم إجراء التغيير بنجاح.",
+          "input3": "قطاع",
+          "input5": "المتبرع متورط",
+          "input6": "نوع الحادث",
+          "input7": "حالة",
+          "input8": "خطورة",
+          "input9": "المنظمة المسؤولة"
+        }
+      }
+    },
+    "rbf": {
+      "title": "ترحيب",
+      "table": {
+        "numbai": "رقم التمويل      ",
+        "bailleur": "الممول      ",
+        "typeF": "نوع التمويل      ",
+        "montantt": "المبلغ",
+        "codeDevise": "عملة",
+        "montantTnd": "المبلغ (دينار)      ",
+        "code": "مشفر",
+        "intitule": "مسمى ",
+        "intituleProjet": "مسمى ",
+        "montant": "كلفة",
+        "montantDev": "تكلفة العملة      ",
+        "montantTND": "التكلفة بالدينار التونسي",
+        "رقمعملة": "مسمى",
+        "dtDebRemn": "مسمى",
+        "dtFinPrevuAfter": "تاريخ الانتهاء المتوقع (بعد)      ",
+        "dtFinPrevuBefore": "تاريخ الانتهاء المتوقع (قبل)",
+        "dtDebPrevuAfter": "تاريخ البدء المتوقع (بعد)      ",
+        "dtDebPrevuBefore": "تاريخ البدء المتوقع (قبل)      ",
+        "organismeOuvrage": "المستفيد",
+        "detDebut": "تاريخ البداية",
+        "detFin": "تاريخ الانتهاء      ",
+        "المستفيد": "المستفيد",
+        "montantinf": "التكلفة الدنيا      ",
+        "montantsup": "التكلفة القصوى      "
+      },
+      "details": {
+        "title": "ملف المشروع ",
+        "titlef": "تفاصيل التمويل      "
+      },
+      "rbf": {
+        "numbai": "رقم التمويل",
+        "bailleur": "الممول      ",
+        "typeF": "نوع التمويل",
+        "montantt": "المبلغ",
+        "devise": "عملة",
+        "montantTnd": "المبلغ (دينار)",
+        "title": "معلومات المتبرع",
+        "titleChild": "تفاصيل معلومات المتبرع",
+        "titleChild2edit": "تعديل التمويل      ",
+        "titleChild2add": "أضف التمويل",
+        "listF": "قائمة التمويل      ",
+        "table": {
+          "numbai": "رقم التمويل",
+          "bailleur": "الممول",
+          "typeF": "نوع التمويل        ",
+          "montantt": "المبلغ",
+          "devise": "عملة",
+          "montantTnd": "المبلغ (دينار) "
+        }
+      },
+      "fiche": {
+        "Bailleur": "المؤجر",
+        "inst": "تعليمات",
+        "idNmDevise": "عملة",
+        "dev": "عملة"
+      }
+    }
+  }
+}

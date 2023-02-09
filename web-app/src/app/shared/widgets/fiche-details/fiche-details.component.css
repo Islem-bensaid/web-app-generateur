@@ -1,0 +1,50 @@
+td.mat-cell:nth-child(1) {
+    font-weight: bold;
+    color: black;
+    background-color: #f0f1f1;
+    width: 35%;
+}
+
+.mat-card {
+    padding: 0;
+}
+
+.th.mat-header-cell:first-child, td.mat-cell:first-child {
+    border-left: 0 !important;
+    border-radius: 0 0 0 0;
+}
+
+.titree {
+    display: flex;
+    flex-direction: row;
+    font-weight: bold;
+    font-size: 21px;
+    color: white;
+    padding-bottom: 0.5%;
+    background-color: #c0392b;
+    padding-top: 0.5%;
+}
+
+.actions-btn {
+    width: 20px !important;
+    height: 20px !important;
+    cursor: pointer !important;
+}
+
+
+.third-btn {
+    background-color: white !important;
+    font-weight: 700 !important;
+    color: #3e90d0 !important;
+    border: 2px solid #3e90d0 !important;
+    line-height: 1.2rem !important;
+}
+
+.third-btn:hover, .third-btn:focus {
+    background-color: #3e90d0 !important;
+    color: white !important;
+    font-weight: 600 !important;
+    border: 2px solid #3e90d0 !important;
+    line-height: 1.2rem !important;
+}
+

@@ -1,0 +1,29 @@
+/*::ng-deep canvas[data-viewer-canvas="true"] {*/
+/*    height: 400px !important;*/
+/*    border-radius:  0  0 10px 10px !important;*/
+/*}*/
+/*::ng-deep .adsk-viewing-viewer {*/
+/*    height: 400px !important;*/
+/*    border-radius:  0  0 10px 10px !important;*/
+/*}*/
+
+
+/*div, span {*/
+/*    font-size: 12px !important;*/
+/*}*/
+
+
+.gminorheading > div {
+    font-size: 12px !important;
+}
+
+.gminorheading:hover, .gminorheadingwkend:hover, .gminorheading:focus, .gminorheadingwkend:focus{
+    background-color: yellow;
+    cursor: pointer;
+}
+
+.gselector {
+    min-width: 300px !important;
+    max-width: 300px!important;
+    width: 300px!important;
+}

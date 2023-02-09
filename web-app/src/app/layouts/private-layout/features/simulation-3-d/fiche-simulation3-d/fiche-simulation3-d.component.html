@@ -1,0 +1,55 @@
+<div fxFlex="100" fxLayout="column" fxLayoutAlign="space-between stretch">
+  <st2i-fiche-details
+    [data]="params['baseInformation'].data"
+    [metadata]="params['baseInformation'].metadata">
+  </st2i-fiche-details>
+  <st2i-card [metadata]="{title: 'simulation.f.content.viewerFilter'}" style="width: 100%;">
+    <div fxFlex="100"  fxLayout="row nowrap">
+      <div fxFlex="95">
+        <mat-slider #matSlider
+          (change)="updateSlider($event)"
+          [step]="1"
+          [min]="0"
+          [disabled]="params.sliderDisabled"
+          [max]="params.sliderMaxValue"
+          [tickInterval]="1">
+        </mat-slider>
+      </div>
+      <div fxFlex fxLayoutAlign="end center">
+        <st2i-button-loading [disabled]="params.playBtnDisabled" (click)="onPlaySimulation()" btnClass="save-btn">
+          <div fxLayoutAlign="center center">
+            <mat-icon  style="font-size: 1.4rem;">play_arrow_outline</mat-icon>
+          </div>
+        </st2i-button-loading>
+        <!--      <button (click)="onPrecedent()" mat-raised-button type="button" class="cancel-btn  mx-2">-->
+        <!--        &lt;!&ndash;              *ngIf="params['_type'] === ROUTING_TYPES.EMR">&ndash;&gt;-->
+        <!--        <mat-icon class="mx-1" style="font-size: 1.4rem;">arrow_back_outline</mat-icon>-->
+        <!--        <span>{{ 'general.back' | translate }}</span>-->
+        <!--      </button>-->
+      </div>
+
+    </div>
+  </st2i-card>
+  <div class="cp5" fxFlex="100" fxLayout="row wrap" fxLayoutAlign="center center">
+    <div fxFlex="50" fxFlex.lt-md="100">
+      <st2i-card
+        [metadata]="{ title: 'Planned', classList: { card: 'fit-viewer-margin-bottom', cardContent: 'p-0 forge-viewer overflow-hidden' }}">
+        <div class="px-3 forge-viewer-label-container">
+          <span fxFlex="50" class="forge-viewer-label">Cost:&nbsp;{{params.isolationData.planned.cost}}</span>
+          <span fxFlex="50" class="forge-viewer-label">Date:&nbsp;{{params.isolationData.planned.date}}</span>
+        </div>
+        <div class="forge-viewer" id="MyViewerDivPla"></div>
+      </st2i-card>
+    </div>
+    <div fxFlex="50" fxFlex.lt-md="100">
+      <st2i-card
+        [metadata]="{ title: 'Actual', classList: { card: 'fit-viewer-margin-bottom', cardContent: 'p-0 forge-viewer overflow-hidden' }}">
+        <div class="px-3 forge-viewer-label-container">
+          <span fxFlex="50" class="forge-viewer-label">Cost:&nbsp;{{params.isolationData.actual.cost}}</span>
+          <span fxFlex="50" class="forge-viewer-label">Date:&nbsp;{{params.isolationData.actual.date}}</span>
+        </div>
+        <div class="forge-viewer" id="MyViewerDivAct"></div>
+      </st2i-card>
+    </div>
+  </div>
+</div>

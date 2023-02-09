@@ -1,0 +1,21 @@
+.heading {
+    width: fit-content;
+    display: flex;
+    justify-content: center;
+    margin-bottom: 20px;
+    color: white;
+    padding-top: 7px;
+    padding-bottom: 5px;
+    padding-right: 20px;
+    padding-left: 20px;
+}
+
+.heading[dir="ltr"] {
+    border-top-right-radius: 25px;
+    border-bottom-right-radius: 25px;
+}
+
+.heading[dir="rtl"] {
+    border-top-left-radius: 25px;
+    border-bottom-left-radius: 25px;
+}

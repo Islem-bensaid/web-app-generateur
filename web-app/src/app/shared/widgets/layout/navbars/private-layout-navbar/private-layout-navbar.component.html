@@ -1,0 +1,53 @@
+<div style="display: flex;" id="private-layout-navbar" [class.sticky] = "sticky" #stickNavbar>
+  <mat-toolbar  class="content-navbar navbar-height navbar-bg shadow-lg">
+    <mat-toolbar-row  class="" fxLayoutAlign="strat center">
+      <div fxFlex="100" fxLayout="row" fxLayoutAlign="space-between center center"
+           [ngStyle]="{'flex-direction': flags.isSmallScreen && flags.sidebarOpened? 'row-reverse': ''}">
+        <button class="mx-1" style="outline: none" (click)="toggleSidebar()" fxHide.gt-sm mat-icon-button>
+          <mat-icon>{{flags.sidebarOpened ? 'close' : 'menu_horiz'}}</mat-icon>
+        </button>
+        <div fxHide.lt-md fxLayout="row wrap" fxLayoutAlign="start center">
+          <button class="mx-1" (click)="toggleSidebar()" mat-icon-button>
+            <mat-icon>{{flags.sidebarOpened ? 'close' : 'menu_horiz'}}</mat-icon>
+          </button>
+          <!--          <img-->
+          <!--            alt="République Tunisiennee"-->
+          <!--            src="../../../../../../assets/images/logos/armoiries_tunisie.png"-->
+          <!--            style="height: 60px;"-->
+          <!--          />-->
+          <!--          <img-->
+          <!--            alt="Autodesk"-->
+          <!--            src="assets/images/logos/logo_autodesk.svg"-->
+          <!--            style="padding-left: 0.625rem;height: 23px;"-->
+          <!--          />-->
+          <!--          1.875rem-->
+          <!--          style="padding-left: 10px;height: 30px;"-->
+          <!--          <div class="logo-description">-->
+          <!--            <div class="mx-2" style="font-weight:600;font-size: 18px;">{{ 'layout.navbar.text1' | translate }}</div>-->
+          <!--            <div class="mx-2" style="font-weight:600;font-size: 18px;">{{ 'layout.navbar.text2' | translate }}</div>-->
+          <!--          </div>-->
+        </div>
+      </div>
+      <!--      <ng-container class="mx-4">-->
+      <!--        <div fxlflex="25" fxHide.lt-md class="mx-1">-->
+      <!--          <img style="height: 32px;" src="assets/images/date-balck.svg" alt="image"/>-->
+      <!--        </div>-->
+      <!--        <div fxlflex="25" fxHide.lt-md style="font-size: 16px; text-align: center;">-->
+      <!--          <div style="color: black">-->
+      <!--            {{myDate  | date : 'dd/MM/yyyy'}}-->
+      <!--          </div>-->
+      <!--          <div style=" margin-top:-20%">-->
+      <!--            {{myDate  | date : 'H:mm'}}-->
+
+      <!--          </div>-->
+
+      <!--        </div>-->
+      <!--      </ng-container>-->
+      <ng-container>
+        <!--        <st2i-select-app-language [hidden]="flags.isSmallScreen && flags.sidebarOpened"></st2i-select-app-language>-->
+        <!--            <mat-icon class="material-icons-outlined mr-3 ml-1" style="transform: scale(1.5)">notifications</mat-icon>-->
+        <st2i-user-menu [isContentLayout]="true" [hidden]="flags.isSmallScreen && flags.sidebarOpened"></st2i-user-menu>
+      </ng-container>
+    </mat-toolbar-row>
+  </mat-toolbar>
+</div>

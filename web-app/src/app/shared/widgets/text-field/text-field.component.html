@@ -1,0 +1,94 @@
+<mat-form-field [appearance]="appearance" [style]="matFormFieldStyle" [hideRequiredMarker]="hideRequiredMarker"
+                [ngClass]="{'datatable-header-search-field': isDatatableHeaderSearchField}">
+    <mat-label *ngIf="label">{{ label | translate}}</mat-label>
+    <div *ngIf="prefix" matPrefix style="position: relative" class="mr-1"
+         [style.bottom]="(control?.value? 0:4)+(!isIconPrefix? 4: 0)+'px'">
+        <ng-container [ngSwitch]="isIconPrefix">
+            <mat-icon *ngSwitchCase="true">{{prefix}}</mat-icon>
+            <span *ngSwitchCase="false">{{prefix}}</span>
+        </ng-container>
+    </div>
+<!--    style="color: black"-->
+    <ng-container *ngIf="!isWithAutocomplete; else autocomplete_field_temp">
+        <input [st2iEnableOnlyArabic]="enableOnlyArabic"
+               [attr.disabled]="true"
+               [maxlength]="max"
+               [ngStyle]="{'text-align':isMontant ? 'right' : '', 'padding-right':isMontant ? '1%' : '' }"
+               [st2iOnlyNumber]="number"
+               [readonly]="isDisabled"
+               [st2iOnlylettre]="lettre"
+               [numbersphoneOnly]="numberphone"
+               [formControl]="control"
+               [max]="max"
+               [min]="min"
+               [type]="type"
+               [value]="value"
+               placeholder="{{placeholder | translate}}"
+               [matTooltipDisabled]="!hasTooltip"
+               [matTooltip]="control?.value!=undefined?control?.value:(label + (required(control)?' * ':'')|translate)"
+               autocomplete="off"
+               matInput
+               (change)="format(control?.value)"
+               (keyup)="emitTypedValue($event)"
+               (blur)="onChange($event)"/>
+    </ng-container>
+    <ng-template #autocomplete_field_temp>
+        <input matInput
+               [ngStyle]="{'text-align':isMontant ? 'right' : '', 'padding-right':isMontant ? '1%' : '' }"
+               [maxlength]="max"
+               [st2iOnlyNumber]="number"
+               [st2iOnlylettre]="lettre"
+               [formControl]="control"
+               [max]="max"
+               [min]="min"
+               [type]="type"
+               [value]="value"
+               [(ngModel)]="typedValue"
+               [readonly]="read"
+               [matAutocomplete]="auto"
+               (keyup)="emitTypedValue($event)"
+               [matTooltipDisabled]="!hasTooltip"
+               [matTooltip]="control?.value!=undefined?control?.value:(label + (required(control)?' * ':'')|translate)"
+               (blur)="onChange($event)">
+        <mat-autocomplete #select autoActiveFirstOption #auto="matAutocomplete"
+                          (optionSelected)="onOptionSelected($event)">
+            <div *ngIf="isListAutocompleteLoading == true; Then isLoadingTemplate; Else isNotLoadingTemplate"></div>
+
+            <ng-template #isLoadingTemplate>
+                <mat-option [value]="null">
+                    <st2i-spinner-container [isLoading]="isListAutocompleteLoading"></st2i-spinner-container>
+                </mat-option>
+            </ng-template>
+
+            <ng-template #isNotLoadingTemplate>
+                <span *ngIf="listFilteredOptions.length">
+                    <mat-option *ngFor="let option  of listFilteredOptions" [value]="option">
+                        {{option[itemToFilterWith]}}
+                    </mat-option>
+                </span>
+                <span *ngIf="!listFilteredOptions.length">
+                    <mat-option [value]="null">
+                        {{msgEmptyList | translate}}
+                    </mat-option>
+                </span>
+            </ng-template>
+        </mat-autocomplete>
+    </ng-template>
+
+    <div *ngIf="suffix" matSuffix style="position: relative"
+         [style.bottom]="(control?.value? 0:4)+(!isIconSuffix? 4: 0)+'px'">
+        <ng-container [ngSwitch]="isIconSuffix">
+            <mat-icon *ngSwitchCase="true"
+                      [style.cursor]="isSuffixClicked?'pointer': 'default'"
+                      [style]="suffixStyleList"
+                      (click)="isSuffixClicked?suffixClickedEvent.emit(true):null">{{suffix}}</mat-icon>
+            <span *ngSwitchCase="false">&nbsp;&nbsp;{{suffix | translate}}</span>
+        </ng-container>
+    </div>
+
+    <ng-content></ng-content>
+    <mat-error [control]="control" appControlError></mat-error>
+</mat-form-field>
+
+
+

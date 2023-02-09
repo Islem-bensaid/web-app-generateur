@@ -1,0 +1,26 @@
+<ng-container *ngIf="show">
+    <mat-card [style]="withoutBorder ? 'border: none' : undefined" appCard>
+        <mat-card-content
+                class="cpb5"
+                fxLayout="column wrap"
+                fxLayoutAlign="center center"
+        >
+            <div>
+                <img src="/src/assets/images/gallery/warning.png" alt=""/>
+            </div>
+            <h3
+                    style="
+          line-height: 1;
+          text-align: center;
+          color: #c5a901;
+          font-weight: bold;
+        "
+            >
+                {{ text }}
+            </h3>
+        </mat-card-content>
+    </mat-card>
+</ng-container>
+<ng-container *ngIf="!show">
+    <ng-content></ng-content>
+</ng-container>

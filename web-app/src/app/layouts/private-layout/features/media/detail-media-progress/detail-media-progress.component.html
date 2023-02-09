@@ -1,0 +1,54 @@
+<div fxFlex="100" fxLayout="column" fxLayoutAlign="space-between stretch">
+  <st2i-fiche-details
+    [data]="params['infoProjet'].data"
+    [metadata]="params['infoProjet'].metadata">
+  </st2i-fiche-details>
+  <div fxFlex="100" fxFlex.lt-md="100">
+    <app-filtre-list-medias (searchoptions)="onSearch($event)"></app-filtre-list-medias>
+  </div>
+  <div fxFlex="100" fxFlex.lt-md="100">
+    <st2i-datatable
+      [metadata]="params.photosList.metadata"
+      [responsePayload]="params['tableListeProjet'].responsePayload"
+      (onAction)="onAction(this,$event)"
+    ></st2i-datatable>
+  </div>
+  <!--  <st2i-card-->
+  <!--    [metadata]="{-->
+  <!--    title: 'Photos Documents List',-->
+  <!--    classList: { cardContent: 'p-0' },-->
+  <!--    forDatatable: true,-->
+  <!--    hasAdd: true,-->
+  <!--    hasExport: false,-->
+  <!--    hasFilter: false}"-->
+  <!--    (onAddClicked)="onAddMedia()"-->
+  <!--  >-->
+  <!--    <mat-horizontal-stepper #stepper>-->
+  <!--      <ng-template matStepperIcon="edit"></ng-template>-->
+  <!--      <ng-template matStepperIcon="number"></ng-template>-->
+  <!--      <ng-container *ngFor="let media of params.mediaTypesList.datatable; let idx = index;">-->
+  <!--        <mat-step>-->
+  <!--          <ng-template matStepLabel>-->
+  <!--            <div class="text-uppercase"-->
+  <!--                 [ngStyle]="{'font-weight': stepper.selectedIndex === idx? '900': '', 'font-size': stepper.selectedIndex === idx? '17px': '', 'color': stepper.selectedIndex === idx? 'black': ''}">-->
+  <!--              {{media | translate}}&nbsp;({{params[media+'List'].responsePayload.total}})-->
+  <!--            </div>-->
+  <!--          </ng-template>-->
+  <!--          <div fxFlex="100" fxFlex.lt-md="100">-->
+  <!--            <st2i-datatable-->
+  <!--              [metadata]="params[media+'List'].metadata"-->
+  <!--              [responsePayload]="params[media+'List'].responsePayload"-->
+  <!--              (onAction)="onAction(this,$event)"-->
+  <!--            ></st2i-datatable>-->
+  <!--          </div>-->
+  <!--        </mat-step>-->
+  <!--      </ng-container>-->
+  <!--    </mat-horizontal-stepper>-->
+  <!--  </st2i-card>-->
+  <div fxFlex="100" fxLayout="row wrap" fxLayoutAlign="end center">
+    <button (click)="onPrecedent()" mat-raised-button type="button" class="cancel-btn">
+      <mat-icon class="mx-1" style="font-size: 1.4rem;">arrow_back_outline</mat-icon>
+      <span>{{ 'Back' | translate }}</span>
+    </button>
+  </div>
+</div>

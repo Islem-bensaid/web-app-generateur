@@ -1,0 +1,154 @@
+<form [formGroup]="form" *ngIf="metadata.editable? !isEmptyValue(form): true">
+
+  <st2i-card
+    [metadata]="cardMetadata(metadata)"
+    (onFilterKeyUp)="onFilter($event)"
+    (onGenerateFile)="generateFile($event)"
+    (onAddClicked)="onActionEventEmitter('onAdd')">
+    <table
+      matSort
+      (matSortChange)="onSortChange($event)"
+      [dataSource]="dataSource"
+      mat-table
+      style="width: 100%">
+      <ng-container *ngFor="let column of metadata['columns']" [matColumnDef]="getColumnKey(column['key'])">
+        <ng-container [ngSwitch]="column['sortable']">
+          <ng-container *ngSwitchCase="false">
+            <th *matHeaderCellDef mat-header-cell class="text-center" [ngStyle]="column['style']">
+              <span class=" text-14"> {{ column['label'] | translate }}</span>
+            </th>
+          </ng-container>
+          <ng-container *ngSwitchDefault>
+            <th *matHeaderCellDef mat-header-cell mat-sort-header class="text-center"
+                [ngStyle]="column['style']">
+              <span class=" text-14"> {{ column['label'] | translate }}</span>
+            </th>
+          </ng-container>
+        </ng-container>
+
+        <td *matCellDef="let row;let i = index" mat-cell [ngStyle]="column['style']" style="vertical-align: top;"
+            class="text-14">
+          <ng-container [ngSwitch]="column['type']">
+            <div *ngSwitchDefault>
+              {{ row[getColumnKey(column['key'])] | typedValue | async | translate}}
+            </div>
+            <div *ngSwitchCase="'montant'">
+              {{ row[column['key']] | montant}}
+            </div>
+            <div *ngSwitchCase="'date'">
+              {{ row[column['key']] | df}}
+            </div>
+            <div *ngSwitchCase="'datetime'">
+              {{ row[column['key']] | dhf}}
+            </div>
+            <div *ngSwitchCase="'combined'">
+              <ng-container *ngFor="let comb of column['combination']">
+                <ng-container [ngSwitch]="comb['type']">
+                  <ng-container *ngSwitchDefault>
+                    {{ row[getColumnKey(comb['key'])] | typedValue | async | translate}}
+                  </ng-container>
+                  <ng-container *ngSwitchCase="'montant'">
+                    {{ row[comb['key']] | montant}}
+                  </ng-container>
+                  <ng-container *ngSwitchCase="'date'">
+                    {{ row[comb['key']] | df}}
+                  </ng-container>
+                  <ng-container *ngSwitchCase="'datetime'">
+                    {{ row[comb['key']] | dhf}}
+                  </ng-container>
+                  {{comb['sep'] || ''}}
+                </ng-container>
+              </ng-container>
+            </div>
+            <div *ngSwitchCase="'hasCheckBox'" class="display-flex cp5 mt-1">
+              <mat-checkbox (change)="onCheckChange(row, $event.checked, i)" [checked]="row.checked"></mat-checkbox>
+            </div>
+            <div *ngSwitchCase="'hasRadioBtn'" class="display-flex cp5 mt-1">
+              <mat-radio-button (change)="onRadioChange($event.value, i)"
+                                [checked]="row.checked"
+                                [value]="row">
+              </mat-radio-button>
+            </div>
+            <div *ngSwitchCase="COMMON_TYPES_CODES.HAS_IMAGE" class="display-flex py-2">
+              <img class="view-image" alt="{{column['label']|translate}}" [src]="row[column['key']]" />
+            </div>
+            <ng-container *ngIf="!isEmptyValue(_formDatasource)">
+              <ng-container *ngSwitchCase="COMMON_TYPES_CODES.TEXT_FIELD_INPUT">
+                  <st2i-text-field
+                    [control]="getFormControl(i,column['key'])"
+                    [isMontant]="column?.metadata?.montant"
+                    [number]="column?.metadata?.number"
+                    [suffix]="column?.metadata?.suffix"
+                    [prefix]="column?.metadata?.prefix"
+                    (onChangeEvent)="onControlValueChange($event, i,column['key'])"
+                  ></st2i-text-field>
+              </ng-container>
+              <div *ngSwitchCase="COMMON_TYPES_CODES.SELECT_LIST_INPUT">
+                <st2i-select
+                  [control]="getFormControl(i,column['key'])"
+                  [metadata]="column?.metadata"
+                  [listItems]="column?.data"
+                  (onValueChangeEvent)="onControlValueChange($event, i,column['key'], column?.metadata, COMMON_TYPES_CODES.SELECT_LIST_INPUT)"
+                ></st2i-select>
+              </div>
+              <div *ngSwitchCase="COMMON_TYPES_CODES.SELECT_DATE_INPUT">
+                <st2i-select-date
+                  [control]="getFormControl(i,column['key'])"
+                ></st2i-select-date>
+              </div>
+            </ng-container>
+            <div *ngSwitchCase="'actions'" class="display-flex">
+              <ng-container *ngFor="let btn of column['btns']">
+                <ng-container
+                  [ngTemplateOutlet]="btn.type == BTN_TYPES.BTN_ICON? iconBtnTemp: flatBtnTemp"
+                  [ngTemplateOutletContext]="{btn: btn, row: row, index: i}">
+                </ng-container>
+              </ng-container>
+            </div>
+          </ng-container>
+        </td>
+
+      </ng-container>
+      <tr *matHeaderRowDef="getColumnsToDisplay()" mat-header-row></tr>
+      <mat-radio-group>
+        <tr *matRowDef="let row; columns: getColumnsToDisplay();let index = index" mat-row></tr>
+      </mat-radio-group>
+    </table>
+    <st2i-empty-list-container
+      [list]="dataSource.data"
+      [withoutBorder]="true"
+    ></st2i-empty-list-container>
+    <st2i-paginator *ngIf="metadata.hasPagination !== false"
+                    #p
+                    (paginate)="onPaginateChange($event)"
+                    [total]="params['pagination']['totalCount']"
+                    [pageSize]="metadata.paginationPageSize || 10"
+                    [pageIndex]="metadata.paginationPageIndex || 0"
+    ></st2i-paginator>
+    <st2i-spinner-container [isLoading]="responsePayload?.isLoading"></st2i-spinner-container>
+  </st2i-card>
+</form>
+
+
+<ng-template #iconBtnTemp let-btn="btn" let-row="row" let-i="index">
+  <a *ngIf="isEmptyValue(row.btns) == true || isEmptyValue(row.btns[btn.ref]) == true || row.btns[btn.ref]"
+     mat-icon-button
+     class="actions-btn display-flex mx-1 {{btn.class || ''}}"
+     (click)="onActionEventEmitter(btn.handler, row, i)">
+    <mat-icon style="{{btn.style || ''}}">{{btn.name}}</mat-icon>
+  </a>
+</ng-template>
+<ng-template #flatBtnTemp let-btn="btn" let-row="row" let-i="index">
+  <a *ngIf="(!isEmptyValue(btn.txt)||!isEmptyValue(row[getColumnKey(btn.key)])) &&( isEmptyValue(row.btns) == true || isEmptyValue(row.btns[btn.ref]) == true || row.btns[btn.ref])"
+     mat-raised-button
+     (click)="onActionEventEmitter(btn.handler, row, i)"
+     style="{{btn.style || ''}}"
+     class="datatable-outline-btn text-wrap {{btn.classList || ''}}">
+    <div fxLayoutAlign="center center">
+      <mat-icon *ngIf="!isEmptyValue(btn.icon) && !isEmptyValue(btn.icon.name)"
+                style="{{btn.icon.style || ''}}">{{btn.icon.name}}</mat-icon>
+      <span>{{ !isEmptyValue(btn.txt) ? (btn.txt | translate) : row[getColumnKey(btn.key)] || '' }}</span>
+    </div>
+  </a>
+</ng-template>
+

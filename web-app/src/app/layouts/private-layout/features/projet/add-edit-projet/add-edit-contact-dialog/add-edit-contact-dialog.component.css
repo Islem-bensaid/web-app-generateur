@@ -1,0 +1,63 @@
+
+.file-input {
+    display: none;
+}
+
+.app-menu-panel {
+    cursor: pointer;
+}
+
+
+.view-image {
+    width: 6.5rem !important;
+    height: 6.5rem !important;
+    border:1px solid #646464;
+    border-radius:50% !important;
+}
+
+.image-container {
+    cursor: pointer;
+    position: relative;
+    display: inline-block;
+    border-radius:50% !important;
+}
+
+
+
+.hover-image {
+    position: absolute;
+    top: 0px;
+    bottom: 0;
+    left: 0px;
+    right: 0;
+    opacity: 0;
+    transition: opacity 0.25s ease-in-out;
+
+    background-color: rgba(30, 42, 49, 0.6);
+    color: white;
+    /*padding: 30px;*/
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    text-align: center;
+    width: 6.5rem !important;
+    height: 6.5rem !important;
+    border:1px solid #646464;
+    border-radius:50% !important;
+}
+
+.image-container:hover .hover-image {
+    opacity: 1;
+}
+
+
+.image-container:hover img{
+    opacity: .5;
+    -moz-box-shadow: unset;
+    -webkit-box-shadow: unset;
+    box-shadow: unset;
+    -moz-border-radius: 0;
+    border: 0;
+}

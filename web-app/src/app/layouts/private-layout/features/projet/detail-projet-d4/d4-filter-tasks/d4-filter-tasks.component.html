@@ -1,0 +1,75 @@
+<st2i-card [metadata]="{title: 'gp.5d.ficheProject5DDetails.viewerFilter.title'}" style="width: 100%;">
+  <div fxFlex="100" fxLayout="column" fxLayoutAlign="space-between stretch">
+    <form [formGroup]="form" *ngIf="form">
+      <div fxFlex="100" class="cp5" fxLayout="row wrap">
+        <div fxFlex="50">
+          <st2i-select
+            [metadata]="params.filterViewerTypes?.metadata"
+            [listItems]="params.filterViewerTypes?.data"
+            [control]="getFormControl('viewOption')"
+          ></st2i-select>
+        </div>
+        <div fxFlex="50" class="mt-2" *ngIf="['002', '003'].includes(getFormControl('viewOption').value)">
+          Selected date:&nbsp;<span class="font-weight-bold">{{date}}</span>
+<!--          <st2i-select-->
+<!--            [metadata]="params.sourceDate?.metadata"-->
+<!--            [listItems]="params.sourceDate?.data"-->
+<!--            [control]="getFormControl('sourceData')"-->
+<!--          ></st2i-select>-->
+        </div>
+      </div>
+    </form>
+
+    <ng-container *ngIf="getFormControl('viewOption').value == '002'">
+      <div fxFlex fxLayout="row wrap" fxLayoutAlign="start center" class="mb-1">
+<!--        Selected date:&nbsp;<span class="font-weight-bold">{{date}}</span>-->
+        <span  style="color: red">Note: Please select the date to filter with from the Gantt Chart</span>
+      </div>
+      <div fxFlex="100" fxLayout="row wrap" fxLayoutAlign="end center" class=" mt-2" *ngIf="date">
+        <st2i-button-loading (click)="actualVsPlannedEventFilter.emit()"
+                             [loading]="isolateViewerTasksLoading"
+                             btnClass="search-btn">
+          <div fxLayoutAlign="center center">
+            <mat-icon class="mx-1" style="font-size: 1.4rem;">filter_alt_outline</mat-icon>
+            <span>{{ 'gp.4d.ficheProject4DDetails.viewerFilter.ActualVsPlanned' | translate }}</span>
+          </div>
+        </st2i-button-loading>
+        <st2i-button-loading color="primary" (click)="resetEvent.emit()"
+                             [loading]="isolateViewerTasksLoading"
+                             btnClass="reset-btn mx-2">
+          <div fxLayoutAlign="center center">
+            <mat-icon class="mx-1" style="font-size: 1.4rem;">autorenew_outline</mat-icon>
+            <span>{{ 'general.reset' | translate }}</span>
+          </div>
+        </st2i-button-loading>
+      </div>
+    </ng-container>
+
+    <ng-container *ngIf="getFormControl('viewOption').value == '003' ">
+      <div fxFlex fxLayout="row wrap" fxLayoutAlign="start center" class="mb-1">
+<!--        Selected date:&nbsp;<span class="font-weight-bold">{{date}}</span>-->
+        <span style="color: red">Note: Please select the date to filter with from the Gantt Chart</span>
+      </div>
+      <div fxFlex="100" fxLayout="row wrap" fxLayoutAlign="end center" class=" mt-2" *ngIf="date">
+        <st2i-button-loading (click)="thisMonthVsLastMonthEventFilter.emit()"
+                             [loading]="isolateViewerTasksLoading"
+                             btnClass="search-btn">
+          <div fxLayoutAlign="center center">
+            <mat-icon class="mx-1" style="font-size: 1.4rem;">filter_alt_outline</mat-icon>
+            <span>{{ 'gp.4d.ficheProject4DDetails.viewerFilter.thisMonthVsLastMonth' | translate }}</span>
+          </div>
+        </st2i-button-loading>
+        <st2i-button-loading color="primary" (click)="resetEvent.emit()"
+                             [loading]="isolateViewerTasksLoading"
+                             btnClass="reset-btn mx-2">
+          <div fxLayoutAlign="center center">
+            <mat-icon class="mx-1" style="font-size: 1.4rem;">autorenew_outline</mat-icon>
+            <span>{{ 'general.reset' | translate }}</span>
+          </div>
+        </st2i-button-loading>
+      </div>
+    </ng-container>
+
+
+  </div>
+</st2i-card>

@@ -1,0 +1,31 @@
+.checklist-leaf-node {
+    padding-top: 0.625rem;
+}
+
+
+a ,mat-tree-node{
+    /* your own custom styles here */
+    /* e.g. */
+
+    background-color: white !important;
+    font-size: 14px !important;
+    font-weight: 600 !important;
+    border-radius: 30px !important;
+    padding-top: 0 !important;
+    padding-bottom: 0 !important;
+    text-align: center !important;
+    max-width: unset !important;
+    white-space: pre-wrap !important;
+}
+::ng-deep .mat-checkbox-disabled .mat-checkbox-label{
+    color: black;
+}
+
+.name-icon {
+    transform: scale(.7);
+}
+
+/*app-tree-view-bim-doc-management .mat-checkbox-label span:nth-child(2) > span{*/
+/*    margin-left: 0 !important;*/
+/*    margin-right: 0 !important;*/
+/*}*/

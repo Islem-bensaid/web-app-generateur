@@ -1,0 +1,44 @@
+<div fxFlex="100" fxLayout="column" fxLayoutAlign="space-between stretch" *ngIf="imageDimensions">
+  <div fxLayout="row nowrap" fxLayoutAlign="end center" class="st2i-dialog-header">
+    <mat-icon class="header-icon" (click)="downloadImage(selectedImage)">download</mat-icon>
+  </div>
+
+  <div class="st2i-dialog-content" fxFlex="100" fxLayout="row nowrap">
+    <div class="px-2" fxFlex="5" fxLayoutAlign="center center">
+      <mat-icon class="main-image-arrow" (click)="move('previous')" *ngIf="selectedImageIdx !=0">
+        arrow_back_ios
+      </mat-icon>
+    </div>
+    <div fxFlex fxLayout="row " fxLayoutAlign="center center">
+      <img class="minimized-image" [ngStyle]="{'width.px': imageDimensions.w, 'height.px': imageDimensions.h}"
+           alt="{{'Project Image' | translate}}" [src]="serializeBase64(selectedImage.base, 'image/png')" />
+    </div>
+    <div fxFlex="5" fxLayoutAlign="center center">
+      <mat-icon class="main-image-arrow" (click)="move('next')"
+                *ngIf="selectedImageIdx !=metadata.listMedias.length-1">
+        arrow_forward_ios
+      </mat-icon>
+    </div>
+  </div>
+
+  <div class="st2i-actions-content" fxFlex="100" fxLayout="row nowrap">
+    <div fxFlex="5" fxLayoutAlign="center center">
+      <mat-icon class="list-image-arrow" (click)="move('previous')" *ngIf="selectedImageIdx !=0">arrow_back_ios
+      </mat-icon>
+    </div>
+    <div fxFlex fxLayout="row " fxLayoutAlign="center center" #listMinimizedImagesContainer style="overflow-x: auto">
+      <!--      <ng-container *ngFor="let media of getListMinimizedImages(metadata.listMedias, listMinimizedImagesContainer.getBoundingClientRect()); let index = index">-->
+      <ng-container *ngFor="let media of metadata.listMedias; let index = index">
+        <img (click)="selectImage(index)" class="minimized-image mx-2"
+             [ngClass]="{'selected-image-glow': index == selectedImageIdx}"
+             alt="{{'image-'+index}}" [src]="serializeBase64(media.base, 'image/png')" />
+      </ng-container>
+    </div>
+    <div fxFlex="5" fxLayoutAlign="center center">
+      <mat-icon class="list-image-arrow" (click)="move('next')"
+                *ngIf="selectedImageIdx !=metadata.listMedias.length-1">
+        arrow_forward_ios
+      </mat-icon>
+    </div>
+  </div>
+</div>

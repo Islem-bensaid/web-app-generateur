@@ -1,0 +1,28 @@
+
+<ng-container *ngIf="ishtml">
+  <div
+    style="height: 200px; overflow: auto ;border:1px solid grey; "
+    *ngIf="somehtml"
+    [innerHTML]="
+          getlang() ? (somehtml.cont2 | safehtml) : (somehtml.cont1 | safehtml)
+        "
+  ></div>
+</ng-container>
+<ng-container *ngIf="!ishtml">
+  <div style="height: 200px; overflow: auto ;border:1px solid grey; ">
+    {{ contenu | translate }}
+  </div>
+</ng-container>
+
+<div>
+  <section class="example-section" fxLayoutAlign="end end">
+    <mat-radio-group [(ngModel)]="accept">
+      <mat-radio-button class="example-margin" value="true">{{
+        "accept" | translate
+        }}</mat-radio-button>
+      <mat-radio-button class="example-margin" value="false"
+      >{{ "no_accept" | translate }}
+      </mat-radio-button>
+    </mat-radio-group>
+  </section>
+</div>

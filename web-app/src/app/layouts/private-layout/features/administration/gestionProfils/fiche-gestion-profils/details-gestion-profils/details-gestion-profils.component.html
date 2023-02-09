@@ -1,0 +1,16 @@
+<div class="px-3">
+  <st2i-fiche-details
+    [data]="responsePayload"
+    [metadata]="ficheDetailsMetadata">
+  </st2i-fiche-details>
+  <st2i-card [metadata]="{title:'adm.gp.list_menu'}">
+    <app-tree-view-menu *ngIf="dataMenu" #treeViewComponent [isDisable]="true" [editMode]="true"
+                        [data]="dataMenu"></app-tree-view-menu>
+  </st2i-card>
+  <div fxLayoutAlign="end center">
+    <button (click)="backToList()" mat-raised-button type="button" class="cancel-btn">
+      <mat-icon class="mx-1" style="font-size: 1.4rem;">arrow_back_outline</mat-icon>
+      <span>{{ 'general.back' | translate }}</span>
+    </button>
+  </div>
+</div>

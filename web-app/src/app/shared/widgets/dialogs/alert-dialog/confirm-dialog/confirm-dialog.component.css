@@ -1,0 +1,7 @@
+.mat-dialog-actions {
+    float: right;
+}
+
+::ng-deep .mat-dialog-title {
+    font-size: 80%;
+}

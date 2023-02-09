@@ -1,0 +1,14 @@
+<div class="cp5" fxLayout="row wrap">
+    <div fxFlex="100" fxFlex.lt-md="100">
+
+        <app-filtre-tracage-des-donnes (searchoptions)="onSearch($event)"></app-filtre-tracage-des-donnes>
+    </div>
+    <div fxFlex="100" fxFlex.lt-md="100">
+        <app-table-tracage-des-donnes #tableTracageDesDonnesComponent
+                                      [responsePayload]="responsePayload"
+                                      (sort)="onSort($event)"
+                                      (paginate)="onPaginate($event)">
+        </app-table-tracage-des-donnes>
+
+    </div>
+</div>
