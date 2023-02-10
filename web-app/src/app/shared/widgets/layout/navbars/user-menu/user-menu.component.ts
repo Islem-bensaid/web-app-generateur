@@ -33,7 +33,7 @@ export class UserMenuComponent {
   }
 
   ngOnInit() {
-    this.getUser();
+     // this.getUser();
     this.breakpointObserver
       .observe(['(max-width: 599px)'])
       .subscribe((result) => {

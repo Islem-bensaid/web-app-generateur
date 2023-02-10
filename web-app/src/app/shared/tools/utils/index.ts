@@ -14,3 +14,5 @@ export * from './removedup';
 export * from './url-param';
 export * from './urlJoin';
 export * from './datatable-factory';
+export * from './pagination';
+

@@ -19,13 +19,13 @@ const LAYOUTS_ROUTES: Routes = [
     path: 'public',
     component: PublicLayoutComponent,
     children: PUBLIC_ROUTES,
-    canActivate: [NonAuthGuard]
+     canActivate: [NonAuthGuard]
   },
   {
     path: 'app',
     component: PrivateLayoutComponent,
     children: PRIVATE_ROUTES,
-    canActivate: [AuthGuard],
+    //canActivate: [AuthGuard],
     data: {
       title: 'general.title'
     },

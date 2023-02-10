@@ -6,14 +6,16 @@ import {
 import { AppTranslateService, ConfirmDialogService, ToastService } from '@shared/services';
 import {Router} from "@angular/router";
 import {doFilter, initDatatableDetails, isSomeInputsChanged} from "@shared/tools";
-import {pagination, paginationOptions} from "@shared/constantes";
-import {PaginatorComponent} from "@shared/widgets";
+import {pagination,paginationOptions} from '@shared/tools/utils'
+
+
 import {DocumentExporterService} from "@shared/services/sharedWs/document-exporter.service";
 import { RequestObject } from '@shared/models';
 import { ADMINISTRATION_URI } from '@privateLayout/shared/constantes';
 import { ConstanteWs } from '@shared/constantes/ConstanteWs';
 import { ResponseObject } from '@shared/models/ResponseObject';
 import { SharedService } from '@shared/services/sharedWs/shared.service';
+import { PaginatorComponent } from "@shared/widgets";
 
 @Component({
   selector: 'app-table-fiche-utilisateur',
@@ -105,7 +107,7 @@ export class TableFicheUtilisateurComponent implements OnInit {
     const filterDetails = doFilter(typedValue, this.tableGestionProfilsDetails, this.responsePayload.data);
     this.dataSource.data = filterDetails?.data || this.responsePayload.data;
     this.totalCount = filterDetails?.data?.length || this.responsePayload.total;
-    this.paginatorComponent.pageSizeOptions = filterDetails?.data?.length ? [filterDetails.data.length] : paginationOptions();
+    this.paginatorComponent.pageSizeOptions = filterDetails?.data?.length ? [filterDetails.data.length] :  paginationOptions();
     this.paginatorComponent.pageSize = filterDetails?.data?.length || pagination().itemsPerPage;
   }
 

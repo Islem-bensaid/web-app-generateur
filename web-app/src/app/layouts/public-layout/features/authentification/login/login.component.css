@@ -18,13 +18,13 @@
 }
 
 .auth-card-side-image-fr {
-    background-image: url("src/assets/images/gallery/login-side-img-fr.png");
+    background-image: url("src/assets/images/gallery/img_st2i.png");
 }
 .auth-card-side-image-ar {
-    background-image: url("src/assets/images/gallery/login-side-img-ar.png");
+    background-image: url("src/assets/images/gallery/img_st2i.png");
 }
 .auth-card-side-image-en {
-    background-image: url("src/assets/images/gallery/login-side-img-en.png");
+    background-image: url("src/assets/images/gallery/img_st2i.png");
 }
 
 .card-container {

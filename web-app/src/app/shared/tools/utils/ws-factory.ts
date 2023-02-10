@@ -9,7 +9,8 @@ import { Injectable } from '@angular/core';
 import { ConstanteWs } from '@shared/constantes/ConstanteWs';
 import { map } from 'rxjs/operators';
 import { COMMON_NOMENCLATURE_URI } from '@privateLayout/shared/constantes';
-import { APP_SPECIFIC_CASE_CONSTANTE, REQUEST_SPE_CASE } from '@shared/constantes/Constante';
+import { REQUEST_SPE_CASE } from "@shared/constantes/Constante";
+
 
 @Injectable({ providedIn: 'root' })
 export class WsFactory {
@@ -118,10 +119,6 @@ export class WsFactory {
                 responseType: 'blob',
                 observe: 'events',
                 reportProgress: true
-              };
-            case APP_SPECIFIC_CASE_CONSTANTE.FORGE_AUTHENTIFICATION:
-              return {
-                headers: new HttpHeaders().set('Content-Type', 'application/x-www-form-urlencoded')
               };
             default:
               return {};

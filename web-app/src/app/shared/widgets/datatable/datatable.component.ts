@@ -4,10 +4,10 @@ import { MatTableDataSource } from '@angular/material/table';
 import { AppTranslateService } from '@shared/services';
 import { DocumentExporterService } from '@shared/services/sharedWs/document-exporter.service';
 import { doFilterV2, initExportedColumns, isEmptyValue, isInputChanged } from '@shared/tools';
-import { pagination, paginationOptions } from '@shared/constantes';
 import { FormBuilder, FormControl, UntypedFormArray, UntypedFormControl, UntypedFormGroup } from '@angular/forms';
 import { COMMON_TYPES_CODES } from '@privateLayout/shared/constantes/common/Constantes';
 import { BTN_TYPES } from '@shared/constantes/Constante';
+import {pagination,paginationOptions} from '@shared/tools/utils'
 
 @Component({
   selector: 'st2i-datatable',

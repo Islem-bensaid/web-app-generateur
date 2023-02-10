@@ -6,7 +6,6 @@ import {COMMON_METADATA} from "@shared/constantes/CommonMetadata";
 import {CriteriaSearch, Pagination, RequestObject, SelectMetadata, Sort} from "@shared/models";
 import {SharedService} from "@shared/services/sharedWs/shared.service";
 import {ConstanteWs} from "@shared/constantes/ConstanteWs";
-import {pagination} from "@shared/constantes";
 import {DatatableComponent} from "@shared/widgets";
 import {AuthentificationService} from "@publicLayout/shared/services/authentification/authentification.service";
 import {ConfirmDialogService, ToastService} from "@shared/services";

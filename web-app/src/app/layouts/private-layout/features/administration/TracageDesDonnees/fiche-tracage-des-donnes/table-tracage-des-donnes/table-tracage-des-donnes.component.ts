@@ -8,7 +8,8 @@ import {AppTranslateService} from "@shared/services";
 import {Router} from "@angular/router";
 import {DocumentExporterService} from "@shared/services/sharedWs/document-exporter.service";
 import {doFilter, initDatatableDetails, isSomeInputsChanged} from "@shared/tools";
-import {pagination, paginationOptions} from "@shared/constantes";
+import {pagination,paginationOptions} from '@shared/tools/utils'
+
 
 @Component({
   selector: 'app-table-tracage-des-donnes',
@@ -93,7 +94,7 @@ export class TableTracageDesDonnesComponent implements OnInit {
     const filterDetails = doFilter(typedValue, this.tableGestionProfilsDetails, this.responsePayload.data);
     this.dataSource.data = filterDetails?.data || this.responsePayload.data;
     this.totalCount = filterDetails?.data?.length || this.responsePayload.total;
-    this.paginatorComponent.pageSizeOptions = filterDetails?.data?.length ? [filterDetails.data.length] : paginationOptions();
+    this.paginatorComponent.pageSizeOptions = filterDetails?.data?.length ? [filterDetails.data.length] :  paginationOptions();
     this.paginatorComponent.pageSize = filterDetails?.data?.length || pagination().itemsPerPage;
   }
 

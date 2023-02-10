@@ -8,7 +8,8 @@ import {AppTranslateService} from "@shared/services";
 import {Router} from "@angular/router";
 import {DocumentExporterService} from "@shared/services/sharedWs/document-exporter.service";
 import {doFilter, initDatatableDetails, isSomeInputsChanged} from "@shared/tools";
-import {pagination, paginationOptions} from "@shared/constantes";
+import {pagination,paginationOptions} from '@shared/tools/utils'
+
 
 @Component({
   selector: 'app-table-tracage-des-acces',

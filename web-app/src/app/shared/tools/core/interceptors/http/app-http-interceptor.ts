@@ -64,7 +64,7 @@ export class AppHttpInterceptor implements HttpInterceptor {
     req: HttpRequest<any>,
     next: HttpHandler
   ): Observable<HttpEvent<any>> {
-    const accessToken = sessionStorage.getItem(this._isForgeApi(req) ? PRL_OTHER_CODES.FORGE_TOKEN_KEY : PUL_OTHER_CODES.APP_TOKEN_KEY);
+    const accessToken = sessionStorage.getItem(PUL_OTHER_CODES.APP_TOKEN_KEY);
 
     if (!isEmptyValue(accessToken)) {
       req = this.getHeader(req, accessToken);
@@ -100,10 +100,6 @@ export class AppHttpInterceptor implements HttpInterceptor {
 
   private _isExludedInterUrl(req) {
     return Links.exludedInterUrlList.some(url => (req.url.includes(url)));
-  }
-
-  private _isForgeApi(req) {
-    return req.url.includes(environment.forgeProperties.hostSource);
   }
 
 

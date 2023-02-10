@@ -10,7 +10,8 @@ import {
 } from '@angular/core';
 import {MatPaginator, PageEvent} from '@angular/material/paginator';
 import { Pagination } from '../../models';
-import {pagination, paginationOptions} from '../../constantes';
+import {pagination,paginationOptions} from '@shared/tools/utils'
+
 
 
 @Component({
@@ -27,7 +28,7 @@ export class PaginatorComponent implements  OnChanges {
     @Input() total: number;
 
     @Input() pageSize = pagination().itemsPerPage;
-    pageSizeOptions = paginationOptions();
+    pageSizeOptions =  paginationOptions(this.pageSize);
 
     constructor(
     ) {
@@ -41,7 +42,7 @@ export class PaginatorComponent implements  OnChanges {
             this.paginator.length = this.total;
         }
         if ( pageSize?.currentValue !== pageSize?.previousValue) {
-            this.pageSizeOptions = paginationOptions(pageSize.currentValue);
+            this.pageSizeOptions =  paginationOptions(pageSize.currentValue);
         }
     }
 

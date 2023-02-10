@@ -4,11 +4,6 @@
 
 import { ScaleType } from '@swimlane/ngx-charts';
 
-export const APP_SPECIFIC_CASE_CONSTANTE = {
-  FORGE_AUTHENTIFICATION: 'forge-authentification',
-}
-
-
 
 
 // ################################################

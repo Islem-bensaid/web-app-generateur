@@ -6,7 +6,7 @@ import { COMMON_METADATA } from '@shared/constantes/CommonMetadata';
 import { Pagination, RequestObject, SelectMetadata, Sort } from '@shared/models';
 import { SharedService } from '@shared/services/sharedWs/shared.service';
 import { ConstanteWs } from '@shared/constantes/ConstanteWs';
-import { pagination } from '@shared/constantes';
+import {pagination} from '@shared/tools/utils'
 import { DatatableComponent } from '@shared/widgets';
 import { HttpEventType, HttpResponse } from '@angular/common/http';
 import { ConfirmDialogService, ToastService } from '@shared/services';

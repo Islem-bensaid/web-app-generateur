@@ -32,7 +32,7 @@ export class ViewerService {
   constructor() {
   }
 
-  /** public static called functions functions */
+  /** public static called functions */
 
   public initNativeViewer(htmlElement, urnsList) {
     Autodesk.Viewing.Initializer(this._options, this._initialized.bind(this, htmlElement, urnsList));

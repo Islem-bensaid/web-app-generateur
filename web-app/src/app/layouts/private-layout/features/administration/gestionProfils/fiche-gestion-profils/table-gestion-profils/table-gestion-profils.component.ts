@@ -7,8 +7,9 @@ import {AppTranslateService} from '@shared/services';
 import {doFilter, initDatatableDetails, isSomeInputsChanged} from '@shared/tools';
 import {Router} from "@angular/router";
 import {PaginatorComponent} from "@shared/widgets";
-import {pagination, paginationOptions} from "@shared/constantes";
 import {DocumentExporterService} from "@shared/services/sharedWs/document-exporter.service";
+import {pagination,paginationOptions} from '@shared/tools/utils'
+
 
 @Component({
     selector: 'app-table-gestion-profils',
