@@ -8,7 +8,7 @@ import { megaBytes } from '@shared/tools';
 function getHost(hostServer: 'local-server' | 'test-server' | 'prod-server') {
   switch (hostServer) {
     case 'local-server':
-      return 'http://127.0.0.1:8062';
+      return 'http://localhost:8199/projet/api/generateur';
     case 'test-server':
       return 'http://162.19.76.41:4062';
     case 'prod-server':

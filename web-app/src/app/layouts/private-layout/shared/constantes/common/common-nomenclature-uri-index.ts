@@ -1,5 +1,5 @@
 export const COMMON_NOMENCLATURE_URI = {
-
+    LIST_LANGUE:"tNmLangue/data",
 
 
 

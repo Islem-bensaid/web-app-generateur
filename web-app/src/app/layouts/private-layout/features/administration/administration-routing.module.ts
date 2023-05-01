@@ -30,6 +30,7 @@ import {
 import {
     DetailTracageDesDonnesComponent
 } from "@privateLayout/features/administration/TracageDesDonnees/fiche-tracage-des-donnes/detail-tracage-des-donnes/detail-tracage-des-donnes.component";
+import { FilterprjComponent } from "@privateLayout/features/administration/filterprj/filterprj.component";
 
 const routes: Routes = [
     {
@@ -157,6 +158,9 @@ const routes: Routes = [
             }
         ]
     },
+
+    {path:'fil',
+    component:FilterprjComponent}
 
 ];
 

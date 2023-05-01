@@ -1,14 +1,11 @@
-<!--<mat-form-field appearance="outline">-->
-<!--    <mat-label>{{ label | translate }}<span *ngIf="required(this.control)" style="color: red">*</span></mat-label>-->
-<!--    <input matInput-->
-<!--           [ngxMatDatetimePicker]="picker //noinspection ValidateTypes"-->
-<!--           [formControl]="control"-->
-<!--           [min]="minDate"-->
-<!--           [max]="maxDate"-->
-<!--           [disabled]="disabled"-->
-<!--           [matTooltipDisabled]="!hasTooltip"-->
-<!--           [matTooltip]="control.value!=undefined?getFormattedDateValueForTheTooltip(control.value):(label + (required(control)?' * ':'')|translate)">-->
-<!--    <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>-->
-<!--    <ngx-mat-datetime-picker #picker></ngx-mat-datetime-picker>-->
-<!--    <mat-error>{{errorMsg | translate}}</mat-error>-->
-<!--</mat-form-field>-->
+<mat-form-field appearance="outline">
+    <mat-label>{{ label | translate }}<span *ngIf="required(this.control)" style="color: red">*</span></mat-label>
+    <input matInput
+           [formControl]="control"
+           [min]="minDate"
+           [max]="maxDate"
+           [disabled]="disabled"
+           [matTooltipDisabled]="!hasTooltip"
+           [matTooltip]="control.value!=undefined?getFormattedDateValueForTheTooltip(control.value):(label + (required(control)?' * ':'')|translate)">
+    <mat-error>{{errorMsg | translate}}</mat-error>
+</mat-form-field>

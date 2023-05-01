@@ -2,6 +2,7 @@
   <st2i-private-layout-navbar
     (toggleSidebarEventEmitter)="sidebar.toggleSidebar($event)"></st2i-private-layout-navbar>
   <st2i-private-layout-sidebar #sidebar [listMenus]="listMenus"></st2i-private-layout-sidebar>
+
   <div class="main-panel" [ngStyle]="{'min-height': mainPanelHeight}">
     <st2i-breadcrumb [isContentLayout]="true"></st2i-breadcrumb>
     <st2i-outlet></st2i-outlet>

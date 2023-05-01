@@ -68,6 +68,7 @@
     "ng-in-viewport": "^6.1.5",
     "ng2-adsk-forge-viewer": "^1.5.0",
     "ngx-bootstrap": "^6.1.0",
+    "ngx-color": "^8.0.3",
     "ngx-gauge": "^6.0.0",
     "ngx-moment": "^5.0.0",
     "ngx-toastr": "^12.1.0",

@@ -123,6 +123,7 @@ import {
 import { SparklineComponent } from '@shared/widgets/charts/custom-charts/sparkline/sparkline.component';
 import { SpinnerComponent } from './widgets/spinner/spinner.component';
 import { NgxGaugeModule } from 'ngx-gauge';
+import { FilterComponent } from './widgets/filter/filter.component';
 
 const pipes = [
     DateFormatheurePipe,
@@ -203,7 +204,8 @@ const pipes = [
     ComboSeriesVerticalComponent,
     TimelineFilterBarChartComponent,
     SparklineComponent,
-    SpinnerComponent
+    SpinnerComponent,
+    FilterComponent
   ],
   exports: [
     FicheDetailsComponent,
@@ -310,7 +312,8 @@ const pipes = [
     SelectDateTimeComponent,
     DialogComponent,
     InnerGalleryMediaComponent,
-    ChartsComponent
+    ChartsComponent,
+    FilterComponent
   ],
   imports: [
     CommonModule,

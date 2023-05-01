@@ -39,7 +39,7 @@ isSmallScreen: boolean;
   ngOnInit(): void {
     this.initStyles();
     this.listenToLoading();
-    this.getMenu();
+   // this.getMenu();
     this.authentificateToForge();
   }
 

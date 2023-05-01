@@ -11,7 +11,7 @@
     </div>
     <div fxFlex fxLayout="row " fxLayoutAlign="center center">
       <img class="minimized-image" [ngStyle]="{'width.px': imageDimensions.w, 'height.px': imageDimensions.h}"
-           alt="{{'Project Image' | translate}}" [src]="serializeBase64(selectedImage.base, 'image/png')" />
+           alt="{{'Project.ts Image' | translate}}" [src]="serializeBase64(selectedImage.base, 'image/png')" />
     </div>
     <div fxFlex="5" fxLayoutAlign="center center">
       <mat-icon class="main-image-arrow" (click)="move('next')"

@@ -150,6 +150,7 @@ import { isPlatformServer } from '@angular/common';
 export class BubbleChartInteractiveComponent extends BaseChartComponent {
   @Input() showGridLines: boolean = true;
   @Input() legend = false;
+
   @Input() legendTitle: string = 'Legend';
   @Input() xAxis: boolean = true;
   @Input() yAxis: boolean = true;

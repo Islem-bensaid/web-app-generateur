@@ -24,6 +24,7 @@ import { TableTracageDesDonnesComponent } from './TracageDesDonnees/fiche-tracag
 import { FiltreTracageDesDonnesComponent } from './TracageDesDonnees/fiche-tracage-des-donnes/filtre-tracage-des-donnes/filtre-tracage-des-donnes.component';
 import { DetailTracageDesDonnesComponent } from './TracageDesDonnees/fiche-tracage-des-donnes/detail-tracage-des-donnes/detail-tracage-des-donnes.component';
 import {MatTreeModule} from "@angular/material/tree";
+import { FilterprjComponent } from './filterprj/filterprj.component';
 
 
 @NgModule({
@@ -46,7 +47,8 @@ import {MatTreeModule} from "@angular/material/tree";
     FicheTracageDesDonnesComponent,
     TableTracageDesDonnesComponent,
     FiltreTracageDesDonnesComponent,
-    DetailTracageDesDonnesComponent
+    DetailTracageDesDonnesComponent,
+    FilterprjComponent
   ],
   imports: [
     CommonModule,

@@ -155,7 +155,6 @@ export class WsFactory {
       params: {
         body: method == ConstanteWs._CODE_POST ? searchObject : null
       },
-      microservice: ConstanteWs._CODE_NOMENCLATURE,
       method: method
     };
     return new Promise(resolve => {

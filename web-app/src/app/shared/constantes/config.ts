@@ -5,6 +5,13 @@ export const CONFIG = {
     {
       key: 'en',
       label: 'En'
+
+
+
+    },
+    {
+      key: 'fr',
+      label: 'Fr'
     },
   ],
   APP_BASE_COLOR: '#35363a',

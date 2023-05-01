@@ -83,6 +83,14 @@ export const COMMON_TYPES_CODES = {
   MONTANT_INPUT: 'montant-input',
 }
 
+export const COMMON_Filter_TYPES={
+  Text:'text',
+  DATE: 'date',
+  MONTANT: 'montant',
+  SELECT:'select'
+
+}
+
 
 export const BTN_TYPES = {
   BTN_ICON: "icon",

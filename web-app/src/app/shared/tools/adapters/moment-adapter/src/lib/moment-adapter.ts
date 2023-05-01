@@ -10,7 +10,7 @@ import {Inject, Injectable, InjectionToken, Optional} from '@angular/core';
 import {MAT_DATE_LOCALE} from '@angular/material/core';
 // Depending on whether rollup is used, moment needs to be imported differently.
 // Since Moment.js doesn't have a default export, we normally need to import using the `* as`
-// syntax. However, rollup creates a synthetic default module and we thus need to import it using
+// syntax. However, rollup creates a synthetic default detail-front and we thus need to import it using
 // the `default as` syntax.
 // TODO(mmalerba): See if we can clean this up at some point.
 import * as _moment from 'moment';
