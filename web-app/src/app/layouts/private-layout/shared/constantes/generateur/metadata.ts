@@ -116,7 +116,6 @@ export const selectedLangues = <SelectMetadata>{
   tooltip: true,
   reset: false,
   value: "idLang",
-  grouping: true
 
 };
 
