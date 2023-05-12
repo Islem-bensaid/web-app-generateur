@@ -1,0 +1,37 @@
+<div class="centered-component" >
+<mat-list>
+  <mat-list-item class="list-header">Micro-services</mat-list-item>
+  <ng-container *ngFor="let ms of listMs">
+    <mat-list-item style="cursor: pointer" class="list-item">
+      <mat-icon style="margin-right: 4%" matListIcon>folder</mat-icon>
+      <p matLine>{{ms.labelToDisplay || ms.labelType }}</p>
+      <h4 matLine>{{ms.codeType}}</h4>
+    </mat-list-item>
+    <div *ngIf="(ms.labelType != 'Eureka') ">
+      <section class="table-container-wrapper">
+        <div class="table-container" *ngFor="let tableData of tables | keyvalue">
+          <div class="table">
+            <h2>{{ tableData.key }}</h2>
+            <div class="checkbox-group-wrapper">
+              <div class="checkbox-group" *ngFor="let item of tableData.value">
+                <label (change)="onCheckboxClick($event, item , ms)" style="cursor: pointer" class="checkbox-container">
+                  <input type="checkbox"
+                         [value]="item"
+                         >
+                  <span class="checkmark"></span>
+                  {{ item }}
+                </label>
+
+
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+    </div>
+
+  </ng-container>
+</mat-list>
+  <st2i-button-loading (click)="reverse()" [disabled]="selectedTables.length === 0" [color]="'accent'"   >Suivant</st2i-button-loading>
+</div>

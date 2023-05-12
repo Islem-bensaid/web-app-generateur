@@ -15,109 +15,110 @@
 
     <!--    [disableClose]="true"-->
 <!--    [class.sticky] = "headerSticky" #sidebarHeader-->
-    <div
-      class="sidebar-header-bg sidebar-header-height"
-      fxLayout="row"
-      fxLayoutAlign="center center"
-    >
-      <img
-        class="ml-n1"
-        alt="Logo guru"
-        src="assets/images/logos/logo_st2i.png"
-        style="height: 60px"
-      />
-    </div>
-    <div >
-      <mat-list class="pt-0">
-        <st2i-spinner-container [isLoading]="onLoadingMenu">
-          <ng-template #menuTemp>
-            <ng-container *ngFor="let menuItem of listMenus; let index = index">
-              <mat-list-item
-                class="cursor-pointer menu-item"
-                [routerLink]="menuItem.path?menuItem.path: null"
-                (click)="onMenuClick(menuItem['menuId'], index)"
-                title="{{ menuItem.tooltip | translate }}"
-                [attr.menu-id]="menuItem['menuId']"
-                [style.height.px]="getMenuHeight(menuItem.title.length )"
-              >
-                <mat-icon mat-list-icon>{{menuItem.icon}}</mat-icon>
-                <div class="menu-item-title ml-1" mat-line>
-                  {{ menuItem.title | translate }}
-                </div>
-                <div
-                  *ngIf="hasSubMenu(menuItem)"
-                  class="col-auto pr-0"
-                  style="justify-content: end"
-                >
-                  <mat-icon
-                    class="mat-icon-rtl-mirror mat-icon"
-                    *ngIf="!expanded[index]"
-                  >navigate_next
-                  </mat-icon
-                  >
-                  <mat-icon *ngIf="expanded[index]">expand_more</mat-icon>
-                </div>
-              </mat-list-item>
+<!--    <st2i-outlet></st2i-outlet>-->
+<!--    <div-->
+<!--      class="sidebar-header-bg sidebar-header-height"-->
+<!--      fxLayout="row"-->
+<!--      fxLayoutAlign="center center"-->
+<!--    >-->
+<!--      <img-->
+<!--        class="ml-n1"-->
+<!--        alt="Logo guru"-->
+<!--        src="assets/images/logos/logo_st2i.png"-->
+<!--        style="height: 60px"-->
+<!--      />-->
+<!--    </div>-->
+<!--    <div >-->
+<!--      <mat-list class="pt-0">-->
+<!--        <st2i-spinner-container [isLoading]="onLoadingMenu">-->
+<!--          <ng-template #menuTemp>-->
+<!--            <ng-container *ngFor="let menuItem of listMenus; let index = index">-->
+<!--              <mat-list-item-->
+<!--                class="cursor-pointer menu-item"-->
+<!--                [routerLink]="menuItem.path?menuItem.path: null"-->
+<!--                (click)="onMenuClick(menuItem['menuId'], index)"-->
+<!--                title="{{ menuItem.tooltip | translate }}"-->
+<!--                [attr.menu-id]="menuItem['menuId']"-->
+<!--                [style.height.px]="getMenuHeight(menuItem.title.length )"-->
+<!--              >-->
+<!--                <mat-icon mat-list-icon>{{menuItem.icon}}</mat-icon>-->
+<!--                <div class="menu-item-title ml-1" mat-line>-->
+<!--                  {{ menuItem.title | translate }}-->
+<!--                </div>-->
+<!--                <div-->
+<!--                  *ngIf="hasSubMenu(menuItem)"-->
+<!--                  class="col-auto pr-0"-->
+<!--                  style="justify-content: end"-->
+<!--                >-->
+<!--                  <mat-icon-->
+<!--                    class="mat-icon-rtl-mirror mat-icon"-->
+<!--                    *ngIf="!expanded[index]"-->
+<!--                  >navigate_next-->
+<!--                  </mat-icon-->
+<!--                  >-->
+<!--                  <mat-icon *ngIf="expanded[index]">expand_more</mat-icon>-->
+<!--                </div>-->
+<!--              </mat-list-item>-->
 
-              <mat-list *ngIf="hasSubMenu(menuItem) && expanded[index]">
-                <ng-container
-                  *ngFor="let subItem of menuItem.submenus; let index1 = index"
-                >
-                  <mat-list-item
-                    class="cursor-pointer menu-item"
-                    [routerLink]="subItem.path?subItem.path:null"
-                    [style]="getMargin(1)"
-                    (click)="onMenuClick(subItem['menuId'], index, index1)"
-                    title="{{ subItem.tooltip | translate }}"
-                    [attr.menu-id]="subItem['menuId']"
-                    [style.height.px]="getMenuHeight(subItem.title.length )"
-                  >
-                    <mat-icon mat-list-icon>{{subItem.icon}}</mat-icon>
-                    <div class="menu-item-title ml-1" mat-line>
-                      {{ subItem.title | translate }}
-                    </div>
-                    <div
-                      *ngIf="hasSubMenu(subItem)"
-                      class="col-auto pr-0"
-                      style="justify-content: end"
-                    >
-                      <mat-icon
-                        class="mat-icon-rtl-mirror mat-icon"
-                        *ngIf="!expanded[index + '' + index1]">
-                        navigate_next
-                      </mat-icon>
-                      <mat-icon *ngIf="expanded[index + '' + index1]">expand_more</mat-icon>
-                    </div>
-                  </mat-list-item>
+<!--              <mat-list *ngIf="hasSubMenu(menuItem) && expanded[index]">-->
+<!--                <ng-container-->
+<!--                  *ngFor="let subItem of menuItem.submenus; let index1 = index"-->
+<!--                >-->
+<!--                  <mat-list-item-->
+<!--                    class="cursor-pointer menu-item"-->
+<!--                    [routerLink]="subItem.path?subItem.path:null"-->
+<!--                    [style]="getMargin(1)"-->
+<!--                    (click)="onMenuClick(subItem['menuId'], index, index1)"-->
+<!--                    title="{{ subItem.tooltip | translate }}"-->
+<!--                    [attr.menu-id]="subItem['menuId']"-->
+<!--                    [style.height.px]="getMenuHeight(subItem.title.length )"-->
+<!--                  >-->
+<!--                    <mat-icon mat-list-icon>{{subItem.icon}}</mat-icon>-->
+<!--                    <div class="menu-item-title ml-1" mat-line>-->
+<!--                      {{ subItem.title | translate }}-->
+<!--                    </div>-->
+<!--                    <div-->
+<!--                      *ngIf="hasSubMenu(subItem)"-->
+<!--                      class="col-auto pr-0"-->
+<!--                      style="justify-content: end"-->
+<!--                    >-->
+<!--                      <mat-icon-->
+<!--                        class="mat-icon-rtl-mirror mat-icon"-->
+<!--                        *ngIf="!expanded[index + '' + index1]">-->
+<!--                        navigate_next-->
+<!--                      </mat-icon>-->
+<!--                      <mat-icon *ngIf="expanded[index + '' + index1]">expand_more</mat-icon>-->
+<!--                    </div>-->
+<!--                  </mat-list-item>-->
 
-                  <mat-list
-                    *ngIf="hasSubMenu(subItem) && expanded[index + '' + index1]"
-                  >
-                    <ng-container *ngFor="let subsubItem of subItem.submenus">
-                      <mat-list-item
-                        class="cursor-pointer menu-item"
-                        [routerLink]="subsubItem.path?subsubItem.path:null"
-                        [style]="getMargin(2.4)"
-                        (click)="_setMenuStyle(subsubItem['menuId'])"
-                        title="{{ subsubItem.tooltip | translate }}"
-                        [attr.menu-id]="subsubItem['menuId']"
-                        [style.height.px]="getMenuHeight(subsubItem.title.length )"
-                      >
-                        {{ subsubItem.title | translate }}
-                      </mat-list-item>
-                    </ng-container>
-                  </mat-list>
-                </ng-container>
-              </mat-list>
-            </ng-container>
-          </ng-template>
-          <ng-template [ngIf]="!onLoadingMenu && !listMenus?.length" [ngIfElse]="menuTemp">
-            Liste des fonctions est actuellement vide!
-          </ng-template>
-        </st2i-spinner-container>
+<!--                  <mat-list-->
+<!--                    *ngIf="hasSubMenu(subItem) && expanded[index + '' + index1]"-->
+<!--                  >-->
+<!--                    <ng-container *ngFor="let subsubItem of subItem.submenus">-->
+<!--                      <mat-list-item-->
+<!--                        class="cursor-pointer menu-item"-->
+<!--                        [routerLink]="subsubItem.path?subsubItem.path:null"-->
+<!--                        [style]="getMargin(2.4)"-->
+<!--                        (click)="_setMenuStyle(subsubItem['menuId'])"-->
+<!--                        title="{{ subsubItem.tooltip | translate }}"-->
+<!--                        [attr.menu-id]="subsubItem['menuId']"-->
+<!--                        [style.height.px]="getMenuHeight(subsubItem.title.length )"-->
+<!--                      >-->
+<!--                        {{ subsubItem.title | translate }}-->
+<!--                      </mat-list-item>-->
+<!--                    </ng-container>-->
+<!--                  </mat-list>-->
+<!--                </ng-container>-->
+<!--              </mat-list>-->
+<!--            </ng-container>-->
+<!--          </ng-template>-->
+<!--          <ng-template [ngIf]="!onLoadingMenu && !listMenus?.length" [ngIfElse]="menuTemp">-->
+<!--            Liste des fonctions est actuellement vide!-->
+<!--          </ng-template>-->
+<!--        </st2i-spinner-container>-->
 
-      </mat-list>
-    </div>
+<!--      </mat-list>-->
+<!--    </div>-->
 
 
   </mat-sidenav>

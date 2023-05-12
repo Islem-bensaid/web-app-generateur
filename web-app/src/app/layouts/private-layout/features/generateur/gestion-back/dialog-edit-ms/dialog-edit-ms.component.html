@@ -1,0 +1,14 @@
+
+<st2i-dialog [title]="'Modifier'">
+
+<mat-dialog-content>
+  <mat-form-field>
+    <input matInput [(ngModel)]="data.label" />
+  </mat-form-field>
+</mat-dialog-content>
+  <div fxLayout="row" fxLayoutAlign="space-evenly none" >
+
+    <st2i-button-loading (click)="onCancel()" [color]="'primary'"   >Cancel</st2i-button-loading>
+    <st2i-button-loading (click)="onSave()" [color]="'primary'"   >Confirmer</st2i-button-loading>
+  </div>
+</st2i-dialog>

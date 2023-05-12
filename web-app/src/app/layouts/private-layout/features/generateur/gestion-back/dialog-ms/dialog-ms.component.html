@@ -1,0 +1,35 @@
+<st2i-dialog [title]="'Ajouter des microservices à votre application'">
+
+
+
+  <mat-form-field  appearance="fill">
+    <mat-label>Liste des types micro-service</mat-label>
+    <mat-select [formControl]="listMs" multiple>
+      <mat-option *ngFor="let msType of listMsType" [value]="msType">{{msType.labelType}}</mat-option>
+    </mat-select>
+  </mat-form-field>
+
+
+  <div fxLayout="row" fxLayoutAlign=" start" >
+
+
+  <mat-checkbox [(ngModel)]="isCheckedCustom" (change)="onaddMsClick();onCheckboxChange()">Voulez-vous créer un micro-service perso ?</mat-checkbox>
+    <button matTooltip="Ajouter un autre microservice personalisé" *ngIf="isCheckedCustom" mat-icon-button (click)="onaddMsClick()">
+      <mat-icon class="my-icon-class" >add</mat-icon>
+    </button>
+  </div>
+  <div [formGroup]="form" *ngIf="isCheckedCustom">
+    <st2i-text-field *ngFor="let control of formArray.controls; let i = index" [placeholder]="'Nom de micro-service personnlisé'"
+                     [control]="control" [label]="'Nom de micro-service '+(i+1)">
+    </st2i-text-field>
+  </div>
+
+  <div fxLayout="row" fxLayoutAlign="space-evenly none" >
+
+  <st2i-button-loading (click)="closeDiag()" [color]="'primary'"   >Cancel</st2i-button-loading>
+    <st2i-button-loading (click)="createMS()" [color]="'primary'"   >Confirmer</st2i-button-loading>
+</div>
+
+
+
+</st2i-dialog>

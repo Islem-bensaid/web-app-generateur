@@ -225,14 +225,7 @@ export const tableColonnes = {
   hasAdd: true, // true | false, default: true
   hasExport: false, // true | false, default: true
   columns: [
-    {
-      label: "Définition et Langue",
-      key: "key",
-      style: {
-        "text-align": "center"
-
-      }
-    }, {
+ {
       label: "Type du colonne",
       key: "type",
       style: {

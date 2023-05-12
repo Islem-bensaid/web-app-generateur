@@ -1,0 +1,169 @@
+<div class="centered-component">
+  <label style="font-weight: bold">Les micro-services générés par défaut</label>
+  <form [formGroup]="form" class="centered-form"  fxLayout="column" >
+
+
+
+
+
+<!--              <div class="cont-main">-->
+<!--                <div class="cont-checkbox" matTooltipClass="tooltip" matTooltip="La configuration pour Eureka et Gateway sera généré par défaut" >-->
+<!--                  <input [checked]="true" [disabled]="true" type="checkbox"  />-->
+<!--                  <label >-->
+<!--                    <img [src]="springImg" />-->
+<!--                    <span class="cover-checkbox">-->
+<!--                  <svg viewBox="0 0 12 10">-->
+<!--                    <polyline points="1.5 6 4.5 9 10.5 1"></polyline>-->
+<!--                  </svg>-->
+<!--                </span>-->
+<!--                    <div class="info">Eureka / Gateway</div>-->
+<!--                  </label>-->
+<!--                </div>-->
+<!--              </div>-->
+
+              <div fxLayout="row" fxLayoutAlign="space-between center" #checkboxList>
+
+
+                <div *ngFor="let msType of listMsTypeToShow; let i = index" class="cont-checkbox" matTooltipClass="tooltip" matTooltip="Si vous cochez cette option un système de {{msType.labelType}} sera inclus dans le projet">
+
+                  <input (click)="getClickedMsId($event,msType); "
+                         [checked]="(msType.labelType === 'Gateway') || (msType.labelType === 'Eureka')"
+                         [disabled]="(msType.labelType === 'Gateway') || (msType.labelType === 'Eureka')"
+                         type="checkbox" [id]="msType.uniqueId" />
+                  <label [for]="msType.uniqueId">
+
+                    <img [src]="springImg" />
+                    <span class="cover-checkbox">
+                  <svg viewBox="0 0 12 10">
+                    <polyline points="1.5 6 4.5 9 10.5 1"></polyline>
+                  </svg>
+                </span>
+
+                    <div class="info">
+                      <ng-container *ngIf="msType.labelType === 'CustomMs'; else notCustom">
+
+
+                        <div fxLayout="row" fxLayoutAlign="space-around center" >
+                          <div fxFlex="65">
+                            <label>{{msType.labelToDisplay}}</label> </div>
+
+                          <div fxFlex="20" fxLayout="row" fxLayoutAlign="end center" >
+                            <button matTooltip="Modifier" mat-icon-button (click)="onClickEditLabel(msType)">
+                          <div ><mat-icon class="my-icon-class" >edit</mat-icon> </div></button>
+
+                            <button matTooltip="Supprimer" mat-icon-button (click)="removeFromListToShow(msType)" >
+                              <div ><mat-icon class="my-icon-class" >delete</mat-icon> </div></button>
+
+                          </div>
+
+                        </div>
+                      </ng-container>
+
+                      <ng-template #notCustom>
+                        {{ msType.labelType }}
+                      </ng-template>
+                    </div>
+
+                  </label>
+                </div>
+                <st2i-button-loading [btnClass]="'my-plus-btn'" (click)="addToListMsType()" > + </st2i-button-loading>
+
+
+              </div>
+
+
+    <div fxLayout="row" fxLayoutAlign="space-between center" >
+      <st2i-text-field fxFlex="40" [placeholder]="'Nom de la base de donnée'"  [control]="getFormControl('nameDB')"
+                       [label]="'Nom de la base de données'"
+      ></st2i-text-field>
+     <div style="margin-bottom: 2.5%"> Host</div> <st2i-text-field fxFlex="25" [placeholder]="'Host de la base de donnée'"  [control]="getFormControl('hostDB')"
+                       [label]="'Host'"
+      ></st2i-text-field>
+      <div  style="margin-bottom: 2.5%">  Port</div> <st2i-text-field fxFlex="25" [placeholder]="'Port de la base de donnée'"  [control]="getFormControl('portDB')"
+                       [label]="'Port'"
+      ></st2i-text-field>
+
+
+
+    </div>
+
+    <div fxLayout="row" fxLayoutAlign="space-between" >
+          <st2i-text-field fxFlex="45" [placeholder]="'Nom utilisateur de la base de donnée'"  [control]="getFormControl('userName')"
+                           [label]="'Nom utilisateur de la base de donnée\''"
+          ></st2i-text-field>
+          <st2i-text-field #password type="password" fxFlex="45"
+                           [isIconPrefix]="true"
+                           [suffix]="password.type == 'password'? 'visibility_off':'visibility'"
+                           [isIconSuffix]="true"
+                           [isSuffixClicked]="true"
+                           (suffixClickedEvent)="password.type = password.type == 'password'? 'text':'password'"
+                           [placeholder]="'Mot de passe de la base de donnée'"
+                           [control]="getFormControl('password')"
+                           [label]="'Mot de passe de la base de donnée'"
+          ></st2i-text-field>
+      <st2i-button-loading (click)="testConnection()" fxFlex="auto" [color]="'primary'"   >Test</st2i-button-loading>
+        </div>
+
+
+    <form class="centered-form"  fxLayout="column" >
+      <div  style="margin-bottom: 2.5%">La configuration du serveur Eureka</div>
+      <st2i-text-field [placeholder]="'Port de serveur Eureka'"  [control]="getFormMsEurekaControl('eurekaPort')"
+        [label]="'Port de serveur Eureka'"
+      ></st2i-text-field>
+    </form>
+
+
+
+    <mat-horizontal-stepper >
+
+      <mat-step    *ngFor="let profil of listProfils; let last = last" errorMessage="Required.">
+
+         <ng-template matStepLabel><div class="step-label" (click)="onProfileLabelClick(profil.idProfile)">
+           {{profil.labelProfile | uppercase}} </div>
+         </ng-template>
+
+
+
+
+        <mat-accordion *ngFor="let msType of listMsTypeToShow" >
+          <mat-expansion-panel hideToggle  *ngIf="isMsCustomClickedInList(msType) || msType.labelType === 'Gateway'"
+                               (opened)="openMsCustom(msType)" (closed)="closeMsCustom()">
+            <mat-expansion-panel-header>
+              <mat-panel-title>
+                {{ msType.labelToDisplay ? msType.labelToDisplay : msType.labelType }}
+              </mat-panel-title>
+              <mat-panel-description>
+                Cette section concerne la config de votre micro-service
+              </mat-panel-description>
+            </mat-expansion-panel-header>
+
+
+            <form [formGroup]="formMs">
+              <div *ngFor="let control of openedMsList">
+                <ng-container *ngIf="control.idType === msType.idType && control.idProfil === idProfileSelected">
+                  <st2i-text-field [control]="getFormMsControl(control.idConf)"
+                                   [label]="control.cle">
+                  </st2i-text-field>
+                </ng-container>
+              </div>
+            </form>
+
+
+
+          </mat-expansion-panel>
+        </mat-accordion>
+        <div fxLayout="row" fxLayoutAlign="end center" >
+
+        <st2i-button-loading *ngIf="last" (click)="generateFromProfile()" [color]="'primary'"   >Générer</st2i-button-loading>
+        </div>
+      </mat-step>
+
+    </mat-horizontal-stepper>
+
+
+
+    <st2i-button-loading (click)="generateMs()" [color]="'accent'"   >Suivant</st2i-button-loading>
+  </form>
+
+</div>
+<button (click)="test()"> aaaa </button>

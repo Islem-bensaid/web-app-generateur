@@ -1,0 +1,90 @@
+.mat-mdc-list-item-icon {
+    color: rgba(119, 12, 12, 0.54);
+}
+
+.list-header {
+    font-weight: bold;
+    text-transform: uppercase;
+    margin-top: 16px;
+    margin-bottom: 8px;
+}
+
+.list-item {
+    margin-top: 8px;
+    margin-bottom: 8px;
+    border-radius: 4px;
+    background-color: #f0f0f0;
+    padding: 8px;
+}
+.centered-component {
+    border: 1px solid #ccc;
+    padding: 20px;
+    box-shadow: 0px 0px 10px 0px rgba(0, 0, 0, 0.2);
+    border-radius: 5px;
+
+    margin-left: 20%;
+    margin-right: 20%;
+
+
+    /* adjust the values below to set the fixed distances from the edges of the screen */
+    margin-top: 50px;
+    margin-bottom: 50px;
+
+    max-height: 100%;
+    overflow: auto;
+}
+
+.table-container-wrapper {
+    display: flex;
+    overflow-x: auto;
+}
+
+.table-container {
+    display: inline-block;
+    vertical-align: top;
+    margin-right: 20px;
+}
+
+.table {
+    width: 300px;
+    margin: 0 0 20px;
+    padding: 20px;
+    background-color: #f0f0f0;
+    border-radius: 5px;
+    overflow-y: auto;
+}
+
+h2 {
+    font-weight: bold;
+    font-size: 1.5rem;
+    margin-bottom: 10px;
+}
+
+.checkbox-group-wrapper {
+    height: 200px;
+    overflow-y: auto;
+    margin-bottom: 20px;
+}
+
+.checkbox-group {
+    display: block;
+    margin-bottom: 10px;
+}
+
+mat-checkbox {
+    margin-right: 5px;
+}
+
+@media only screen and (max-width: 600px) {
+    .table {
+        width: 100%;
+        margin: 0 0 10px;
+        padding: 10px;
+    }
+
+    .table-container {
+        margin-right: 10px;
+    }
+}
+
+
